@@ -1,0 +1,29 @@
+{
+  "pokemon": {
+    "valid_ids": [1, 25, 150],
+    "valid_names": ["pikachu", "charizard", "mewtwo"],
+    "invalid_ids": [0, -1, 99999],
+    "invalid_names": ["invalidpokemon", "123abc", ""]
+  },
+  "abilities": {
+    "valid_ids": [1, 2, 3],
+    "valid_names": ["stench", "drizzle", "speed-boost"]
+  },
+  "items": {
+    "valid_ids": [1, 2, 3],
+    "valid_names": ["master-ball", "ultra-ball", "great-ball"]
+  },
+  "moves": {
+    "valid_ids": [1, 2, 3],
+    "valid_names": ["pound", "karate-chop", "double-slap"]
+  },
+  "types": {
+    "valid_ids": [1, 2, 3],
+    "valid_names": ["normal", "fighting", "flying"]
+  },
+  "performance": {
+    "max_response_time": 5.0,
+    "concurrent_requests": 5,
+    "pagination_limits": [10, 20, 50]
+  }
+}

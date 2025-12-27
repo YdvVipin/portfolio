@@ -1,0 +1,21 @@
+{
+  "base_url": "https://pokeapi.co/api/v2",
+  "endpoints": {
+    "pokemon": "/pokemon/",
+    "ability": "/ability/",
+    "berry": "/berry/",
+    "item": "/item/",
+    "move": "/move/",
+    "type": "/type/",
+    "evolution_chain": "/evolution-chain/",
+    "species": "/pokemon-species/"
+  },
+  "timeout": 30,
+  "retry_count": 3,
+  "test_data": {
+    "valid_pokemon_ids": [1, 25, 150],
+    "valid_pokemon_names": ["pikachu", "charizard", "mewtwo"],
+    "invalid_ids": [0, -1, 99999],
+    "invalid_names": ["invalidpokemon", "123abc", ""]
+  }
+}
