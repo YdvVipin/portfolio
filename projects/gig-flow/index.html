@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Gig Discovery Automation - Vipin Yadav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="tech-bg"></div>
+    <div class="particles-container"></div>
+    
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="../../index.html" class="nav-logo">Vipin Yadav</a>
+                <ul class="nav-menu">
+                    <li><a href="../../index.html#about">About</a></li>
+                    <li><a href="../../index.html#projects">Projects</a></li>
+                    <li><a href="../../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <div class="terminal-bar">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">Gig_Discovery_Automation.py</span>
+                </div>
+                <h1>🎯 AI-Powered Freelance Gig Discovery Automation</h1>
+            </div>
+            
+            <div class="project-overview">
+                <h2>📋 Project Overview</h2>
+                <p>A compliant semi-automated Python system that discovers AI/web automation gigs, scores relevance using Claude API, generates personalized proposals, and sends email notifications for manual review. Built with human-in-the-loop approach to ensure TOS compliance.</p>
+                
+                <div class="tech-stats">
+                    <span class="stat"><span class="stat-label">Role:</span> QA Automation Engineer & AI Integrator</span>
+                    <span class="stat"><span class="stat-label">Gigs/Week:</span> 50+ processed</span>
+                    <span class="stat"><span class="stat-label">Accuracy:</span> 80% fit rate</span>
+                    <span class="stat"><span class="stat-label">Efficiency:</span> 70% time saved</span>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h2>🛠️ Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>Core Language</h4>
+                        <p>Python 3.9+</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>AI Integration</h4>
+                        <p>Claude API (Anthropic)</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Data Fetching</h4>
+                        <p>requests, feedparser</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Storage</h4>
+                        <p>airtable-python-wrapper</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Notifications</h4>
+                        <p>smtplib, email</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Scheduling</h4>
+                        <p>schedule (cron-like)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-diagram">
+                <h2>🔄 System Flow</h2>
+                <div class="mermaid">
+                    graph TD
+                        A[RSS/API Sources] --> B[Fetch Gigs]
+                        B --> C[Claude AI Scoring]
+                        C --> D{Score > 7?}
+                        D -->|Yes| E[Generate Proposal]
+                        D -->|No| F[Discard]
+                        E --> G[Store in Airtable]
+                        G --> H[Email Notification]
+                        H --> I[Manual Review]
+                        I --> J[Human Application]
+                        
+                        style A fill:#ff79c6
+                        style C fill:#50fa7b
+                        style E fill:#8be9fd
+                        style J fill:#ffb86c
+                </div>
+            </div>
+
+            <div class="code-example">
+                <h2>💻 Code Implementation</h2>
+                <div class="code-snippet">
+                    <span class="code-line"><span class="keyword">import</span> anthropic</span>
+                    <span class="code-line"><span class="keyword">import</span> feedparser</span>
+                    <span class="code-line"><span class="keyword">from</span> airtable <span class="keyword">import</span> Airtable</span>
+                    <span class="code-line"></span>
+                    <span class="code-line"><span class="keyword">def</span> score_gig_relevance(gig_description):</span>
+                    <span class="code-line">    client = anthropic.Anthropic()</span>
+                    <span class="code-line">    response = client.messages.create(</span>
+                    <span class="code-line">        model=<span class="string">"claude-3-sonnet"</span>,</span>
+                    <span class="code-line">        messages=[{</span>
+                    <span class="code-line">            <span class="string">"role"</span>: <span class="string">"user"</span>,</span>
+                    <span class="code-line">            <span class="string">"content"</span>: <span class="string">f"Score this gig 1-10: {gig_description}"</span></span>
+                    <span class="code-line">        }]</span>
+                    <span class="code-line">    )</span>
+                    <span class="code-line">    <span class="keyword">return</span> extract_score(response.content)</span>
+                </div>
+            </div>
+
+            <div class="key-learnings">
+                <h2>🎓 Key Learnings</h2>
+                <ul>
+                    <li><strong>Ethical AI Integration:</strong> Implemented Claude API for intelligent scoring while maintaining human oversight</li>
+                    <li><strong>TOS Compliance:</strong> Designed human-in-the-loop system to avoid automated submissions</li>
+                    <li><strong>API Rate Limiting:</strong> Implemented proper throttling for RSS feeds and Claude API calls</li>
+                    <li><strong>Data Pipeline:</strong> Built robust ETL process with error handling and retry mechanisms</li>
+                    <li><strong>Notification System:</strong> Created smart email alerts with proposal previews for quick review</li>
+                </ul>
+            </div>
+
+            <div class="metrics">
+                <h2>📊 Performance Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>50+</h3>
+                        <p>Gigs Processed Weekly</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>80%</h3>
+                        <p>Relevance Accuracy</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>70%</h3>
+                        <p>Time Reduction</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>100%</h3>
+                        <p>TOS Compliant</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-links">
+                <h2>🔗 Project Links</h2>
+                <div class="links">
+                    <a href="https://github.com/ydvvipin/gig-automation" target="_blank" class="btn btn-primary">💻 GitHub Repository</a>
+                    <a href="../../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Vipin Yadav. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+        
+        // Initialize particles for this page
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.particles-container');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.cssText = `
+                    width: ${Math.random() * 4 + 2}px;
+                    height: ${Math.random() * 4 + 2}px;
+                    left: ${Math.random() * 100}%;
+                    animation-delay: ${Math.random() * 6}s;
+                    animation-duration: ${Math.random() * 4 + 4}s;
+                `;
+                container.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
