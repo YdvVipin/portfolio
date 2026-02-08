@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playwright BDD Framework - Vipin Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css?v=3.0">
+<style>
+.detail-hero { padding: 140px 24px 60px; text-align: center; }
+.detail-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: var(--text); }
+.detail-hero .grad { background: linear-gradient(135deg, var(--cyan), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-hero p { font-size: 1.05rem; color: var(--text2); max-width: 620px; margin: 0 auto 32px; }
+.detail-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(0,255,255,0.08); margin-bottom: 60px; }
+.detail-stat { background: var(--bg2); padding: 24px 16px; text-align: center; }
+.detail-stat-num { font-size: 1.5rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, var(--cyan), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-stat-label { font-size: 0.75rem; color: var(--text3); margin-top: 4px; }
+.detail-section { padding: 60px 0; }
+.detail-section h2 { font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.detail-section .subtitle { font-size: 1rem; color: var(--text2); margin-bottom: 32px; max-width: 640px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.detail-card { padding: 24px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); }
+.detail-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--cyan); }
+.detail-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.pill { padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500; background: var(--bg3); border: 1px solid rgba(255,255,255,0.05); color: var(--text); }
+.code-block { background: var(--bg2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); overflow: hidden; margin: 24px 0; }
+.code-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg3); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.code-header .dots { display: flex; gap: 6px; }
+.code-header .dots span { width: 10px; height: 10px; border-radius: 50%; }
+.code-header .dots span:nth-child(1) { background: #ef4444; }
+.code-header .dots span:nth-child(2) { background: #f59e0b; }
+.code-header .dots span:nth-child(3) { background: #22c55e; }
+.code-header .file-name { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text3); }
+.code-body { padding: 20px; overflow-x: auto; }
+.code-body pre { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: var(--text2); }
+.kw { color: var(--pink); } .fn { color: var(--accent2); } .str { color: var(--green); } .cm { color: var(--text3); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="tech-bg"></div>
+
+<header>
+  <nav>
+    <a href="../../index.html#projects" class="nav-brand" style="text-decoration:none">&larr; Portfolio</a>
+    <ul><li><a href="#features">Features</a></li><li><a href="#tech">Tech</a></li><li><a href="#structure">Structure</a></li></ul>
+  </nav>
+</header>
+
+<section class="detail-hero">
+  <div class="container">
+    <h1>Playwright BDD<br><span class="grad">Test Framework</span></h1>
+    <p>Production-ready BDD test automation framework built with Playwright, Cucumber, and TypeScript. Features page object model, accessibility testing, Allure reporting, and MCP agent integration.</p>
+    <div class="hero-btns" style="display:flex;gap:12px;justify-content:center">
+      <a href="https://github.com/YdvVipin/PlaywrightDemoProject" class="btn" target="_blank" style="background:rgba(0,255,255,0.06);color:var(--cyan);border:1px solid rgba(0,255,255,0.2);border-radius:100px;padding:10px 24px">View Source</a>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="detail-stats">
+    <div class="detail-stat"><div class="detail-stat-num">7+</div><div class="detail-stat-label">Test Suites</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">BDD</div><div class="detail-stat-label">Cucumber/Gherkin</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">A11y</div><div class="detail-stat-label">Axe Integration</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">TS</div><div class="detail-stat-label">TypeScript 5</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">MCP</div><div class="detail-stat-label">Agent Support</div></div>
+  </div>
+</div>
+
+<section class="detail-section" id="features">
+  <div class="container">
+    <h2>Key Features</h2>
+    <p class="subtitle">Enterprise-grade test automation combining BDD methodology with modern tooling.</p>
+    <div class="detail-grid">
+      <div class="detail-card"><h4>BDD with Cucumber</h4><p>Write tests in plain English using Gherkin syntax. Step definitions auto-map to Playwright actions for readable, maintainable test scenarios.</p></div>
+      <div class="detail-card"><h4>Page Object Model</h4><p>Clean separation of test logic and page interactions. Reusable page objects with typed locators and action methods.</p></div>
+      <div class="detail-card"><h4>Accessibility Testing</h4><p>Axe-Playwright integration for automated WCAG compliance checks. Catch accessibility violations during functional tests.</p></div>
+      <div class="detail-card"><h4>Allure Reporting</h4><p>Rich HTML reports with screenshots, traces, and step-by-step execution details. Integrates with CI/CD pipelines.</p></div>
+      <div class="detail-card"><h4>Parallel Execution</h4><p>Run tests across multiple workers with tag-based filtering. Smoke, regression, and custom suite configurations.</p></div>
+      <div class="detail-card"><h4>MCP Agent Integration</h4><p>Model Context Protocol agents for intelligent test assistance, code generation support, and smart locator strategies.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="tech" style="background:var(--bg2)">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <div class="tech-pills">
+      <span class="pill">Playwright</span><span class="pill">TypeScript 5</span><span class="pill">Cucumber BDD</span><span class="pill">Axe-Playwright</span><span class="pill">Allure Reports</span><span class="pill">Winston Logger</span><span class="pill">Zod Validation</span><span class="pill">ESLint</span><span class="pill">Prettier</span><span class="pill">MCP Agents</span>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="structure">
+  <div class="container">
+    <h2>Project Structure</h2>
+    <div class="code-block">
+      <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><div class="file-name">project-structure</div></div>
+      <div class="code-body"><pre><span class="fn">src/</span>
+  <span class="fn">pages/</span>        <span class="cm"># Page Object Models</span>
+  <span class="fn">steps/</span>        <span class="cm"># Cucumber step definitions</span>
+  <span class="fn">hooks/</span>        <span class="cm"># Before/After hooks</span>
+  <span class="fn">locators/</span>     <span class="cm"># Centralized selectors</span>
+  <span class="fn">agents/</span>       <span class="cm"># MCP agent integrations</span>
+  <span class="fn">utils/</span>        <span class="cm"># Helpers & config</span>
+<span class="fn">features/</span>       <span class="cm"># Gherkin .feature files</span>
+<span class="fn">tests/</span>          <span class="cm"># Playwright spec tests</span>
+<span class="fn">reports/</span>        <span class="cm"># Allure results</span></pre></div>
+    </div>
+    <div class="code-block">
+      <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><div class="file-name">login.feature</div></div>
+      <div class="code-body"><pre><span class="kw">Feature:</span> User Login
+  <span class="kw">Scenario:</span> Successful login with valid credentials
+    <span class="kw">Given</span> <span class="str">the user is on the login page</span>
+    <span class="kw">When</span> <span class="str">they enter valid credentials</span>
+    <span class="kw">Then</span> <span class="str">they should see the dashboard</span>
+    <span class="kw">And</span> <span class="str">the page should be accessible</span></pre></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><p style="font-size:.82rem;color:var(--text3)">&copy; 2026 Vipin Yadav</p></div></footer>
+<script src="../../js/script.js"></script>
+</body>
+</html>

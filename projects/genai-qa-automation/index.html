@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenAI QA Automation - Vipin Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css?v=3.0">
+<style>
+.detail-hero { padding: 140px 24px 60px; text-align: center; }
+.detail-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: var(--text); }
+.detail-hero .grad { background: linear-gradient(135deg, var(--green), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-hero p { font-size: 1.05rem; color: var(--text2); max-width: 620px; margin: 0 auto 32px; }
+.detail-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(80,250,123,0.08); margin-bottom: 60px; }
+.detail-stat { background: var(--bg2); padding: 24px 16px; text-align: center; }
+.detail-stat-num { font-size: 1.5rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, var(--green), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-stat-label { font-size: 0.75rem; color: var(--text3); margin-top: 4px; }
+.detail-section { padding: 60px 0; }
+.detail-section h2 { font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.detail-section .subtitle { font-size: 1rem; color: var(--text2); margin-bottom: 32px; max-width: 640px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.detail-card { padding: 24px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); }
+.detail-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--green); }
+.detail-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.pill { padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500; background: var(--bg3); border: 1px solid rgba(255,255,255,0.05); color: var(--text); }
+.code-block { background: var(--bg2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); overflow: hidden; margin: 24px 0; }
+.code-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg3); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.code-header .dots { display: flex; gap: 6px; }
+.code-header .dots span { width: 10px; height: 10px; border-radius: 50%; }
+.code-header .dots span:nth-child(1) { background: #ef4444; }
+.code-header .dots span:nth-child(2) { background: #f59e0b; }
+.code-header .dots span:nth-child(3) { background: #22c55e; }
+.code-header .file-name { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text3); }
+.code-body { padding: 20px; overflow-x: auto; }
+.code-body pre { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: var(--text2); }
+.kw { color: var(--pink); } .fn { color: var(--accent2); } .str { color: var(--green); } .cm { color: var(--text3); font-style: italic; }
+.flow-step { display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius); margin-bottom: 12px; }
+.flow-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; color: #fff; background: var(--green); flex-shrink: 0; }
+.flow-step h4 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.flow-step p { font-size: 0.82rem; color: var(--text2); }
+</style>
+</head>
+<body>
+<div class="tech-bg"></div>
+
+<header>
+  <nav>
+    <a href="../../index.html#projects" class="nav-brand" style="text-decoration:none">&larr; Portfolio</a>
+    <ul><li><a href="#pipeline">Pipeline</a></li><li><a href="#tech">Tech</a></li></ul>
+  </nav>
+</header>
+
+<section class="detail-hero">
+  <div class="container">
+    <h1>GenAI QA<br><span class="grad">Test Automation</span></h1>
+    <p>AI-powered test case generation system that reads CSV test step data and generates complete Selenium + BDD test scripts using Groq LLM (Llama 3.1). From manual test steps to automated scripts in seconds.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="detail-stats">
+    <div class="detail-stat"><div class="detail-stat-num">Groq</div><div class="detail-stat-label">Llama 3.1 8B</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">CSV</div><div class="detail-stat-label">Input Format</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">BDD</div><div class="detail-stat-label">Gherkin Output</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">Auto</div><div class="detail-stat-label">Selenium Scripts</div></div>
+  </div>
+</div>
+
+<section class="detail-section" id="pipeline">
+  <div class="container">
+    <h2>How It Works</h2>
+    <p class="subtitle">A 4-step pipeline from raw test data to executable automation scripts.</p>
+    <div class="flow-step"><div class="flow-num">1</div><div><h4>Read CSV Steps</h4><p>Parse manual test step data from CSV files. Normalize columns, extract test scenarios and expected results.</p></div></div>
+    <div class="flow-step"><div class="flow-num">2</div><div><h4>LLM Processing</h4><p>Feed structured test data into Groq's Llama 3.1 model via LangChain prompt templates with output parsing.</p></div></div>
+    <div class="flow-step"><div class="flow-num">3</div><div><h4>Generate BDD Features</h4><p>AI produces Gherkin feature files with Given/When/Then steps mapped from the original manual test cases.</p></div></div>
+    <div class="flow-step"><div class="flow-num">4</div><div><h4>Generate Selenium Scripts</h4><p>Produce executable Python Selenium scripts with proper locators, waits, and assertions ready to run.</p></div></div>
+  </div>
+</section>
+
+<section class="detail-section" id="tech" style="background:var(--bg2)">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <div class="tech-pills">
+      <span class="pill">Python</span><span class="pill">Groq LLM</span><span class="pill">Llama 3.1</span><span class="pill">LangChain</span><span class="pill">Selenium</span><span class="pill">Pandas</span><span class="pill">BDD/Gherkin</span><span class="pill">Prompt Engineering</span>
+    </div>
+    <div class="code-block">
+      <div class="code-header"><div class="dots"><span></span><span></span><span></span></div><div class="file-name">run_generator.py</div></div>
+      <div class="code-body"><pre><span class="kw">from</span> langchain_groq <span class="kw">import</span> <span class="fn">ChatGroq</span>
+<span class="kw">from</span> langchain_core.prompts <span class="kw">import</span> <span class="fn">PromptTemplate</span>
+
+llm = <span class="fn">ChatGroq</span>(
+    model=<span class="str">"llama-3.1-8b-instant"</span>,
+    temperature=<span class="str">0.1</span>
+)
+
+<span class="cm"># Read CSV test steps</span>
+df = <span class="fn">read_csv_steps</span>(<span class="str">"test_data.csv"</span>)
+
+<span class="cm"># Generate BDD + Selenium scripts</span>
+features = llm.<span class="fn">generate_bdd</span>(df)
+scripts  = llm.<span class="fn">generate_selenium</span>(df)</pre></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><p style="font-size:.82rem;color:var(--text3)">&copy; 2026 Vipin Yadav</p></div></footer>
+<script src="../../js/script.js"></script>
+</body>
+</html>

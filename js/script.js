@@ -1,30 +1,31 @@
-// Tech Anime Background Effects
 document.addEventListener('DOMContentLoaded', function() {
-    createVisibleParticles();
-    createTechGrid();
-    addGlowEffects();
+    createParticles();
+    createGridOverlay();
+    setupScrollAnimations();
+    setupNavHighlight();
+    setupMobileMenu();
+    setupProjectFilters();
 });
 
-// Create visible cyan particles
-function createVisibleParticles() {
+function createParticles() {
     const container = document.querySelector('.particles-container');
-    
-    for (let i = 0; i < 30; i++) {
+    if (!container) return;
+
+    for (let i = 0; i < 20; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.cssText = `
-            width: ${Math.random() * 6 + 2}px;
-            height: ${Math.random() * 6 + 2}px;
+            width: ${Math.random() * 4 + 2}px;
+            height: ${Math.random() * 4 + 2}px;
             left: ${Math.random() * 100}%;
-            animation-delay: ${Math.random() * 6}s;
-            animation-duration: ${Math.random() * 4 + 4}s;
+            animation-delay: ${Math.random() * 8}s;
+            animation-duration: ${Math.random() * 6 + 6}s;
         `;
         container.appendChild(particle);
     }
 }
 
-// Create tech grid overlay
-function createTechGrid() {
+function createGridOverlay() {
     const grid = document.createElement('div');
     grid.style.cssText = `
         position: fixed;
@@ -32,36 +33,91 @@ function createTechGrid() {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: 
-            linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
+        background-image:
+            linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
         pointer-events: none;
         z-index: -1;
-        animation: gridMove 20s linear infinite;
     `;
     document.body.appendChild(grid);
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-    `;
-    document.head.appendChild(style);
 }
 
-// Add glow effects to cards
-function addGlowEffects() {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.5), 0 20px 40px rgba(0, 0, 0, 0.3)';
+function setupScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 60);
+            }
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.project-card, .skill-category, .contact-card, .timeline-item, .edu-card, .achievement-card, .highlight-item, .info-card').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+}
+
+function setupNavHighlight() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 120;
+            if (window.scrollY >= top) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.style.color = '';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.color = '#e4e4ef';
+            }
+        });
+    });
+}
+
+function setupMobileMenu() {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('nav ul');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    });
+}
+
+function setupProjectFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card[data-category]');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            cards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                    card.style.display = '';
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         });
     });
 }

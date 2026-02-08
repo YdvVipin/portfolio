@@ -3,212 +3,1014 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QA Automation Portfolio | Vipin Yadav</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <title>Vipin Yadav | QA Automation & AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=5.0">
 </head>
 <body>
   <div class="tech-bg"></div>
   <div class="particles-container"></div>
+
   <header>
     <nav>
-      <h1>🤖 QA Automation Specialist ⚡</h1>
-      <p>🌆 Based in Toronto | 📊 Testing | 🤖 Automation | 🚀 CI/CD</p>
+      <div class="nav-brand">Vipin Yadav</div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
       <ul>
-        <li><a href="#projects">💼 Projects</a></li>
-        <li><a href="#skills">⚡ Skills</a></li>
-        <li><a href="#contact">📧 Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- ─── Hero ─────────────────────────────────────── -->
   <section class="hero">
-    <h2>🚀 Welcome to the Future of QA</h2>
-    <p>🤖 I build automated testing solutions and ensure application quality through cutting-edge technology.</p>
-    <p>⚡ Explore my projects to see test automation in action with AI-powered insights.</p>
+    <div class="hero-badge"><span class="hero-dot"></span> Open to Opportunities</div>
+    <h2>QA Automation &<br><span class="hero-gradient">AI Engineering</span></h2>
+    <p>Software Development Engineer in Test with 8+ years of experience. Building intelligent testing systems that combine deterministic automation with AI-powered insights. Based in Toronto.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">8+</span><span class="hero-stat-label">Years Experience</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">18+</span><span class="hero-stat-label">Projects</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">LLM Integrations</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">18</span><span class="hero-stat-label">AI Agents Built</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
   </section>
 
-  <section id="projects" class="projects">
-    <h2>🚀 Featured Tech Projects</h2>
-    
-    <div class="project-card">
-      <div class="card-header">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">E-Commerce_Test_Suite.exe</span>
+  <!-- ─── About ────────────────────────────────────── -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lead">Software Development Engineer in Test with over <strong>8 years of experience</strong>, successfully transitioning from RF network engineering to specialized QA automation with AI integration.</p>
+        <div class="about-details">
+          <p>I leverage foundational skills in algorithm design, scripting, and data analysis from my early RF roles to build robust automation frameworks. My current focus is on integrating AI tools for predictive testing, intelligent test generation, and self-healing automation systems.</p>
+          <p>Strong background in Frontend and Backend testing of Web/Mobile applications and APIs. Experienced in building enterprise-grade platforms with multi-agent orchestration, LLM integration (Claude, GPT-4o, Grok), and MCP protocol implementation.</p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>RF Engineering → QA Automation → AI/ML Integration</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </span>
+            <span>65% test cases automated, 80% fewer bugs in top projects</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <span>Trained and managed 100+ technical staff</span>
+          </div>
         </div>
       </div>
-      <div class="card-content">
-        <div class="code-snippet">
-          <span class="code-line"><span class="keyword">describe</span>(<span class="string">'E-Commerce Tests'</span>, () => {</span>
-          <span class="code-line">  <span class="keyword">test</span>(<span class="string">'checkout flow'</span>, <span class="success">✓ PASSED</span>)</span>
-          <span class="code-line">  <span class="keyword">test</span>(<span class="string">'payment gateway'</span>, <span class="success">✓ PASSED</span>)</span>
-          <span class="code-line">})</span>
+      <div class="about-info">
+        <div class="info-card">
+          <div class="info-row"><span class="info-label">Location</span><span class="info-value">Toronto, Ontario</span></div>
+          <div class="info-row"><span class="info-label">Role</span><span class="info-value">QA Automation Specialist</span></div>
+          <div class="info-row"><span class="info-label">Focus</span><span class="info-value">AI-Powered QA Systems</span></div>
+          <div class="info-row"><span class="info-label">Education</span><span class="info-value">PGD Computer Programming</span></div>
+          <div class="info-row"><span class="info-label">Languages</span><span class="info-value">Python, Java, TypeScript, JS</span></div>
         </div>
-        <h3>🛍️ E-Commerce Test Automation</h3>
-        <div class="tech-stats">
-          <span class="stat"><span class="stat-label">Framework:</span> Playwright</span>
-          <span class="stat"><span class="stat-label">Coverage:</span> 95.2%</span>
-          <span class="stat"><span class="stat-label">Tests:</span> 247 ✓</span>
-        </div>
-        <p>🤖 AI-powered end-to-end testing suite with intelligent test generation, visual regression detection, and automated CI/CD integration.</p>
-        <div class="buttons">
-          <a href="projects/qa-automation-1/" class="btn">🔍 Analyze</a>
-          <a href="https://your-app.up.railway.app" target="_blank" class="btn btn-live">🌐 Live Demo</a>
-          <a href="https://github.com/YdvVipin/portfolio" target="_blank" class="btn btn-github">💻 Source</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-header">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">API_Automation_Framework.py</span>
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="code-snippet">
-          <span class="code-line"><span class="keyword">@given</span>(<span class="string">'API endpoint is available'</span>)</span>
-          <span class="code-line"><span class="keyword">@when</span>(<span class="string">'I send GET request'</span>)</span>
-          <span class="code-line"><span class="keyword">@then</span>(<span class="string">'response is valid'</span>) <span class="success">✓</span></span>
-          <span class="code-line"><span class="comment"># Performance: 45ms avg</span></span>
-        </div>
-        <h3>🔌 AI-Enabled API Testing</h3>
-        <div class="tech-stats">
-          <span class="stat"><span class="stat-label">Language:</span> Python/BDD</span>
-          <span class="stat"><span class="stat-label">Endpoints:</span> 127 tested</span>
-          <span class="stat"><span class="stat-label">Uptime:</span> 99.8%</span>
-        </div>
-        <p>🚀 Comprehensive BDD framework with schema validation, performance monitoring, and ML-powered anomaly detection.</p>
-        <div class="buttons">
-          <a href="projects/ai-enabled-api-automation/" class="btn">🔍 Analyze</a>
-          <a href="projects/ai-enabled-api-automation/reports/allure-report/index.html" target="_blank" class="btn btn-live">📊 Reports</a>
-          <a href="https://github.com/YdvVipin/AIEnabledAPIAutomation" target="_blank" class="btn btn-github">💻 Source</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-header">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">JIRA_Analytics_Engine.ipynb</span>
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="code-snippet">
-          <span class="code-line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span>
-          <span class="code-line">df = jira_data.analyze_trends()</span>
-          <span class="code-line"><span class="comment"># Defect prediction: 87% accuracy</span></span>
-          <span class="code-line">model.predict() <span class="success">→ HIGH_RISK</span></span>
-        </div>
-        <h3>📊 JIRA Intelligence System</h3>
-        <div class="tech-stats">
-          <span class="stat"><span class="stat-label">Data Points:</span> 15.2K</span>
-          <span class="stat"><span class="stat-label">Accuracy:</span> 87.3%</span>
-          <span class="stat"><span class="stat-label">Insights:</span> 42 generated</span>
-        </div>
-        <p>🤖 ML-powered analytics engine for defect prediction, trend analysis, and automated quality insights generation.</p>
-        <div class="buttons">
-          <a href="projects/jira-data-analysis/" class="btn">🔍 Analyze</a>
-          <a href="https://github.com/YdvVipin/portfolio" target="_blank" class="btn btn-github">💻 Source</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-header">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">AI_TestCase_Generator.py</span>
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="code-snippet">
-          <span class="code-line"><span class="keyword">class</span> AITestGenerator:</span>
-          <span class="code-line">  <span class="keyword">def</span> generate_from_jira():</span>
-          <span class="code-line">    <span class="comment"># Grok-3 AI Processing...</span></span>
-          <span class="code-line">    <span class="keyword">return</span> test_cases <span class="success">✓ 98.2%</span></span>
-        </div>
-        <h3>🤖 AI Test Case Generator</h3>
-        <div class="tech-stats">
-          <span class="stat"><span class="stat-label">AI Model:</span> Grok-3</span>
-          <span class="stat"><span class="stat-label">Accuracy:</span> 98.2%</span>
-          <span class="stat"><span class="stat-label">Generated:</span> 1,247 cases</span>
-        </div>
-        <p>🚀 Advanced AI system converting JIRA tickets to TestRail cases with natural language processing and context awareness.</p>
-        <div class="buttons">
-          <a href="projects/JiraTestRailIntegration/" class="btn">🔍 Analyze</a>
-          <a href="#" target="_blank" class="btn btn-live">📊 Demo</a>
-          <a href="https://github.com/YdvVipin/portfolio" target="_blank" class="btn btn-github">💻 Source</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="card-header">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">Gig_Discovery_Automation.py</span>
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="code-snippet">
-          <span class="code-line"><span class="keyword">def</span> score_gig_relevance(gig):</span>
-          <span class="code-line">  score = claude.analyze(gig)</span>
-          <span class="code-line">  <span class="keyword">if</span> score > <span class="string">7</span>: <span class="success">✓ MATCH</span></span>
-          <span class="code-line">  <span class="comment"># 80% accuracy, 50+ gigs/week</span></span>
-        </div>
-        <h3>🎯 AI Gig Discovery Engine</h3>
-        <div class="tech-stats">
-          <span class="stat"><span class="stat-label">AI Model:</span> Claude API</span>
-          <span class="stat"><span class="stat-label">Accuracy:</span> 80%</span>
-          <span class="stat"><span class="stat-label">Efficiency:</span> 70% faster</span>
-        </div>
-        <p>🤖 Human-in-the-loop automation system for discovering AI/web gigs, scoring relevance with Claude, and generating personalized proposals while ensuring TOS compliance.</p>
-        <div class="buttons">
-          <a href="projects/gig-flow/" class="btn">🔍 Analyze</a>
-          <a href="https://github.com/ydvvipin/gig-automation" target="_blank" class="btn btn-github">💻 Source</a>
+        <div class="info-card metrics-card">
+          <h4>Key Metrics</h4>
+          <div class="mini-metrics">
+            <div class="mini-metric"><span class="mm-num">65%</span><span class="mm-label">Tests Automated</span></div>
+            <div class="mini-metric"><span class="mm-num">80%</span><span class="mm-label">Fewer Bugs</span></div>
+            <div class="mini-metric"><span class="mm-num">100+</span><span class="mm-label">Staff Trained</span></div>
+            <div class="mini-metric"><span class="mm-num">75%</span><span class="mm-label">Less Complaints</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ─── Experience ───────────────────────────────── -->
+  <section id="experience" class="experience">
+    <h2>Work Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker current"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>QA Automation Specialist</h3>
+              <span class="company">Bright Order Inc., Toronto, Ontario</span>
+            </div>
+            <span class="date-badge">Jan 2023 – Present</span>
+          </div>
+          <ul class="experience-list">
+            <li>Plan, develop, and maintain automation solutions for fleet management, shop management, and ELD applications, building on prior data-driven testing from RF engineering.</li>
+            <li>Build and enhance automated test frameworks using Python, Behave BDD, and Selenium to validate vehicle tracking, maintenance scheduling, and defect reporting workflows.</li>
+            <li>Develop automation scripts integrating with Jira — pulling tickets, generating automated test cases, and updating QA workflows.</li>
+            <li>Test and validate ELD-related features: driver logs, HOS compliance, real-time GPS updates, vehicle diagnostics, and backend synchronization.</li>
+            <li>Use AI-assisted tools for generating realistic fleet/shop test data, predicting defects, and improving automation coverage.</li>
+            <li>Conduct load testing with Locust to simulate high-traffic fleet operations and bulk maintenance updates.</li>
+            <li>Design and implement CI/CD automation pipelines for streamlined testing and deployment.</li>
+          </ul>
+          <div class="experience-tags">
+            <span>Python</span><span>Playwright</span><span>Selenium</span><span>Behave BDD</span><span>Locust</span><span>Jira API</span><span>CI/CD</span><span>AI Tools</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>Quality Assurance, QA Analyst</h3>
+              <span class="company">Sofbang LLC, Delhi, India</span>
+            </div>
+            <span class="date-badge">Jul 2020 – Dec 2020</span>
+          </div>
+          <ul class="experience-list">
+            <li>Built automated testing frameworks for AI Chatbot Application for one of North America's top power corporations — a pivotal shift toward automation expertise.</li>
+            <li>Created test plans, test cases, and collected test requirements for complex projects.</li>
+            <li>Performed automation testing on APIs using Rest-Assured, Selenium, and Cucumber.</li>
+            <li>Expertise in creating automation framework from scratch using Selenium, Java/C#, Apache Maven, Cucumber, with Jenkins and DevOps scheduling.</li>
+            <li>Built autonomous test scripts to handle repetitive software testing and submit daily reports.</li>
+          </ul>
+          <div class="experience-tags">
+            <span>Selenium</span><span>Java/C#</span><span>Cucumber</span><span>Rest-Assured</span><span>Maven</span><span>Jenkins</span><span>DevOps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>Quality Assurance Test Engineer</h3>
+              <span class="company">OPPO Mobiles, Gurgaon, India</span>
+            </div>
+            <span class="date-badge">Feb 2017 – Nov 2019</span>
+          </div>
+          <ul class="experience-list">
+            <li>Managed entire software testing lifecycle — requirement analysis, test design, execution, defect management, and reporting.</li>
+            <li>Created comprehensive mobile and software testing plans for top OPPO projects.</li>
+            <li>Automated mobile applications using Appium, Selenium with Java.</li>
+            <li>Developed testing strategies for specific bugs resulting in <strong>75% less customer complaints</strong> across India in 2018.</li>
+            <li>Streamlined testing to support automation and manual efforts; performed black box, white box testing on web and mobile apps.</li>
+          </ul>
+          <div class="experience-tags">
+            <span>Appium</span><span>Selenium</span><span>Java</span><span>Mobile Testing</span><span>Android Studio</span><span>Xcode</span><span>Agile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>Test Engineer (RF Network Engineering)</h3>
+              <span class="company">Mobilecomm Technologies Inc, Gurgaon, India</span>
+            </div>
+            <span class="date-badge">May 2015 – Feb 2017</span>
+          </div>
+          <ul class="experience-list">
+            <li>Designed algorithms and scripts for GSM, UMTS, VoLTE, RF Data, and Drive Test log file analysis — laying the groundwork for QA transition.</li>
+            <li>Set up test environments, developed test strategy, plans, cases, suites, scenarios, and traceability matrix documentation.</li>
+            <li>Utilized statistical methods to solve problems and perform field tests, skills that directly transferred to QA automation debugging and optimization.</li>
+            <li>Trained and managed a team of more than <strong>100 technical staff</strong>.</li>
+          </ul>
+          <div class="experience-tags">
+            <span>RF Engineering</span><span>GSM/UMTS/VoLTE</span><span>Data Analysis</span><span>Scripting</span><span>Test Strategy</span><span>Team Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Projects ─────────────────────────────────── -->
+  <section id="projects" class="projects-section">
+    <h2>Projects</h2>
+    <p class="section-subtitle">A collection of production-grade QA automation, AI/ML, and engineering projects</p>
+
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai-platform">AI Platforms</button>
+      <button class="filter-btn" data-filter="qa-framework">QA Frameworks</button>
+      <button class="filter-btn" data-filter="data-intel">Data & Intelligence</button>
+      <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- 1. QA Automation AI Enabler (FEATURED) -->
+      <div class="project-card featured" data-category="ai-platform">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">QA_AI_Enabler_Platform.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">class</span> QAAutomationAIEnabler:</span>
+            <span class="code-line">  pipeline = [<span class="string">"L1:Selector"</span>, <span class="string">"L2:CodeGen"</span>, <span class="string">"L3:AI"</span>]</span>
+            <span class="code-line">  agents = <span class="string">18</span>  <span class="comment"># MCP + LangGraph</span></span>
+            <span class="code-line">  llms = [<span class="string">"Claude"</span>, <span class="string">"GPT-4o"</span>, <span class="string">"Grok"</span>] <span class="success">&#10003;</span></span>
+          </div>
+          <div class="card-badge">Flagship Project</div>
+          <h3>QA Automation AI Enabler</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Agents:</span> 18 MCP</span>
+            <span class="stat"><span class="stat-label">Pipeline:</span> 3-Layer</span>
+            <span class="stat"><span class="stat-label">Code:</span> 50K+ LOC</span>
+            <span class="stat"><span class="stat-label">Endpoints:</span> 72 API</span>
+          </div>
+          <p>Enterprise-grade full-stack platform with React frontend + FastAPI backend. Records browser interactions and generates Playwright tests using a 3-layer deterministic + AI pipeline. Features multi-LLM debate pattern, self-healing agents, Jira/Zephyr integration, and n8n workflows.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>React</span><span>FastAPI</span><span>Playwright</span><span>LangGraph</span><span>Claude</span><span>GPT-4o</span><span>PostgreSQL</span><span>Docker</span><span>n8n</span>
+          </div>
+          <div class="buttons">
+            <a href="projects/ai-enabled-qa/" class="btn">Explore</a>
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Playwright BDD + AI Framework -->
+      <div class="project-card" data-category="ai-platform">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">playwright_ai_framework.ts</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">class</span> AgentOrchestrator {</span>
+            <span class="code-line">  agents = [<span class="string">"Planner"</span>, <span class="string">"Generator"</span>, <span class="string">"Healer"</span>]</span>
+            <span class="code-line">  locators = <span class="string">9</span> <span class="comment">// tier priority</span></span>
+            <span class="code-line">  coverage = <span class="success">80%+</span></span>
+          </div>
+          <h3>Playwright BDD + AI Framework</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Agents:</span> 3 AI</span>
+            <span class="stat"><span class="stat-label">Locators:</span> 9-tier</span>
+            <span class="stat"><span class="stat-label">LOC:</span> 8K+</span>
+          </div>
+          <p>Production-ready TypeScript framework with Cucumber BDD, AI agents (Planner, Generator, Healer), smart 9-tier locator engine, self-healing tests, visual regression, and accessibility testing (WCAG).</p>
+          <div class="tech-pills">
+            <span>TypeScript</span><span>Playwright</span><span>Cucumber</span><span>OpenAI</span><span>Allure</span><span>Jest</span>
+          </div>
+          <div class="buttons">
+            <a href="projects/playwright-bdd-framework/" class="btn">Explore</a>
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Multi-Agent Orchestration Platform -->
+      <div class="project-card" data-category="ai-platform">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">multi_agent_orchestrator.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">class</span> Orchestrator:</span>
+            <span class="code-line">  agents = [<span class="string">"Planner"</span>, <span class="string">"Generator"</span>,</span>
+            <span class="code-line">    <span class="string">"Executor"</span>, <span class="string">"Analyzer"</span>, <span class="string">"Learner"</span>]</span>
+            <span class="code-line">  mcp_servers = <span class="string">5</span> <span class="success">&#10003;</span></span>
+          </div>
+          <h3>Multi-Agent Orchestration Platform</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Agents:</span> 5 Specialized</span>
+            <span class="stat"><span class="stat-label">MCP:</span> 5 Servers</span>
+            <span class="stat"><span class="stat-label">Docs:</span> 8K+ lines</span>
+          </div>
+          <p>Enterprise multi-agent system with 5 specialized AI agents (Planner, Generator, Executor, Analyzer, Learner), 5 MCP servers (GitHub, Playwright, Supabase, Jira, Search), JWT auth, and Prometheus monitoring.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>FastAPI</span><span>Claude</span><span>LangChain</span><span>CrewAI</span><span>PostgreSQL</span><span>Docker</span><span>MCP</span>
+          </div>
+          <div class="buttons">
+            <a href="projects/multi-agent-orchestration/" class="btn">Explore</a>
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. RAG Knowledge System -->
+      <div class="project-card" data-category="data-intel">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">rag_system.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">class</span> RAGSystem:</span>
+            <span class="code-line">  sources = <span class="string">25</span>  <span class="comment"># collectors</span></span>
+            <span class="code-line">  vectordb = FAISS(<span class="string">"embeddings"</span>)</span>
+            <span class="code-line">  search(<span class="string">"query"</span>) <span class="success">→ FOUND</span></span>
+          </div>
+          <h3>RAG Knowledge System</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Sources:</span> 25+</span>
+            <span class="stat"><span class="stat-label">DB:</span> FAISS Vector</span>
+            <span class="stat"><span class="stat-label">Tools:</span> 10+ frameworks</span>
+          </div>
+          <p>Advanced Retrieval-Augmented Generation system for QA automation knowledge with 25+ data source collectors (Stack Overflow, GitHub, Arxiv), FAISS semantic search, and interactive Streamlit chatbot.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>FAISS</span><span>OpenAI</span><span>Streamlit</span><span>ChromaDB</span><span>BeautifulSoup</span>
+          </div>
+          <div class="buttons">
+            <a href="projects/rag-system/" class="btn">Explore</a>
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. QA Automation Bot + MCP -->
+      <div class="project-card" data-category="qa-framework">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">qa_automation_bot.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">async def</span> run_features():</span>
+            <span class="code-line">  mcp = PlaywrightMCP(<span class="string">"enhanced"</span>)</span>
+            <span class="code-line">  errors.learn(pattern) <span class="comment"># AI fix</span></span>
+            <span class="code-line">  allure.report() <span class="success">PASS</span></span>
+          </div>
+          <h3>QA Automation Bot + MCP</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Features:</span> 7 BDD</span>
+            <span class="stat"><span class="stat-label">MCP:</span> Enhanced</span>
+            <span class="stat"><span class="stat-label">Roles:</span> 3 tested</span>
+          </div>
+          <p>Production-grade QA bot with enhanced Playwright MCP server (1,878 lines), multi-feature BDD tests, error learning system, role-based testing (Manager, Tech, Driver), and Allure reporting.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Playwright</span><span>MCP</span><span>BDD</span><span>Allure</span><span>Error Learning</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Jira to Zephyr Automation -->
+      <div class="project-card" data-category="data-intel">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">jira_zephyr_cli.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">def</span> generate_test_case(ticket):</span>
+            <span class="code-line">  ai = grok.analyze(ticket.desc)</span>
+            <span class="code-line">  match = faiss.similarity(<span class="string">0.98</span>)</span>
+            <span class="code-line">  zephyr.push(test_case) <span class="success">✓</span></span>
+          </div>
+          <h3>Jira → Zephyr Test Case AI</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Accuracy:</span> 98%+</span>
+            <span class="stat"><span class="stat-label">AI:</span> Grok</span>
+            <span class="stat"><span class="stat-label">Vector:</span> FAISS</span>
+          </div>
+          <p>AI system converting Jira tickets to Zephyr Scale test cases with 98%+ style match using Grok AI, FAISS vector similarity, sentence transformers, duplicate protection, and dry-run validation.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Grok AI</span><span>FAISS</span><span>Jira API</span><span>Zephyr</span><span>FastAPI</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Jira to TestRail Automation -->
+      <div class="project-card" data-category="data-intel">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">jira_testrail_sync.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">class</span> JiraTestRailMapper:</span>
+            <span class="code-line">  style_match = <span class="string">"98%+"</span></span>
+            <span class="code-line">  <span class="keyword">def</span> sync(jira_issue):</span>
+            <span class="code-line">    testrail.create(case) <span class="success">SYNCED</span></span>
+          </div>
+          <h3>Jira → TestRail Sync</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Match:</span> 98%+</span>
+            <span class="stat"><span class="stat-label">AI:</span> Grok</span>
+            <span class="stat"><span class="stat-label">Mode:</span> Dry-run</span>
+          </div>
+          <p>Automated Jira to TestRail sync system with Grok AI for intelligent test generation, automatic section creation per Epic, duplicate protection, and detailed step-by-step test cases.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Grok AI</span><span>Jira API</span><span>TestRail API</span><span>FastAPI</span><span>YAML</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Jira Data Analytics -->
+      <div class="project-card" data-category="data-intel">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">jira_analytics_engine.ipynb</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">import</span> prophet, sklearn</span>
+            <span class="code-line">forecast = prophet.predict(tickets)</span>
+            <span class="code-line">anomalies = detect(<span class="string">87%</span> accuracy)</span>
+            <span class="code-line">dashboard.render() <span class="success">LIVE</span></span>
+          </div>
+          <h3>Jira Intelligence & Forecasting</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Accuracy:</span> 87.3%</span>
+            <span class="stat"><span class="stat-label">NLP:</span> Root Cause</span>
+            <span class="stat"><span class="stat-label">Forecast:</span> Prophet</span>
+          </div>
+          <p>ML-powered analytics engine for Jira data with Prophet forecasting, anomaly detection, cycle time analysis, NLP root cause analysis, workload heatmaps, and automated dashboard generation.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Prophet</span><span>Scikit-learn</span><span>Pandas</span><span>Plotly</span><span>NLP</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. AI-Enabled API Testing -->
+      <div class="project-card" data-category="qa-framework">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">api_automation_bdd.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">@given</span>(<span class="string">'API endpoint is ready'</span>)</span>
+            <span class="code-line"><span class="keyword">@when</span>(<span class="string">'I send GET /pokemon'</span>)</span>
+            <span class="code-line"><span class="keyword">@then</span>(<span class="string">'schema validates'</span>) <span class="success">PASS</span></span>
+            <span class="code-line"><span class="comment"># MCP server integrated</span></span>
+          </div>
+          <h3>AI-Enabled API Testing</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Framework:</span> BDD</span>
+            <span class="stat"><span class="stat-label">MCP:</span> Integrated</span>
+            <span class="stat"><span class="stat-label">Schema:</span> JSON</span>
+          </div>
+          <p>Comprehensive BDD API testing framework with Behave, MCP server integration, JSON schema validation, page objects, performance testing, and HTML reporting.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Behave</span><span>Playwright</span><span>MCP</span><span>JSON Schema</span><span>Pytest</span>
+          </div>
+          <div class="buttons">
+            <a href="projects/ai-enabled-qa/" class="btn">Explore</a>
+            <a href="https://github.com/YdvVipin/AIEnabledAPIAutomation" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. NanoGPT QA Model -->
+      <div class="project-card" data-category="ai-ml">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">nanogpt_qa_model.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">class</span> NanoGPT:</span>
+            <span class="code-line">  params = <span class="string">29.92M</span></span>
+            <span class="code-line">  data = <span class="string">54,793</span> QA conversations</span>
+            <span class="code-line">  loss: 1.43 → <span class="success">1.22</span> (89% ↑)</span>
+          </div>
+          <h3>Custom NanoGPT QA Model</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Params:</span> 29.92M</span>
+            <span class="stat"><span class="stat-label">Data:</span> 54.8K Q&A</span>
+            <span class="stat"><span class="stat-label">Mode:</span> Hybrid</span>
+          </div>
+          <p>Locally trained NanoGPT transformer (29.92M params) on 54,793 QA conversations. Hybrid mode combines local model with Grok API via MCP. Loss improved from 1.43 to 1.22.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>PyTorch</span><span>Transformer</span><span>Grok API</span><span>MCP</span><span>Tiktoken</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. LangChain RAG Project -->
+      <div class="project-card" data-category="ai-ml">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">langchain_rag_app.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">from</span> langchain <span class="keyword">import</span> RAG</span>
+            <span class="code-line">chain = ChromaDB | LLM | Stream</span>
+            <span class="code-line">response = chain.invoke(<span class="string">"query"</span>)</span>
+            <span class="code-line"><span class="comment"># SSE streaming enabled</span></span>
+          </div>
+          <h3>LangChain RAG Chatbot</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Backend:</span> FastAPI</span>
+            <span class="stat"><span class="stat-label">Vector:</span> ChromaDB</span>
+            <span class="stat"><span class="stat-label">Stream:</span> SSE</span>
+          </div>
+          <p>LangChain-based conversational AI with RAG, FastAPI backend with SSE streaming, ChromaDB/FAISS vector storage, PDF/web document ingestion, and Streamlit UI.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span><span>OpenAI</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. AI Gig Discovery Engine -->
+      <div class="project-card" data-category="ai-ml">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">gig_discovery_engine.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">def</span> score_gig(gig):</span>
+            <span class="code-line">  score = claude.analyze(gig)</span>
+            <span class="code-line">  <span class="keyword">if</span> score > <span class="string">7</span>: <span class="success">MATCH</span></span>
+            <span class="code-line">  <span class="comment"># 80% accuracy, 50+ gigs/wk</span></span>
+          </div>
+          <h3>AI Gig Discovery Engine</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">AI:</span> Claude API</span>
+            <span class="stat"><span class="stat-label">Accuracy:</span> 80%</span>
+            <span class="stat"><span class="stat-label">Speed:</span> 70% faster</span>
+          </div>
+          <p>Human-in-the-loop system for discovering freelance gigs across Upwork, RemoteOK, Indeed. Claude AI scores relevance, generates personalized proposals, with Streamlit dashboard and email notifications.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Claude API</span><span>Streamlit</span><span>Gmail</span><span>Airtable</span><span>RSS</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. AI-QA Bug Prediction -->
+      <div class="project-card" data-category="qa-framework">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">bug_predictor.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> predict</span>
+            <span class="code-line">risk = model.score(file_metrics)</span>
+            <span class="code-line">flask.serve(<span class="string">"/calculate"</span>)</span>
+            <span class="code-line">behave.test() <span class="success">ALL PASS</span></span>
+          </div>
+          <h3>AI Bug Prediction System</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">ML:</span> Scikit-learn</span>
+            <span class="stat"><span class="stat-label">Tests:</span> BDD + Unit</span>
+            <span class="stat"><span class="stat-label">API:</span> Flask</span>
+          </div>
+          <p>Flask-based QA framework with ML bug prediction model, file risk scoring, BDD tests with Behave, pytest unit tests, and Allure reporting. Intentional bug injection for testing practice.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Behave</span><span>Pytest</span><span>Allure</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Playwright E2E with BDD -->
+      <div class="project-card" data-category="qa-framework">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">e2e_work_order.spec.ts</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">Feature</span>: Work Order Flow</span>
+            <span class="code-line">  <span class="keyword">Scenario</span>: Create + Assign</span>
+            <span class="code-line">  <span class="keyword">Given</span> <span class="string">dispatcher is logged in</span></span>
+            <span class="code-line">  <span class="keyword">Then</span> <span class="string">order status</span> = <span class="success">ACTIVE</span></span>
+          </div>
+          <h3>Playwright E2E Business Flows</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Framework:</span> Playwright</span>
+            <span class="stat"><span class="stat-label">BDD:</span> Cucumber</span>
+            <span class="stat"><span class="stat-label">Lang:</span> TypeScript</span>
+          </div>
+          <p>Comprehensive Playwright automation for complex business workflows — work orders, notifications, and analysis — with Cucumber BDD, auth state persistence, and HTML reports.</p>
+          <div class="tech-pills">
+            <span>TypeScript</span><span>Playwright</span><span>Cucumber</span><span>Node.js</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Kona BDD Automation -->
+      <div class="project-card" data-category="qa-framework">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">kona_qa_automation.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">Feature</span>: Login Flow</span>
+            <span class="code-line">  <span class="keyword">Scenario</span>: Valid credentials</span>
+            <span class="code-line">  page.fill(<span class="string">"#username"</span>)</span>
+            <span class="code-line">  screenshot.capture() <span class="success">OK</span></span>
+          </div>
+          <h3>Kona Platform BDD Automation</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">Framework:</span> Behave</span>
+            <span class="stat"><span class="stat-label">Browser:</span> Playwright</span>
+            <span class="stat"><span class="stat-label">Pattern:</span> POM</span>
+          </div>
+          <p>BDD automation framework for Kona platform with Playwright browser control, Page Object Model, screenshot capture, configuration-driven test setup, and recording/playback.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>Playwright</span><span>Behave</span><span>Page Objects</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. GenAI QA Automation -->
+      <div class="project-card" data-category="ai-ml">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">genai_qa_automation.py</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">def</span> generate_bdd_tests():</span>
+            <span class="code-line">  ai = GenAI(<span class="string">"Claude"</span>)</span>
+            <span class="code-line">  features = ai.generate(<span class="string">"gherkin"</span>)</span>
+            <span class="code-line">  behave.run(features) <span class="success">PASS</span></span>
+          </div>
+          <h3>GenAI BDD Test Generator</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">AI:</span> Claude/OpenAI</span>
+            <span class="stat"><span class="stat-label">Output:</span> Gherkin</span>
+            <span class="stat"><span class="stat-label">Data:</span> CSV params</span>
+          </div>
+          <p>Uses generative AI to automatically create BDD feature files and parameterized test cases from CSV data. AI-powered Gherkin generation with Behave framework integration.</p>
+          <div class="tech-pills">
+            <span>Python</span><span>GenAI</span><span>Behave</span><span>Gherkin</span><span>CSV</span>
+          </div>
+          <div class="buttons">
+            <a href="projects/genai-qa-automation/" class="btn">Explore</a>
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. TestGenius Hub -->
+      <div class="project-card" data-category="ai-platform">
+        <div class="card-header">
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">testgenius_hub.tsx</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="code-snippet">
+            <span class="code-line"><span class="keyword">import</span> { Dashboard } <span class="keyword">from</span> <span class="string">'./app'</span></span>
+            <span class="code-line"><span class="keyword">const</span> App = () => (</span>
+            <span class="code-line">  &lt;Dashboard theme=<span class="string">"modern"</span> /&gt;</span>
+            <span class="code-line">) <span class="comment">// shadcn + Tailwind</span></span>
+          </div>
+          <h3>TestGenius Hub Dashboard</h3>
+          <div class="tech-stats">
+            <span class="stat"><span class="stat-label">UI:</span> React 18</span>
+            <span class="stat"><span class="stat-label">Build:</span> Vite</span>
+            <span class="stat"><span class="stat-label">CSS:</span> Tailwind</span>
+          </div>
+          <p>Modern React 18 dashboard application with TypeScript, Vite, shadcn/ui components (Radix UI), and Tailwind CSS. Responsive, component-based, and type-safe architecture.</p>
+          <div class="tech-pills">
+            <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind</span><span>shadcn/ui</span><span>Radix</span>
+          </div>
+          <div class="buttons">
+            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Skills ───────────────────────────────────── -->
   <section id="skills" class="skills">
-    <h2>⚡ Skills & Tech Arsenal</h2>
-    <ul>
-      <li>🤖 Automation Frameworks: Playwright, Cypress, Selenium</li>
-      <li>💻 Languages: JavaScript, Java, Python</li>
-      <li>🚀 CI/CD: GitHub Actions, GitLab CI</li>
-      <li>📊 Testing: E2E, API, Unit Testing</li>
-      <li>📈 Reporting: Allure, Mochawesome, HTML Reports</li>
-      <li>🤖 Data Analysis: Pandas, NumPy, Matplotlib, Jupyter</li>
-      <li>☁️ Platforms: Railway, Vercel, Netlify</li>
-    </ul>
+    <h2>Skills & Tech Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>Programming Languages</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">C/C++</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Test Automation Frameworks</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Playwright</span>
+          <span class="skill-tag">Selenium</span>
+          <span class="skill-tag">Appium</span>
+          <span class="skill-tag">Cypress</span>
+          <span class="skill-tag">Cucumber/BDD</span>
+          <span class="skill-tag">Behave</span>
+          <span class="skill-tag">Pytest</span>
+          <span class="skill-tag">Jest</span>
+          <span class="skill-tag">JUnit</span>
+          <span class="skill-tag">Rest-Assured</span>
+          <span class="skill-tag">Locust</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>AI / ML / LLM</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Claude API</span>
+          <span class="skill-tag">GPT-4o / OpenAI</span>
+          <span class="skill-tag">Grok / xAI</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">LangGraph</span>
+          <span class="skill-tag">CrewAI</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">FAISS</span>
+          <span class="skill-tag">MCP Protocol</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>CI/CD & DevOps</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Jenkins</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">GitLab CI</span>
+          <span class="skill-tag">Azure DevOps</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">n8n Workflows</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Databases & Storage</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">ChromaDB</span>
+          <span class="skill-tag">Weaviate</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Tools & Platforms</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">TestRail</span>
+          <span class="skill-tag">Zephyr Scale</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">Git/GitHub</span>
+          <span class="skill-tag">Allure Reports</span>
+          <span class="skill-tag">Android Studio</span>
+          <span class="skill-tag">Xcode</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Web & Backend</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Streamlit</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">WebSocket</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Methodologies & Concepts</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Agile/Scrum</span>
+          <span class="skill-tag">BDD/TDD</span>
+          <span class="skill-tag">SDLC/STLC</span>
+          <span class="skill-tag">Page Object Model</span>
+          <span class="skill-tag">ETL Testing</span>
+          <span class="skill-tag">Performance Testing</span>
+          <span class="skill-tag">E2E Testing</span>
+          <span class="skill-tag">API Testing</span>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- ─── Education ────────────────────────────────── -->
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <div class="education-grid">
+      <div class="edu-card">
+        <div class="edu-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-content">
+          <h3>Post-Graduation Diploma in Computer Programming</h3>
+          <span class="edu-school">Seneca College, Toronto, ON</span>
+          <span class="edu-date">Jan 2021 – Dec 2022</span>
+          <div class="edu-courses">
+            <span>Object-Oriented Programming</span>
+            <span>Software Development</span>
+            <span>Web Development</span>
+            <span>Database Management</span>
+            <span>Android Development</span>
+            <span>IBM Computing</span>
+            <span>Linux</span>
+            <span>Microsoft Azure</span>
+          </div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-content">
+          <h3>Bachelor of Technology (Information Technology)</h3>
+          <span class="edu-school">IIMT College of Engineering, Delhi, India</span>
+          <span class="edu-date">Aug 2010 – Jul 2014</span>
+          <p class="edu-note">Equivalent to a Bachelor of Computer Science degree from an Ontario university, as determined by World Education Services in Toronto, ON.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Achievements ─────────────────────────────── -->
+  <section id="achievements" class="achievements">
+    <h2>Key Achievements</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>AI Chatbot Framework</h3>
+        <p>Successfully developed Automation Framework from scratch for AI Chatbot application, demonstrating growth from RF engineering roots.</p>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>65% Automation Coverage</h3>
+        <p>Took efforts in moving 65% test cases to automation, significantly saving time and improving testing reliability.</p>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>80% Fewer Bugs</h3>
+        <p>Documented and resolved blocker issues which led to 80% less bugs in top projects through systematic defect analysis.</p>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>100+ Staff Trained</h3>
+        <p>Trained and managed a team of more than 100 technical staff, building leadership and mentoring capabilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ──────────────────────────────────── -->
   <section id="contact" class="contact">
-    <h2>🚀 Get in Touch</h2>
-    <p>📧 Email: <a href="mailto:your-email@example.com">ydvvipin1793@gmail.com</a></p>
-    <p>👤 LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">Your Profile</a></p>
-    <p>💻 GitHub: <a href="https://github.com/YdvVipin" target="_blank">YdvVipin</a></p>
+    <h2>Let's Connect</h2>
+    <p class="contact-subtitle">Looking for a QA engineer who builds AI-powered testing systems? Let's talk.</p>
+    <div class="contact-links">
+      <a href="mailto:ydvvipin1793@gmail.com" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <span class="contact-label">Email</span>
+        <span class="contact-value">ydvvipin1793@gmail.com</span>
+      </a>
+      <a href="tel:+16476769897" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="contact-label">Phone</span>
+        <span class="contact-value">(647) 676-9897</span>
+      </a>
+      <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </span>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">vipin-ydv</span>
+      </a>
+      <a href="https://github.com/YdvVipin" target="_blank" class="contact-card">
+        <span class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </span>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">YdvVipin</span>
+      </a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Vipin Yadav. All rights reserved.</p>
+    <div class="footer-inner">
+      <p>&copy; 2026 Vipin Yadav. Built with precision.</p>
+    </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=5.0"></script>
 </body>
 </html>

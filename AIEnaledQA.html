@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA Automation AI Enabler — Vipin Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── Reset & Variables ───────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--bg2:#111119;--bg3:#1a1a27;--bg4:#222233;
+  --text:#e4e4ef;--text2:#9d9db5;--text3:#6b6b85;
+  --accent:#6366f1;--accent2:#818cf8;--accent3:#4f46e5;
+  --green:#22c55e;--green2:#16a34a;
+  --orange:#f59e0b;--pink:#ec4899;--cyan:#06b6d4;--red:#ef4444;
+  --gradient:linear-gradient(135deg,#6366f1,#8b5cf6,#ec4899);
+  --gradient2:linear-gradient(135deg,#06b6d4,#6366f1);
+  --radius:12px;--radius-sm:8px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--accent2);text-decoration:none;transition:color .2s}
+a:hover{color:var(--pink)}
+
+/* ─── Utility ─────────────────────────────────────── */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
+.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--gradient);border-radius:2px}
+.section-title{font-size:2.25rem;font-weight:800;line-height:1.2;margin-bottom:16px;background:linear-gradient(to right,var(--text),var(--text2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-subtitle{font-size:1.1rem;color:var(--text2);max-width:640px;margin-bottom:48px}
+
+/* ─── Nav ─────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(99,102,241,.08)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto}
+nav .logo{font-weight:800;font-size:1.05rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav .links{display:flex;gap:28px}
+nav .links a{font-size:.85rem;font-weight:500;color:var(--text2);transition:color .2s}
+nav .links a:hover{color:var(--text)}
+@media(max-width:640px){nav .links{display:none}}
+
+/* ─── Hero ────────────────────────────────────────── */
+.hero{padding:160px 0 100px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(99,102,241,.12) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(99,102,241,.3);border-radius:100px;font-size:.8rem;font-weight:500;color:var(--accent2);background:rgba(99,102,241,.06);margin-bottom:28px}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,5.5vw,4.25rem);font-weight:900;line-height:1.08;margin-bottom:20px;letter-spacing:-.03em}
+.hero h1 .grad{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--text2);max-width:620px;margin:0 auto 36px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:100px;font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .25s}
+.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 24px rgba(99,102,241,.3)}
+.btn-primary:hover{box-shadow:0 6px 32px rgba(99,102,241,.45);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--bg4)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent2)}
+
+/* ─── Stats Bar ───────────────────────────────────── */
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--bg3);border-radius:var(--radius);overflow:hidden;margin-top:-40px;position:relative;z-index:2;border:1px solid rgba(99,102,241,.08)}
+.stat-item{background:var(--bg2);padding:28px 20px;text-align:center}
+.stat-num{font-size:1.75rem;font-weight:800;font-family:'JetBrains Mono',monospace;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:.78rem;color:var(--text3);margin-top:4px;font-weight:500}
+
+/* ─── Problem / Solution ──────────────────────────── */
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:768px){.ps-grid{grid-template-columns:1fr}}
+.ps-card{padding:36px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.05)}
+.ps-card.problem{background:linear-gradient(135deg,rgba(239,68,68,.06),rgba(239,68,68,.02));border-color:rgba(239,68,68,.12)}
+.ps-card.solution{background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(34,197,94,.02));border-color:rgba(34,197,94,.12)}
+.ps-card h3{font-size:1.15rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ps-card.problem h3{color:var(--red)}
+.ps-card.solution h3{color:var(--green)}
+.ps-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ps-card li{font-size:.92rem;color:var(--text2);padding-left:20px;position:relative}
+.ps-card.problem li::before{content:'✕';position:absolute;left:0;color:var(--red);font-weight:700;font-size:.75rem}
+.ps-card.solution li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;font-size:.85rem}
+
+/* ─── Architecture ────────────────────────────────── */
+.arch-pipeline{display:flex;flex-direction:column;gap:0;position:relative}
+.arch-layer{display:flex;align-items:stretch;gap:20px;position:relative}
+@media(max-width:768px){.arch-layer{flex-direction:column}}
+.arch-layer .layer-marker{display:flex;flex-direction:column;align-items:center;width:60px;flex-shrink:0}
+.layer-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:#fff;flex-shrink:0}
+.layer-line{flex:1;width:2px;background:var(--bg4)}
+.l1 .layer-num{background:var(--cyan)}
+.l2 .layer-num{background:var(--accent)}
+.l25 .layer-num{background:var(--orange)}
+.l3 .layer-num{background:var(--pink)}
+.arch-card{flex:1;padding:28px;border-radius:var(--radius);background:var(--bg2);border:1px solid rgba(255,255,255,.05);margin-bottom:16px}
+.arch-card h4{font-size:1rem;font-weight:700;margin-bottom:6px}
+.arch-card .arch-file{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent2);margin-bottom:10px}
+.arch-card p{font-size:.88rem;color:var(--text2);line-height:1.6}
+.arch-card .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:600;background:rgba(99,102,241,.1);color:var(--accent2);border:1px solid rgba(99,102,241,.15)}
+.tag.green{background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.15)}
+.tag.orange{background:rgba(245,158,11,.1);color:var(--orange);border-color:rgba(245,158,11,.15)}
+.tag.pink{background:rgba(236,72,153,.1);color:var(--pink);border-color:rgba(236,72,153,.15)}
+.tag.cyan{background:rgba(6,182,212,.1);color:var(--cyan);border-color:rgba(6,182,212,.15)}
+
+/* ─── Features Grid ───────────────────────────────── */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+@media(max-width:700px){.features-grid{grid-template-columns:1fr}}
+.feature-card{padding:28px;border-radius:var(--radius);background:var(--bg2);border:1px solid rgba(255,255,255,.05);transition:border-color .3s,transform .3s}
+.feature-card:hover{border-color:rgba(99,102,241,.2);transform:translateY(-2px)}
+.feature-icon{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+.feature-card h4{font-size:1rem;font-weight:700;margin-bottom:8px}
+.feature-card p{font-size:.88rem;color:var(--text2);line-height:1.6}
+
+/* ─── Tech Stack ──────────────────────────────────── */
+.tech-categories{display:flex;flex-direction:column;gap:28px}
+.tech-cat-label{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.tech-pills{display:flex;flex-wrap:wrap;gap:8px}
+.tech-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;font-size:.82rem;font-weight:500;background:var(--bg3);border:1px solid rgba(255,255,255,.05);color:var(--text);transition:all .2s}
+.tech-pill:hover{border-color:var(--accent);background:rgba(99,102,241,.06)}
+.tech-pill .tp-dot{width:8px;height:8px;border-radius:50%}
+
+/* ─── Selector Tiers ──────────────────────────────── */
+.tier-list{display:flex;flex-direction:column;gap:6px}
+.tier-row{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid rgba(255,255,255,.03)}
+.tier-rank{font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;color:var(--text3);width:20px;text-align:center}
+.tier-bar{height:6px;border-radius:4px;transition:width .6s ease}
+.tier-name{font-size:.82rem;font-weight:500;color:var(--text);flex:1}
+.tier-conf{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:600;width:36px;text-align:right}
+
+/* ─── Code Snippet ────────────────────────────────── */
+.code-block{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;margin-top:24px}
+.code-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg3);border-bottom:1px solid rgba(255,255,255,.05)}
+.code-header .dots{display:flex;gap:6px}
+.code-header .dots span{width:10px;height:10px;border-radius:50%}
+.code-header .dots span:nth-child(1){background:#ef4444}
+.code-header .dots span:nth-child(2){background:#f59e0b}
+.code-header .dots span:nth-child(3){background:#22c55e}
+.code-header .file-name{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text3)}
+.code-body{padding:20px;overflow-x:auto}
+.code-body pre{font-family:'JetBrains Mono',monospace;font-size:.8rem;line-height:1.7;color:var(--text2)}
+.code-body .kw{color:var(--pink)}
+.code-body .fn{color:var(--accent2)}
+.code-body .str{color:var(--green)}
+.code-body .cm{color:var(--text3);font-style:italic}
+.code-body .num{color:var(--orange)}
+.code-body .type{color:var(--cyan)}
+
+/* ─── Agent Cards ─────────────────────────────────── */
+.agent-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+@media(max-width:900px){.agent-flow{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.agent-flow{grid-template-columns:1fr}}
+.agent-card{padding:20px;border-radius:var(--radius);background:var(--bg2);border:1px solid rgba(255,255,255,.05);text-align:center;position:relative}
+.agent-card::after{content:'→';position:absolute;right:-18px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:1.2rem}
+.agent-card:last-child::after{display:none}
+@media(max-width:900px){.agent-card::after{display:none}}
+.agent-card .agent-num{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;color:var(--accent2);margin-bottom:6px}
+.agent-card h5{font-size:.9rem;font-weight:700;margin-bottom:6px}
+.agent-card p{font-size:.78rem;color:var(--text3);line-height:1.5}
+
+/* ─── Footer ──────────────────────────────────────── */
+footer{padding:60px 0 40px;border-top:1px solid rgba(255,255,255,.05);text-align:center}
+footer p{font-size:.85rem;color:var(--text3)}
+footer .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:20px}
+footer .footer-links a{color:var(--text2);font-size:.88rem;font-weight:500}
+
+/* ─── Animations ──────────────────────────────────── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="inner">
+    <div class="logo">Vipin Yadav</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#features">Features</a>
+      <a href="#tech">Tech Stack</a>
+      <a href="#agents">AI Agents</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> Full-Stack AI Project</div>
+    <h1>QA Automation<br><span class="grad">AI Enabler</span></h1>
+    <p>An enterprise-grade platform that records browser interactions and generates production-ready Playwright test scripts using a 3-layer deterministic + AI pipeline with multi-LLM orchestration and self-healing capabilities.</p>
+    <div class="hero-btns">
+      <a href="https://github.com/vipinyadav" class="btn btn-primary" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        View Source Code
+      </a>
+      <a href="#architecture" class="btn btn-outline">Explore Architecture</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="container">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">72</div><div class="stat-label">API Endpoints</div></div>
+    <div class="stat-item"><div class="stat-num">18</div><div class="stat-label">AI Agents (MCP)</div></div>
+    <div class="stat-item"><div class="stat-num">50K+</div><div class="stat-label">Lines of Code</div></div>
+    <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Docker Services</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">LLM Integrations</div></div>
+    <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">DB Models</div></div>
+  </div>
+</div>
+
+<!-- Problem / Solution -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-label">The Challenge</div>
+    <h2 class="section-title">Why This Exists</h2>
+    <p class="section-subtitle">Manual QA test creation is slow, fragile, and doesn't scale. AI-only approaches hallucinate 20-30% of the time. I built something better.</p>
+    <div class="ps-grid">
+      <div class="ps-card problem">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          The Problem
+        </h3>
+        <ul>
+          <li>Manual test writing takes hours per feature</li>
+          <li>Selectors break on every UI change</li>
+          <li>Pure LLM-generated tests fail 20-30% of the time</li>
+          <li>No feedback loop — same mistakes repeated</li>
+          <li>Test maintenance becomes a full-time job</li>
+        </ul>
+      </div>
+      <div class="ps-card solution">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          My Solution
+        </h3>
+        <ul>
+          <li>Record once, generate production-ready tests in seconds</li>
+          <li>9-tier selector strategy with confidence scoring</li>
+          <li>Deterministic first — AI only for enhancement (not core logic)</li>
+          <li>Self-learning from failures via vector DB pattern store</li>
+          <li>Self-healing locators with automatic fallbacks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section class="section" id="architecture" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label">System Design</div>
+    <h2 class="section-title">3-Layer Smart Pipeline</h2>
+    <p class="section-subtitle">Deterministic layers handle the core logic. AI layers enhance — not generate — the output. This inverted approach gives reliability + intelligence.</p>
+
+    <div class="arch-pipeline">
+      <!-- Layer 1 -->
+      <div class="arch-layer l1">
+        <div class="layer-marker">
+          <div class="layer-num">L1</div>
+          <div class="layer-line"></div>
+        </div>
+        <div class="arch-card">
+          <h4>Selector Resolver</h4>
+          <div class="arch-file">core/recording/selector_resolver.py</div>
+          <p>Receives raw DOM element bundles (8-10 selectors each) from the browser recorder and scores them through a 9-tier deterministic priority chain. Filters out dynamic IDs (React Aria, UUIDs). Always produces the most stable selector available.</p>
+          <div class="tag-row">
+            <span class="tag cyan">Deterministic</span>
+            <span class="tag">Confidence Scoring</span>
+            <span class="tag">Dynamic ID Filtering</span>
+          </div>
+        </div>
+      </div>
+      <!-- Layer 2 -->
+      <div class="arch-layer l2">
+        <div class="layer-marker">
+          <div class="layer-num">L2</div>
+          <div class="layer-line"></div>
+        </div>
+        <div class="arch-card">
+          <h4>Playwright Code Builder</h4>
+          <div class="arch-file">core/generators/playwright_code_builder.py</div>
+          <p>Template-based TypeScript code generation using Playwright-native locators (<code>getByTestId</code>, <code>getByRole</code>, <code>getByLabel</code>). Handles 10+ event types: clicks, inputs, selects, drag-drop, file uploads, dialog interactions, keyboard events, form submissions.</p>
+          <div class="tag-row">
+            <span class="tag cyan">Deterministic</span>
+            <span class="tag">TypeScript Output</span>
+            <span class="tag">Template Engine</span>
+          </div>
+        </div>
+      </div>
+      <!-- Layer 2.5 -->
+      <div class="arch-layer l25">
+        <div class="layer-marker">
+          <div class="layer-num">2.5</div>
+          <div class="layer-line"></div>
+        </div>
+        <div class="arch-card">
+          <h4>AI Polish &amp; Fallback</h4>
+          <div class="arch-file">core/agents/playwright_generator_agent.py</div>
+          <p>LangGraph-powered agent that polishes the deterministic output with better variable names, page object patterns, and retry logic. Serves as fallback when templates can't handle edge cases. Only ~10-15% of tests need this layer.</p>
+          <div class="tag-row">
+            <span class="tag orange">AI-Enhanced</span>
+            <span class="tag">LangGraph Agent</span>
+            <span class="tag">Fallback Path</span>
+          </div>
+        </div>
+      </div>
+      <!-- Layer 3 -->
+      <div class="arch-layer l3">
+        <div class="layer-marker">
+          <div class="layer-num">L3</div>
+        </div>
+        <div class="arch-card">
+          <h4>Multi-LLM Enrichment</h4>
+          <div class="arch-file">core/generators/ai_enrichment.py &amp; mcp_servers/a2a_orchestration_wrapper.py</div>
+          <p>3-LLM debate pattern: Claude analyzes code quality, GPT-4o suggests coverage improvements, Grok generates edge-case assertions. Weighted voting produces consensus-enhanced test code with BDD/Gherkin scenarios.</p>
+          <div class="tag-row">
+            <span class="tag pink">Multi-LLM</span>
+            <span class="tag">Claude + GPT + Grok</span>
+            <span class="tag">BDD Generation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selector Tiers -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Smart Locators</div>
+    <h2 class="section-title">9-Tier Selector Priority Chain</h2>
+    <p class="section-subtitle">Every DOM element yields 8-10 possible selectors. The resolver scores each one and picks the most stable — not the most convenient.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+      <div class="tier-list">
+        <div class="tier-row"><span class="tier-rank">1</span><span class="tier-name">data-testid</span><div style="flex:2"><div class="tier-bar" style="width:100%;background:var(--green)"></div></div><span class="tier-conf" style="color:var(--green)">100</span></div>
+        <div class="tier-row"><span class="tier-rank">2</span><span class="tier-name">data-cy / data-test</span><div style="flex:2"><div class="tier-bar" style="width:98%;background:var(--green)"></div></div><span class="tier-conf" style="color:var(--green)">98</span></div>
+        <div class="tier-row"><span class="tier-rank">3</span><span class="tier-name">role + aria-label</span><div style="flex:2"><div class="tier-bar" style="width:95%;background:var(--green)"></div></div><span class="tier-conf" style="color:var(--green)">95</span></div>
+        <div class="tier-row"><span class="tier-rank">4</span><span class="tier-name">placeholder</span><div style="flex:2"><div class="tier-bar" style="width:90%;background:var(--cyan)"></div></div><span class="tier-conf" style="color:var(--cyan)">90</span></div>
+        <div class="tier-row"><span class="tier-rank">5</span><span class="tier-name">label text</span><div style="flex:2"><div class="tier-bar" style="width:88%;background:var(--cyan)"></div></div><span class="tier-conf" style="color:var(--cyan)">88</span></div>
+        <div class="tier-row"><span class="tier-rank">6</span><span class="tier-name">visible text</span><div style="flex:2"><div class="tier-bar" style="width:75%;background:var(--accent2)"></div></div><span class="tier-conf" style="color:var(--accent2)">75</span></div>
+        <div class="tier-row"><span class="tier-rank">7</span><span class="tier-name">stable ID</span><div style="flex:2"><div class="tier-bar" style="width:70%;background:var(--accent2)"></div></div><span class="tier-conf" style="color:var(--accent2)">70</span></div>
+        <div class="tier-row"><span class="tier-rank">8</span><span class="tier-name">CSS structural</span><div style="flex:2"><div class="tier-bar" style="width:50%;background:var(--orange)"></div></div><span class="tier-conf" style="color:var(--orange)">50</span></div>
+        <div class="tier-row"><span class="tier-rank">9</span><span class="tier-name">XPath fallback</span><div style="flex:2"><div class="tier-bar" style="width:30%;background:var(--red)"></div></div><span class="tier-conf" style="color:var(--red)">30</span></div>
+      </div>
+      <div>
+        <div class="code-block">
+          <div class="code-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="file-name">selector_resolver.py</div>
+          </div>
+          <div class="code-body"><pre><span class="kw">class</span> <span class="type">SelectorResolver</span>:
+    <span class="cm"># 9-tier deterministic priority chain</span>
+    PRIORITY_CHAIN = [
+        (<span class="str">"data-testid"</span>,  <span class="num">100</span>),
+        (<span class="str">"data-cy"</span>,      <span class="num">98</span>),
+        (<span class="str">"role+aria"</span>,    <span class="num">95</span>),
+        (<span class="str">"placeholder"</span>,  <span class="num">90</span>),
+        (<span class="str">"label"</span>,        <span class="num">88</span>),
+        (<span class="str">"text"</span>,         <span class="num">75</span>),
+        (<span class="str">"id"</span>,           <span class="num">70</span>),
+        (<span class="str">"css"</span>,          <span class="num">50</span>),
+        (<span class="str">"xpath"</span>,        <span class="num">30</span>),
+    ]
+
+    <span class="kw">def</span> <span class="fn">resolve</span>(self, bundle) -> <span class="type">Selector</span>:
+        <span class="cm"># Filter dynamic IDs (React, UUID)</span>
+        <span class="cm"># Score each candidate</span>
+        <span class="cm"># Return highest confidence</span>
+        ...</pre></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Key Features</h2>
+    <p class="section-subtitle">End-to-end QA automation — from browser recording to test execution, with Jira integration and self-learning.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(6,182,212,.1);color:var(--cyan)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h4>Browser Recording</h4>
+        <p>Point-and-click recording with live event capture. Supports clicks, inputs, drag-drop, file uploads, dialogs, keyboard events. No code needed to create tests.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(99,102,241,.1);color:var(--accent2)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h4>Deterministic Code Gen</h4>
+        <p>Template-based TypeScript generation that always produces valid Playwright code. Uses native locators like <code>getByRole</code> and <code>getByTestId</code> for maximum stability.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(236,72,153,.1);color:var(--pink)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><rect x="9" y="18" width="6" height="4" rx="1"/></svg>
+        </div>
+        <h4>Multi-LLM Orchestration</h4>
+        <p>3-LLM consensus debate: Claude, GPT-4o, and Grok each analyze generated tests. Weighted voting produces enhanced, battle-tested output.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(34,197,94,.1);color:var(--green)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+        </div>
+        <h4>Self-Healing Tests</h4>
+        <p>4-agent LangGraph pipeline automatically fixes failing tests. Analyzes errors, applies corrections, validates, and learns from each fix for future improvements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(245,158,11,.1);color:var(--orange)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h4>Self-Learning System</h4>
+        <p>Stores successful patterns in Weaviate vector DB. Error capture, auto-correction, and prompt evolution reduce failure rates over time through continuous learning.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(99,102,241,.1);color:var(--accent2)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h4>Interactive Dashboard</h4>
+        <p>React 18 + TypeScript dashboard with real-time analytics, agent metrics, code comparison views, and live recording controls — all via WebSocket.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(6,182,212,.1);color:var(--cyan)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <h4>Jira &amp; Zephyr Integration</h4>
+        <p>Bidirectional Jira sync: generate test cases from tickets, push results back. Zephyr Scale integration with full folder hierarchy and test execution linking.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(236,72,153,.1);color:var(--pink)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h4>Dockerized Microservices</h4>
+        <p>6-service Docker Compose stack: FastAPI, PostgreSQL, Redis, Weaviate, n8n workflows, and React frontend — all with health checks and persistent volumes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(34,197,94,.1);color:var(--green)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h4>18 MCP Agents</h4>
+        <p>Specialized agents for BDD generation, test prioritization, coverage analysis, code intelligence, and learning — communicating via Model Context Protocol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="section" id="tech">
+  <div class="container">
+    <div class="section-label">Technology</div>
+    <h2 class="section-title">Tech Stack</h2>
+    <p class="section-subtitle">A carefully chosen stack balancing reliability, performance, and developer experience.</p>
+
+    <div class="tech-categories">
+      <div>
+        <div class="tech-cat-label">Backend</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="tp-dot" style="background:#3776AB"></span>Python 3.11</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#009688"></span>FastAPI</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#FF6F00"></span>SQLAlchemy</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#336791"></span>PostgreSQL</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#DC382D"></span>Redis</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#2EAD33"></span>Playwright</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#FFD43B"></span>Pydantic</span>
+        </div>
+      </div>
+      <div>
+        <div class="tech-cat-label">AI / ML</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="tp-dot" style="background:#D4A574"></span>Claude API</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#10A37F"></span>GPT-4o</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#1DA1F2"></span>Grok (XAI)</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#FF6B35"></span>LangGraph</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#1C3C3C"></span>LangChain</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#FF4500"></span>ChromaDB</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#00C9A7"></span>Weaviate</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#9B59B6"></span>Tree-Sitter</span>
+        </div>
+      </div>
+      <div>
+        <div class="tech-cat-label">Frontend</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="tp-dot" style="background:#61DAFB"></span>React 18</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#3178C6"></span>TypeScript 5</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#646CFF"></span>Vite</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#764ABC"></span>Zustand</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#FF4154"></span>React Query</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#111"></span>Radix UI</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#06B6D4"></span>Tailwind CSS</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#8884D8"></span>Recharts</span>
+        </div>
+      </div>
+      <div>
+        <div class="tech-cat-label">Infrastructure</div>
+        <div class="tech-pills">
+          <span class="tech-pill"><span class="tp-dot" style="background:#2496ED"></span>Docker</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#2496ED"></span>Docker Compose</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#FF6D5A"></span>n8n Workflows</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#0B0D0E"></span>MCP Protocol</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#8957E5"></span>WebSocket</span>
+          <span class="tech-pill"><span class="tp-dot" style="background:#ED1C40"></span>JWT Auth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Agents -->
+<section class="section" id="agents" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label">AI Agents</div>
+    <h2 class="section-title">Self-Healing Pipeline</h2>
+    <p class="section-subtitle">When a test fails, a 4-agent LangGraph pipeline automatically diagnoses, fixes, validates, and learns — without human intervention.</p>
+
+    <div class="agent-flow">
+      <div class="agent-card">
+        <div class="agent-num">AGENT 01</div>
+        <h5>Code Analyzer</h5>
+        <p>Parses failing test with Tree-Sitter AST. Identifies error type: broken selector, assertion mismatch, timeout, or logic error.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-num">AGENT 02</div>
+        <h5>Code Fixer</h5>
+        <p>Applies targeted fix: selector update, assertion correction, retry logic injection, or wait strategy adjustment.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-num">AGENT 03</div>
+        <h5>Quality Validator</h5>
+        <p>Runs the fixed test against the target app. Verifies pass/fail status. Checks for regressions in other test steps.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-num">AGENT 04</div>
+        <h5>Pattern Learner</h5>
+        <p>Extracts the fix pattern and stores it in Weaviate vector DB. Future tests benefit from accumulated knowledge.</p>
+      </div>
+    </div>
+
+    <!-- Code sample -->
+    <div class="code-block">
+      <div class="code-header">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="file-name">Generated Test Output — TypeScript + Playwright</div>
+      </div>
+      <div class="code-body"><pre><span class="kw">import</span> { test, expect } <span class="kw">from</span> <span class="str">'@playwright/test'</span>;
+
+test(<span class="str">'User can complete checkout flow'</span>, <span class="kw">async</span> ({ page }) => {
+  <span class="kw">await</span> page.<span class="fn">goto</span>(<span class="str">'https://shop.example.com'</span>);
+
+  <span class="cm">// L1: data-testid selector (confidence: 100)</span>
+  <span class="kw">await</span> page.<span class="fn">getByTestId</span>(<span class="str">'product-card'</span>).first().<span class="fn">click</span>();
+
+  <span class="cm">// L1: role + aria-label (confidence: 95)</span>
+  <span class="kw">await</span> page.<span class="fn">getByRole</span>(<span class="str">'button'</span>, { name: <span class="str">'Add to Cart'</span> }).<span class="fn">click</span>();
+
+  <span class="cm">// L2: Template-generated navigation</span>
+  <span class="kw">await</span> page.<span class="fn">getByRole</span>(<span class="str">'link'</span>, { name: <span class="str">'Checkout'</span> }).<span class="fn">click</span>();
+
+  <span class="cm">// L3: AI-enriched assertions (via Multi-LLM consensus)</span>
+  <span class="kw">await</span> <span class="fn">expect</span>(page.<span class="fn">getByTestId</span>(<span class="str">'cart-count'</span>)).<span class="fn">toHaveText</span>(<span class="str">'1'</span>);
+  <span class="kw">await</span> <span class="fn">expect</span>(page.<span class="fn">getByRole</span>(<span class="str">'heading'</span>)).<span class="fn">toContainText</span>(<span class="str">'Checkout'</span>);
+  <span class="kw">await</span> <span class="fn">expect</span>(page).<span class="fn">toHaveURL</span>(<span class="str">/checkout/</span>);
+});</pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture Diagram -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Full System</div>
+    <h2 class="section-title">End-to-End Architecture</h2>
+    <p class="section-subtitle">From browser recording to test execution, integrated with enterprise tools.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px">
+      <div style="padding:24px;border-radius:var(--radius);background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.15);text-align:center">
+        <div style="font-size:.7rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Input Layer</div>
+        <div style="font-size:.85rem;color:var(--text);display:flex;flex-direction:column;gap:6px">
+          <span>Browser Recorder</span>
+          <span>Jira Ticket Import</span>
+          <span>Manual Upload</span>
+        </div>
+      </div>
+      <div style="padding:24px;border-radius:var(--radius);background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);text-align:center">
+        <div style="font-size:.7rem;font-weight:700;color:var(--accent2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Processing Core</div>
+        <div style="font-size:.85rem;color:var(--text);display:flex;flex-direction:column;gap:6px">
+          <span>3-Layer Pipeline</span>
+          <span>18 MCP Agents</span>
+          <span>Multi-LLM Debate</span>
+        </div>
+      </div>
+      <div style="padding:24px;border-radius:var(--radius);background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);text-align:center">
+        <div style="font-size:.7rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Output Layer</div>
+        <div style="font-size:.85rem;color:var(--text);display:flex;flex-direction:column;gap:6px">
+          <span>Playwright Tests (TS)</span>
+          <span>BDD/Gherkin Scenarios</span>
+          <span>Zephyr Push</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px">
+      <div style="padding:18px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid rgba(255,255,255,.05);text-align:center">
+        <div style="font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:4px">Database</div>
+        <div style="font-size:.82rem;color:var(--text)">PostgreSQL + Redis</div>
+      </div>
+      <div style="padding:18px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid rgba(255,255,255,.05);text-align:center">
+        <div style="font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:4px">Vector Store</div>
+        <div style="font-size:.82rem;color:var(--text)">Weaviate + ChromaDB</div>
+      </div>
+      <div style="padding:18px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid rgba(255,255,255,.05);text-align:center">
+        <div style="font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:4px">Workflows</div>
+        <div style="font-size:.82rem;color:var(--text)">n8n Orchestration</div>
+      </div>
+      <div style="padding:18px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid rgba(255,255,255,.05);text-align:center">
+        <div style="font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:4px">Frontend</div>
+        <div style="font-size:.82rem;color:var(--text)">React + TypeScript</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What I Learned -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label">Reflections</div>
+    <h2 class="section-title">Key Technical Decisions</h2>
+    <p class="section-subtitle">Architectural trade-offs and design philosophy behind this project.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="padding:24px;border-radius:var(--radius);background:var(--bg);border:1px solid rgba(255,255,255,.05)">
+        <h4 style="font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--accent2)">Deterministic First, AI Second</h4>
+        <p style="font-size:.85rem;color:var(--text2)">Template-based code generation handles 85-90% of cases reliably. AI only enhances — never generates core logic. This inverted approach gives enterprise-grade reliability while still benefiting from LLM intelligence.</p>
+      </div>
+      <div style="padding:24px;border-radius:var(--radius);background:var(--bg);border:1px solid rgba(255,255,255,.05)">
+        <h4 style="font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--accent2)">Multi-LLM Over Single-LLM</h4>
+        <p style="font-size:.85rem;color:var(--text2)">A single LLM has blind spots. By debating between Claude, GPT-4o, and Grok with weighted voting, the system produces more robust output than any individual model alone.</p>
+      </div>
+      <div style="padding:24px;border-radius:var(--radius);background:var(--bg);border:1px solid rgba(255,255,255,.05)">
+        <h4 style="font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--accent2)">Selector Bundling Strategy</h4>
+        <p style="font-size:.85rem;color:var(--text2)">Storing 8-10 selectors per element instead of one means when a primary selector breaks, the system can instantly fallback to alternatives without re-recording. This is what makes self-healing actually work.</p>
+      </div>
+      <div style="padding:24px;border-radius:var(--radius);background:var(--bg);border:1px solid rgba(255,255,255,.05)">
+        <h4 style="font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--accent2)">Graceful Degradation</h4>
+        <p style="font-size:.85rem;color:var(--text2)">Every subsystem degrades independently. If Redis is down, tests still generate. If LLMs are unreachable, deterministic templates still work. No single point of failure takes down the whole platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://github.com/vipinyadav" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank">LinkedIn</a>
+      <a href="mailto:ydvvipin1793@example.com">Email</a>
+    </div>
+    <p>Built by Vipin Yadav &middot; QA Automation AI Enabler</p>
+  </div>
+</footer>
+
+<!-- Scroll Animation -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.1 });
+document.querySelectorAll('.feature-card, .arch-card, .ps-card, .agent-card').forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
