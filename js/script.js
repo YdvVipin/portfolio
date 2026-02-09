@@ -1,11 +1,27 @@
 const GITHUB_USERNAME = 'YdvVipin';
 const GITHUB_API = 'https://api.github.com';
 
+// ─── Local Project Detail Pages ─────────────────────
+const LOCAL_PROJECTS = [
+    { name: 'QA Automation AI Enabler', path: 'projects/ai-enabled-qa/', desc: '50K+ LOC platform with 72 FastAPI endpoints, 18 AI agents, React dashboard', tags: ['Python', 'React', 'FastAPI'] },
+    { name: 'Playwright BDD Framework', path: 'projects/playwright-bdd-framework/', desc: 'TypeScript BDD framework with 3 AI agents and 9-tier intelligent locator system', tags: ['TypeScript', 'Playwright'] },
+    { name: 'Multi-Agent Orchestration', path: 'projects/multi-agent-orchestration/', desc: '5 specialized agents with 5 MCP servers using CrewAI and LangChain', tags: ['Python', 'CrewAI'] },
+    { name: 'QA RAG System', path: 'projects/rag-system/', desc: '25+ data collectors with FAISS vector search for intelligent QA knowledge retrieval', tags: ['Python', 'FAISS'] },
+    { name: 'GenAI QA Automation', path: 'projects/genai-qa-automation/', desc: 'Generative AI powered test case generation and execution pipeline', tags: ['Python', 'AI/ML'] },
+    { name: 'AI-Enabled API Automation', path: 'projects/ai-enabled-api-automation/', desc: 'BDD framework with AI-driven API testing, Allure reports, and schema validation', tags: ['Python', 'BDD'] },
+    { name: 'AI Gig Discovery', path: 'projects/gig-flow/', desc: 'AI-powered freelance gig discovery automation using Claude API', tags: ['Python', 'Claude API'] },
+    { name: 'JIRA Data Analysis', path: 'projects/jira-data-analysis/', desc: 'Prophet forecasting and NLP analysis on Jira project data', tags: ['Python', 'NLP'] },
+    { name: 'Jira-TestRail Integration', path: 'projects/JiraTestRailIntegration/', desc: 'Jira to TestRail sync with Grok AI achieving 98% accuracy', tags: ['Python', 'Grok AI'] },
+    { name: 'E-Commerce Testing', path: 'projects/qa-automation-1/', desc: 'End-to-end e-commerce test automation suite', tags: ['Selenium', 'Java'] },
+    { name: 'API Testing Suite', path: 'projects/qa-automation-2/', desc: 'Comprehensive API testing framework with data-driven approach', tags: ['REST', 'Python'] },
+];
+
 document.addEventListener('DOMContentLoaded', function() {
     setupScrollAnimations();
     setupParallax();
     setupSmoothScroll();
     loadGitHubData();
+    renderLocalProjects();
 });
 
 // ─── GitHub API ──────────────────────────────────────
@@ -157,6 +173,43 @@ function showAPIError() {
     if (grid) {
         grid.innerHTML = '<p class="gh-error">Unable to load repositories. GitHub API rate limit may be exceeded.</p>';
     }
+}
+
+// ─── Local Project Cards ──────────────────────────────
+
+function renderLocalProjects() {
+    const grid = document.getElementById('project-grid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    LOCAL_PROJECTS.forEach((project, i) => {
+        const card = document.createElement('a');
+        card.href = project.path;
+        card.className = 'project-card fade-target';
+        card.style.animationDelay = `${i * 0.06}s`;
+
+        const tagsHTML = project.tags.map(tag =>
+            `<span class="project-tag" style="border-color:${getLangColor(tag)};color:${getLangColor(tag)}">${tag}</span>`
+        ).join('');
+
+        card.innerHTML = `
+            <div class="project-card-header">
+                <svg class="project-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <h3 class="project-name">${project.name}</h3>
+            </div>
+            <p class="project-desc">${project.desc}</p>
+            <div class="project-tags">${tagsHTML}</div>
+            <div class="project-cta">
+                View Details
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+
+    setupScrollAnimations();
 }
 
 // ─── Helpers ──────────────────────────────────────
