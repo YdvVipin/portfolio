@@ -4,187 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vipin Yadav — QA Automation & AI Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-base-path="">
 
-  <!-- Fixed Header -->
-  <header class="header" role="banner">
-    <div class="header-inner">
-      <div class="header-brand">
-        <div class="header-title">Vipin Yadav</div>
-        <div class="header-subtitle">QA AUTOMATION & AI ENGINEERING</div>
-      </div>
-      <nav>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <!-- Navigation -->
+  <nav class="kc-nav" role="navigation">
+    <div class="kc-nav__inner">
+      <a href="index.html" class="kc-nav__brand">Vipin Yadav</a>
+      <ul class="kc-nav__links">
+        <li><a href="index.html" class="kc-nav__link active">Home</a></li>
+        <li><a href="pages/projects.html" class="kc-nav__link">Projects</a></li>
+        <li><a href="pages/about.html" class="kc-nav__link">About</a></li>
+        <li><a href="pages/resume.html" class="kc-nav__link">Resume</a></li>
+        <li><a href="pages/contact.html" class="kc-nav__link">Contact</a></li>
+      </ul>
+      <button class="kc-nav__hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
+  </nav>
 
-  <!-- SVG Background Pattern -->
-  <div class="pattern-bg" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-      <!-- Contour Group A: Top-left -->
-      <path d="M50,300 C150,150 450,80 600,200 C750,320 650,450 450,450 C250,450 -50,400 50,300" stroke="white" stroke-width="0.5" fill="none" opacity="0.1"/>
-      <path d="M100,290 C190,170 430,110 560,210 C690,310 610,420 440,420 C270,420 20,380 100,290" stroke="white" stroke-width="0.5" fill="none" opacity="0.08"/>
-      <path d="M150,280 C230,190 410,140 520,220 C630,300 570,390 430,390 C290,390 90,360 150,280" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
-      <path d="M200,270 C260,210 390,170 480,230 C570,290 530,360 420,360 C310,360 160,340 200,270" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
-      <!-- Contour Group B: Center-right -->
-      <path d="M800,350 C900,280 1150,260 1280,350 C1410,440 1300,550 1100,550 C900,550 720,480 800,350" stroke="white" stroke-width="0.5" fill="none" opacity="0.08"/>
-      <path d="M850,360 C940,300 1130,280 1240,360 C1350,440 1260,530 1090,530 C920,530 780,470 850,360" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
-      <path d="M900,370 C970,320 1110,300 1200,370 C1290,440 1220,510 1080,510 C940,510 840,460 900,370" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
-      <!-- Contour Group C: Bottom sweeps -->
-      <path d="M0,700 C200,640 400,750 700,680 C1000,610 1200,730 1440,680" stroke="white" stroke-width="0.8" fill="none" opacity="0.07"/>
-      <path d="M0,730 C200,670 400,780 700,710 C1000,640 1200,760 1440,710" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
-      <path d="M0,760 C200,700 400,810 700,740 C1000,670 1200,790 1440,740" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
-      <path d="M0,790 C200,730 400,840 700,770 C1000,700 1200,820 1440,770" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
-      <!-- Contour Group D: Top-right small -->
-      <path d="M1100,80 C1180,50 1300,60 1350,120 C1400,180 1330,230 1250,210 C1170,190 1050,140 1100,80" stroke="white" stroke-width="0.5" fill="none" opacity="0.08"/>
-      <path d="M1130,95 C1190,70 1280,80 1320,125 C1360,170 1310,210 1250,195 C1190,180 1090,135 1130,95" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
-      <!-- Scattered arcs -->
-      <path d="M600,50 C700,20 800,40 850,90" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
-      <path d="M200,550 C300,520 400,560 450,600" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
-      <path d="M700,850 C800,820 900,840 950,870" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
-      <!-- Large sweep -->
-      <path d="M0,150 C300,100 600,180 900,130 C1200,80 1440,140 1440,140" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
-      <!-- Middle-left blob -->
-      <path d="M0,350 C100,300 250,320 300,380 C350,440 250,480 150,450 C50,420 -20,380 0,350" stroke="white" stroke-width="0.5" fill="none" opacity="0.07"/>
-      <!-- Center scatter -->
-      <path d="M600,100 C700,60 850,80 900,130 C950,180 880,230 780,220 C680,210 550,160 600,100" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
-      <path d="M700,300 C800,260 950,280 1000,330" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
-    </svg>
-  </div>
+  <main>
 
-  <main role="main">
-
-    <!-- Hero Section -->
-    <section class="section hero" id="home">
-      <div class="section-content fade-target">
-        <h1 class="section-heading">QA Meets AI</h1>
-        <p class="section-text">8+ years transforming quality assurance through AI-powered automation. Building intelligent testing platforms, multi-agent systems, and custom ML models that redefine how teams deliver quality software.</p>
-        <a href="#experience" class="btn" aria-label="Learn more about my experience">
-          Learn More
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-      <div class="section-content fade-target">
-        <h2 class="section-heading">The Journey</h2>
-        <p class="section-text">From RF engineering at Mobilecomm Technologies to leading QA automation at Bright Order Inc. A career defined by continuous evolution — mastering test automation, embracing AI integration, and building systems that learn and adapt. Currently engineering 18-agent orchestration platforms and AI-enabled testing frameworks in Toronto.</p>
-        <a href="#projects" class="btn" aria-label="View my projects">
-          View Projects
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Projects Section -->
-    <section class="section section-auto" id="projects">
-      <div class="section-content fade-target">
-        <h2 class="section-heading">The Work</h2>
-        <p class="section-text">Live from GitHub — all public repositories with real-time stats, language breakdowns, and activity data.</p>
-        <div id="github-stats" class="gh-stats">
-          <div class="gh-stat skeleton"><span class="gh-stat-value">-</span><span class="gh-stat-label">Repositories</span></div>
-          <div class="gh-stat skeleton"><span class="gh-stat-value">-</span><span class="gh-stat-label">Followers</span></div>
-          <div class="gh-stat skeleton"><span class="gh-stat-value">-</span><span class="gh-stat-label">Following</span></div>
+    <!-- Hero -->
+    <section class="kc-hero">
+      <div class="kc-hero__blob" aria-hidden="true"></div>
+      <div class="kc-wrap">
+        <div class="kc-hero__content">
+          <div class="kc-hero__tag"><span></span> Open to opportunities</div>
+          <h1 class="kc-hero__title">
+            QA Meets<br><span class="kc-grad">AI</span>
+          </h1>
+          <p class="kc-hero__desc">8+ years transforming quality assurance through AI-powered automation. Building intelligent testing platforms, multi-agent systems, and custom ML models that redefine how teams deliver quality software.</p>
+          <div class="kc-hero__btns">
+            <a href="pages/projects.html" class="kc-btn kc-btn--primary">
+              View Projects
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="pages/resume.html" class="kc-btn kc-btn--outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+              View Resume
+            </a>
+          </div>
         </div>
-        <div id="repo-grid" class="repo-grid">
-          <div class="repo-card skeleton-card"></div>
-          <div class="repo-card skeleton-card"></div>
-          <div class="repo-card skeleton-card"></div>
+      </div>
+    </section>
+
+    <!-- Stats Counter Bar -->
+    <section class="kc-section" style="padding-top:0">
+      <div class="kc-wrap">
+        <div class="kc-stats kc-fade">
+          <div class="kc-stat">
+            <div class="kc-stat__value" data-target="8+">8+</div>
+            <div class="kc-stat__label">Years Experience</div>
+          </div>
+          <div class="kc-stat">
+            <div class="kc-stat__value" data-target="17">17</div>
+            <div class="kc-stat__label">Projects</div>
+          </div>
+          <div class="kc-stat">
+            <div class="kc-stat__value" data-target="18">18</div>
+            <div class="kc-stat__label">AI Agents</div>
+          </div>
+          <div class="kc-stat">
+            <div class="kc-stat__value" data-target="50000+">50,000+</div>
+            <div class="kc-stat__label">Lines of Code</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="kc-section">
+      <div class="kc-wrap">
+        <h2 class="kc-section__title kc-fade">Featured Projects</h2>
+        <p class="kc-section__sub kc-fade">A selection of AI-powered QA platforms, multi-agent systems, and intelligent automation frameworks.</p>
+
+        <div class="kc-grid" id="project-grid">
+          <!-- Rendered by JS — shows top projects -->
         </div>
 
-        <h3 class="subsection-heading">Project Showcases</h3>
-        <p class="section-text">Detailed walkthroughs of 11 projects — architecture diagrams, tech stacks, and implementation highlights.</p>
-        <div id="project-grid" class="project-grid"></div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-      <div class="section-content fade-target">
-        <h2 class="section-heading">The Stack</h2>
-        <p class="section-text">Python, TypeScript, Playwright, Selenium, FastAPI, React, LangChain, CrewAI, Docker, and more. Specialized in bridging AI/ML with test automation — from RAG architectures and vector search to CI/CD pipelines, multi-agent orchestration, and cloud deployment.</p>
-        <a href="#contact" class="btn" aria-label="Get in touch">
-          Let's Connect
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
+        <div style="text-align:center;margin-top:48px" class="kc-fade">
+          <a href="pages/projects.html" class="kc-btn kc-btn--outline">
+            View All Projects
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="footer" id="contact" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h3 class="footer-heading">Experience</h3>
-        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">Bright Order Inc.</a>
-        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">Sofbang LLC</a>
-        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">OPPO Mobiles</a>
-        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">Mobilecomm Technologies</a>
-      </div>
-      <div class="footer-col">
-        <h3 class="footer-heading">Key Projects</h3>
-        <a href="https://github.com/YdvVipin" class="footer-link">AI-Enabled QA Platform</a>
-        <a href="https://github.com/YdvVipin" class="footer-link">Multi-Agent Orchestration</a>
-        <a href="https://github.com/YdvVipin" class="footer-link">Playwright BDD Framework</a>
-        <a href="https://github.com/YdvVipin" class="footer-link">RAG Intelligence System</a>
-      </div>
-      <div class="footer-col">
-        <h3 class="footer-heading">Connect</h3>
-        <div class="social-grid">
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="social-icon" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
+  <footer class="kc-footer">
+    <div class="kc-footer__inner">
+      <div>
+        <div class="kc-footer__brand">Vipin Yadav</div>
+        <p class="kc-footer__desc">QA Automation Specialist & AI Engineer based in Toronto, Ontario. Bridging the gap between quality assurance and artificial intelligence.</p>
+        <div class="kc-footer__socials">
+          <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="kc-footer__social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
-          <!-- GitHub -->
-          <a href="https://github.com/YdvVipin" target="_blank" class="social-icon" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-            </svg>
+          <a href="https://github.com/YdvVipin" target="_blank" class="kc-footer__social" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           </a>
-          <!-- Email -->
-          <a href="mailto:ydvvipin1793@gmail.com" class="social-icon" aria-label="Email">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-          </a>
-          <!-- Phone -->
-          <a href="tel:+16476769897" class="social-icon" aria-label="Phone">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-          </a>
-          <!-- Resume -->
-          <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="social-icon" aria-label="Resume">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 2l5 5h-5V4zm-3 12v-2h4v2h-4zm6-4H8v-2h8v2z"/>
-            </svg>
-          </a>
-          <!-- Location -->
-          <a href="https://maps.google.com/?q=Toronto,Ontario" target="_blank" class="social-icon" aria-label="Toronto, Ontario">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
+          <a href="mailto:ydvvipin1793@gmail.com" class="kc-footer__social" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
         </div>
       </div>
+      <div>
+        <h4 class="kc-footer__heading">Quick Links</h4>
+        <ul class="kc-footer__links">
+          <li><a href="pages/projects.html" class="kc-footer__link">Projects</a></li>
+          <li><a href="pages/about.html" class="kc-footer__link">About</a></li>
+          <li><a href="pages/resume.html" class="kc-footer__link">Resume</a></li>
+          <li><a href="pages/contact.html" class="kc-footer__link">Contact</a></li>
+          <li><a href="https://github.com/YdvVipin" target="_blank" class="kc-footer__link">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="kc-footer__heading">Top Projects</h4>
+        <ul class="kc-footer__links">
+          <li><a href="projects/ai-enabled-qa/" class="kc-footer__link">AI QA Platform</a></li>
+          <li><a href="projects/multi-agent-orchestration/" class="kc-footer__link">Multi-Agent System</a></li>
+          <li><a href="projects/playwright-bdd-framework/" class="kc-footer__link">Playwright BDD</a></li>
+          <li><a href="projects/rag-system/" class="kc-footer__link">RAG System</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="kc-footer__bottom">Vipin Yadav &copy; 2025. Built with precision.</div>
   </footer>
 
   <script src="js/script.js"></script>

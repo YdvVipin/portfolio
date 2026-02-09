@@ -1,0 +1,388 @@
+/* ─── Detail Page Compatibility Layer ──────────────
+   Provides CSS variables and base classes expected
+   by the 10 project detail pages.
+   ─────────────────────────────────────────────────── */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0F0F0F;
+  --bg2: #181818;
+  --bg3: #232323;
+  --text: #EDEDEF;
+  --text2: #A1A1AA;
+  --text3: #52525B;
+  --accent: #6366F1;
+  --accent2: #818CF8;
+  --cyan: #22D3EE;
+  --pink: #EC4899;
+  --green: #34D399;
+  --orange: #FB923C;
+  --radius: 12px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── Tech Background ──────────────────────────── */
+.tech-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(99,102,241,0.08), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(236,72,153,0.06), transparent);
+}
+
+/* ─── Container ─────────────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Header / Nav ──────────────────────────────── */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15,15,15,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+nav, .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.nav-brand, .nav-logo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-brand:hover, .nav-logo:hover { color: var(--cyan); }
+
+nav ul, .nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+nav ul li a, .nav-menu li a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover, .nav-menu li a:hover { color: var(--text); }
+
+nav h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ─── Buttons ───────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99,102,241,0.25);
+}
+
+/* ─── Sections ──────────────────────────────────── */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 80px 24px;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 24px 0 12px;
+}
+
+section p {
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+section ul {
+  color: var(--text2);
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* ─── Legacy Project Detail Classes ─────────────── */
+.project-detail { padding-top: 100px; }
+
+.project-header {
+  margin-bottom: 32px;
+}
+
+.project-header h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg3);
+  border-radius: var(--radius) var(--radius) 0 0;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ef4444; }
+.terminal-dot.yellow { background: #f59e0b; }
+.terminal-dot.green { background: #22c55e; }
+
+.terminal-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text3);
+  margin-left: auto;
+}
+
+.project-overview {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.tech-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat {
+  font-size: 0.9rem;
+  color: var(--text2);
+  background: var(--bg3);
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.tech-stack, .features {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tech-tag {
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--bg3);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--text);
+}
+
+/* ─── Particles container (gig-flow) ────────────── */
+.particles-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Source Table ───────────────────────────────── */
+.source-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.source-table th, .source-table td {
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+}
+
+.source-table th {
+  background: var(--bg3);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.source-table td { color: var(--text2); }
+.source-table td:first-child { color: var(--cyan); font-weight: 500; }
+
+/* ─── Agent Flow ────────────────────────────────── */
+.agent-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.agent-card {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.agent-card .agent-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.agent-card h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.agent-card p {
+  font-size: 0.82rem;
+  color: var(--text2);
+}
+
+/* ─── Flow Steps ────────────────────────────────── */
+.flow-step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.flow-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.flow-step h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.flow-step p {
+  font-size: 0.88rem;
+  color: var(--text2);
+}
+
+/* ─── Focus States ──────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ─── Responsive ────────────────────────────────── */
+@media (max-width: 767px) {
+  nav, .nav-container {
+    padding: 12px 16px;
+  }
+
+  nav ul, .nav-menu {
+    gap: 12px;
+  }
+
+  nav ul li a, .nav-menu li a {
+    font-size: 0.8rem;
+  }
+
+  section {
+    padding: 48px 16px;
+  }
+
+  .project-overview, .tech-stack, .features {
+    padding: 20px;
+  }
+
+  .agent-flow {
+    grid-template-columns: 1fr;
+  }
+}
