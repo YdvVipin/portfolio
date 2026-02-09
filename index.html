@@ -3,1014 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vipin Yadav | QA Automation & AI Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5.0">
+  <title>Vipin Yadav — QA Automation & AI Engineering</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="tech-bg"></div>
-  <div class="particles-container"></div>
 
-  <header>
-    <nav>
-      <div class="nav-brand">Vipin Yadav</div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Fixed Header -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="header-title">Vipin Yadav</div>
+        <div class="header-subtitle">QA AUTOMATION & AI ENGINEERING</div>
+      </div>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- ─── Hero ─────────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-badge"><span class="hero-dot"></span> Open to Opportunities</div>
-    <h2>QA Automation &<br><span class="hero-gradient">AI Engineering</span></h2>
-    <p>Software Development Engineer in Test with 8+ years of experience. Building intelligent testing systems that combine deterministic automation with AI-powered insights. Based in Toronto.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="hero-stat-num">8+</span><span class="hero-stat-label">Years Experience</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">18+</span><span class="hero-stat-label">Projects</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">LLM Integrations</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">18</span><span class="hero-stat-label">AI Agents Built</span></div>
-    </div>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
-    </div>
-  </section>
+  <!-- SVG Background Pattern -->
+  <div class="pattern-bg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <!-- Contour Group A: Top-left -->
+      <path d="M50,300 C150,150 450,80 600,200 C750,320 650,450 450,450 C250,450 -50,400 50,300" stroke="white" stroke-width="0.5" fill="none" opacity="0.1"/>
+      <path d="M100,290 C190,170 430,110 560,210 C690,310 610,420 440,420 C270,420 20,380 100,290" stroke="white" stroke-width="0.5" fill="none" opacity="0.08"/>
+      <path d="M150,280 C230,190 410,140 520,220 C630,300 570,390 430,390 C290,390 90,360 150,280" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
+      <path d="M200,270 C260,210 390,170 480,230 C570,290 530,360 420,360 C310,360 160,340 200,270" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
+      <!-- Contour Group B: Center-right -->
+      <path d="M800,350 C900,280 1150,260 1280,350 C1410,440 1300,550 1100,550 C900,550 720,480 800,350" stroke="white" stroke-width="0.5" fill="none" opacity="0.08"/>
+      <path d="M850,360 C940,300 1130,280 1240,360 C1350,440 1260,530 1090,530 C920,530 780,470 850,360" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
+      <path d="M900,370 C970,320 1110,300 1200,370 C1290,440 1220,510 1080,510 C940,510 840,460 900,370" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
+      <!-- Contour Group C: Bottom sweeps -->
+      <path d="M0,700 C200,640 400,750 700,680 C1000,610 1200,730 1440,680" stroke="white" stroke-width="0.8" fill="none" opacity="0.07"/>
+      <path d="M0,730 C200,670 400,780 700,710 C1000,640 1200,760 1440,710" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
+      <path d="M0,760 C200,700 400,810 700,740 C1000,670 1200,790 1440,740" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
+      <path d="M0,790 C200,730 400,840 700,770 C1000,700 1200,820 1440,770" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
+      <!-- Contour Group D: Top-right small -->
+      <path d="M1100,80 C1180,50 1300,60 1350,120 C1400,180 1330,230 1250,210 C1170,190 1050,140 1100,80" stroke="white" stroke-width="0.5" fill="none" opacity="0.08"/>
+      <path d="M1130,95 C1190,70 1280,80 1320,125 C1360,170 1310,210 1250,195 C1190,180 1090,135 1130,95" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
+      <!-- Scattered arcs -->
+      <path d="M600,50 C700,20 800,40 850,90" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
+      <path d="M200,550 C300,520 400,560 450,600" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
+      <path d="M700,850 C800,820 900,840 950,870" stroke="white" stroke-width="0.5" fill="none" opacity="0.04"/>
+      <!-- Large sweep -->
+      <path d="M0,150 C300,100 600,180 900,130 C1200,80 1440,140 1440,140" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
+      <!-- Middle-left blob -->
+      <path d="M0,350 C100,300 250,320 300,380 C350,440 250,480 150,450 C50,420 -20,380 0,350" stroke="white" stroke-width="0.5" fill="none" opacity="0.07"/>
+      <!-- Center scatter -->
+      <path d="M600,100 C700,60 850,80 900,130 C950,180 880,230 780,220 C680,210 550,160 600,100" stroke="white" stroke-width="0.5" fill="none" opacity="0.05"/>
+      <path d="M700,300 C800,260 950,280 1000,330" stroke="white" stroke-width="0.5" fill="none" opacity="0.06"/>
+    </svg>
+  </div>
 
-  <!-- ─── About ────────────────────────────────────── -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="about-lead">Software Development Engineer in Test with over <strong>8 years of experience</strong>, successfully transitioning from RF network engineering to specialized QA automation with AI integration.</p>
-        <div class="about-details">
-          <p>I leverage foundational skills in algorithm design, scripting, and data analysis from my early RF roles to build robust automation frameworks. My current focus is on integrating AI tools for predictive testing, intelligent test generation, and self-healing automation systems.</p>
-          <p>Strong background in Frontend and Backend testing of Web/Mobile applications and APIs. Experienced in building enterprise-grade platforms with multi-agent orchestration, LLM integration (Claude, GPT-4o, Grok), and MCP protocol implementation.</p>
-        </div>
-        <div class="about-highlights">
-          <div class="highlight-item">
-            <span class="highlight-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </span>
-            <span>RF Engineering → QA Automation → AI/ML Integration</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </span>
-            <span>65% test cases automated, 80% fewer bugs in top projects</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </span>
-            <span>Trained and managed 100+ technical staff</span>
-          </div>
-        </div>
-      </div>
-      <div class="about-info">
-        <div class="info-card">
-          <div class="info-row"><span class="info-label">Location</span><span class="info-value">Toronto, Ontario</span></div>
-          <div class="info-row"><span class="info-label">Role</span><span class="info-value">QA Automation Specialist</span></div>
-          <div class="info-row"><span class="info-label">Focus</span><span class="info-value">AI-Powered QA Systems</span></div>
-          <div class="info-row"><span class="info-label">Education</span><span class="info-value">PGD Computer Programming</span></div>
-          <div class="info-row"><span class="info-label">Languages</span><span class="info-value">Python, Java, TypeScript, JS</span></div>
-        </div>
-        <div class="info-card metrics-card">
-          <h4>Key Metrics</h4>
-          <div class="mini-metrics">
-            <div class="mini-metric"><span class="mm-num">65%</span><span class="mm-label">Tests Automated</span></div>
-            <div class="mini-metric"><span class="mm-num">80%</span><span class="mm-label">Fewer Bugs</span></div>
-            <div class="mini-metric"><span class="mm-num">100+</span><span class="mm-label">Staff Trained</span></div>
-            <div class="mini-metric"><span class="mm-num">75%</span><span class="mm-label">Less Complaints</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main role="main">
 
-  <!-- ─── Experience ───────────────────────────────── -->
-  <section id="experience" class="experience">
-    <h2>Work Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-marker current"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3>QA Automation Specialist</h3>
-              <span class="company">Bright Order Inc., Toronto, Ontario</span>
-            </div>
-            <span class="date-badge">Jan 2023 – Present</span>
-          </div>
-          <ul class="experience-list">
-            <li>Plan, develop, and maintain automation solutions for fleet management, shop management, and ELD applications, building on prior data-driven testing from RF engineering.</li>
-            <li>Build and enhance automated test frameworks using Python, Behave BDD, and Selenium to validate vehicle tracking, maintenance scheduling, and defect reporting workflows.</li>
-            <li>Develop automation scripts integrating with Jira — pulling tickets, generating automated test cases, and updating QA workflows.</li>
-            <li>Test and validate ELD-related features: driver logs, HOS compliance, real-time GPS updates, vehicle diagnostics, and backend synchronization.</li>
-            <li>Use AI-assisted tools for generating realistic fleet/shop test data, predicting defects, and improving automation coverage.</li>
-            <li>Conduct load testing with Locust to simulate high-traffic fleet operations and bulk maintenance updates.</li>
-            <li>Design and implement CI/CD automation pipelines for streamlined testing and deployment.</li>
-          </ul>
-          <div class="experience-tags">
-            <span>Python</span><span>Playwright</span><span>Selenium</span><span>Behave BDD</span><span>Locust</span><span>Jira API</span><span>CI/CD</span><span>AI Tools</span>
-          </div>
-        </div>
+    <!-- Hero Section -->
+    <section class="section hero" id="home">
+      <div class="section-content fade-target">
+        <h1 class="section-heading">QA Meets AI</h1>
+        <p class="section-text">8+ years transforming quality assurance through AI-powered automation. Building intelligent testing platforms, multi-agent systems, and custom ML models that redefine how teams deliver quality software.</p>
+        <a href="#experience" class="btn" aria-label="Learn more about my experience">
+          Learn More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3>Quality Assurance, QA Analyst</h3>
-              <span class="company">Sofbang LLC, Delhi, India</span>
-            </div>
-            <span class="date-badge">Jul 2020 – Dec 2020</span>
-          </div>
-          <ul class="experience-list">
-            <li>Built automated testing frameworks for AI Chatbot Application for one of North America's top power corporations — a pivotal shift toward automation expertise.</li>
-            <li>Created test plans, test cases, and collected test requirements for complex projects.</li>
-            <li>Performed automation testing on APIs using Rest-Assured, Selenium, and Cucumber.</li>
-            <li>Expertise in creating automation framework from scratch using Selenium, Java/C#, Apache Maven, Cucumber, with Jenkins and DevOps scheduling.</li>
-            <li>Built autonomous test scripts to handle repetitive software testing and submit daily reports.</li>
-          </ul>
-          <div class="experience-tags">
-            <span>Selenium</span><span>Java/C#</span><span>Cucumber</span><span>Rest-Assured</span><span>Maven</span><span>Jenkins</span><span>DevOps</span>
-          </div>
-        </div>
-      </div>
+    <div class="section-divider"></div>
 
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3>Quality Assurance Test Engineer</h3>
-              <span class="company">OPPO Mobiles, Gurgaon, India</span>
-            </div>
-            <span class="date-badge">Feb 2017 – Nov 2019</span>
-          </div>
-          <ul class="experience-list">
-            <li>Managed entire software testing lifecycle — requirement analysis, test design, execution, defect management, and reporting.</li>
-            <li>Created comprehensive mobile and software testing plans for top OPPO projects.</li>
-            <li>Automated mobile applications using Appium, Selenium with Java.</li>
-            <li>Developed testing strategies for specific bugs resulting in <strong>75% less customer complaints</strong> across India in 2018.</li>
-            <li>Streamlined testing to support automation and manual efforts; performed black box, white box testing on web and mobile apps.</li>
-          </ul>
-          <div class="experience-tags">
-            <span>Appium</span><span>Selenium</span><span>Java</span><span>Mobile Testing</span><span>Android Studio</span><span>Xcode</span><span>Agile</span>
-          </div>
-        </div>
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <div class="section-content fade-target">
+        <h2 class="section-heading">The Journey</h2>
+        <p class="section-text">From RF engineering at Mobilecomm Technologies to leading QA automation at Bright Order Inc. A career defined by continuous evolution — mastering test automation, embracing AI integration, and building systems that learn and adapt. Currently engineering 18-agent orchestration platforms and AI-enabled testing frameworks in Toronto.</p>
+        <a href="#projects" class="btn" aria-label="View my projects">
+          View Projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <h3>Test Engineer (RF Network Engineering)</h3>
-              <span class="company">Mobilecomm Technologies Inc, Gurgaon, India</span>
-            </div>
-            <span class="date-badge">May 2015 – Feb 2017</span>
-          </div>
-          <ul class="experience-list">
-            <li>Designed algorithms and scripts for GSM, UMTS, VoLTE, RF Data, and Drive Test log file analysis — laying the groundwork for QA transition.</li>
-            <li>Set up test environments, developed test strategy, plans, cases, suites, scenarios, and traceability matrix documentation.</li>
-            <li>Utilized statistical methods to solve problems and perform field tests, skills that directly transferred to QA automation debugging and optimization.</li>
-            <li>Trained and managed a team of more than <strong>100 technical staff</strong>.</li>
-          </ul>
-          <div class="experience-tags">
-            <span>RF Engineering</span><span>GSM/UMTS/VoLTE</span><span>Data Analysis</span><span>Scripting</span><span>Test Strategy</span><span>Team Management</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="section-divider"></div>
 
-  <!-- ─── Projects ─────────────────────────────────── -->
-  <section id="projects" class="projects-section">
-    <h2>Projects</h2>
-    <p class="section-subtitle">A collection of production-grade QA automation, AI/ML, and engineering projects</p>
+    <!-- Projects Section -->
+    <section class="section section-auto" id="projects">
+      <div class="section-content fade-target">
+        <h2 class="section-heading">The Work</h2>
+        <p class="section-text">Live from GitHub — all public repositories with real-time stats, language breakdowns, and activity data.</p>
+        <div id="github-stats" class="gh-stats">
+          <div class="gh-stat skeleton"><span class="gh-stat-value">-</span><span class="gh-stat-label">Repositories</span></div>
+          <div class="gh-stat skeleton"><span class="gh-stat-value">-</span><span class="gh-stat-label">Followers</span></div>
+          <div class="gh-stat skeleton"><span class="gh-stat-value">-</span><span class="gh-stat-label">Following</span></div>
+        </div>
+        <div id="repo-grid" class="repo-grid">
+          <div class="repo-card skeleton-card"></div>
+          <div class="repo-card skeleton-card"></div>
+          <div class="repo-card skeleton-card"></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="project-filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="ai-platform">AI Platforms</button>
-      <button class="filter-btn" data-filter="qa-framework">QA Frameworks</button>
-      <button class="filter-btn" data-filter="data-intel">Data & Intelligence</button>
-      <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
-    </div>
+    <div class="section-divider"></div>
 
-    <div class="projects-grid">
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="section-content fade-target">
+        <h2 class="section-heading">The Stack</h2>
+        <p class="section-text">Python, TypeScript, Playwright, Selenium, FastAPI, React, LangChain, CrewAI, Docker, and more. Specialized in bridging AI/ML with test automation — from RAG architectures and vector search to CI/CD pipelines, multi-agent orchestration, and cloud deployment.</p>
+        <a href="#contact" class="btn" aria-label="Get in touch">
+          Let's Connect
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </section>
 
-      <!-- 1. QA Automation AI Enabler (FEATURED) -->
-      <div class="project-card featured" data-category="ai-platform">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">QA_AI_Enabler_Platform.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">class</span> QAAutomationAIEnabler:</span>
-            <span class="code-line">  pipeline = [<span class="string">"L1:Selector"</span>, <span class="string">"L2:CodeGen"</span>, <span class="string">"L3:AI"</span>]</span>
-            <span class="code-line">  agents = <span class="string">18</span>  <span class="comment"># MCP + LangGraph</span></span>
-            <span class="code-line">  llms = [<span class="string">"Claude"</span>, <span class="string">"GPT-4o"</span>, <span class="string">"Grok"</span>] <span class="success">&#10003;</span></span>
-          </div>
-          <div class="card-badge">Flagship Project</div>
-          <h3>QA Automation AI Enabler</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Agents:</span> 18 MCP</span>
-            <span class="stat"><span class="stat-label">Pipeline:</span> 3-Layer</span>
-            <span class="stat"><span class="stat-label">Code:</span> 50K+ LOC</span>
-            <span class="stat"><span class="stat-label">Endpoints:</span> 72 API</span>
-          </div>
-          <p>Enterprise-grade full-stack platform with React frontend + FastAPI backend. Records browser interactions and generates Playwright tests using a 3-layer deterministic + AI pipeline. Features multi-LLM debate pattern, self-healing agents, Jira/Zephyr integration, and n8n workflows.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>React</span><span>FastAPI</span><span>Playwright</span><span>LangGraph</span><span>Claude</span><span>GPT-4o</span><span>PostgreSQL</span><span>Docker</span><span>n8n</span>
-          </div>
-          <div class="buttons">
-            <a href="projects/ai-enabled-qa/" class="btn">Explore</a>
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
+  </main>
 
-      <!-- 2. Playwright BDD + AI Framework -->
-      <div class="project-card" data-category="ai-platform">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">playwright_ai_framework.ts</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">class</span> AgentOrchestrator {</span>
-            <span class="code-line">  agents = [<span class="string">"Planner"</span>, <span class="string">"Generator"</span>, <span class="string">"Healer"</span>]</span>
-            <span class="code-line">  locators = <span class="string">9</span> <span class="comment">// tier priority</span></span>
-            <span class="code-line">  coverage = <span class="success">80%+</span></span>
-          </div>
-          <h3>Playwright BDD + AI Framework</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Agents:</span> 3 AI</span>
-            <span class="stat"><span class="stat-label">Locators:</span> 9-tier</span>
-            <span class="stat"><span class="stat-label">LOC:</span> 8K+</span>
-          </div>
-          <p>Production-ready TypeScript framework with Cucumber BDD, AI agents (Planner, Generator, Healer), smart 9-tier locator engine, self-healing tests, visual regression, and accessibility testing (WCAG).</p>
-          <div class="tech-pills">
-            <span>TypeScript</span><span>Playwright</span><span>Cucumber</span><span>OpenAI</span><span>Allure</span><span>Jest</span>
-          </div>
-          <div class="buttons">
-            <a href="projects/playwright-bdd-framework/" class="btn">Explore</a>
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Multi-Agent Orchestration Platform -->
-      <div class="project-card" data-category="ai-platform">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">multi_agent_orchestrator.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">class</span> Orchestrator:</span>
-            <span class="code-line">  agents = [<span class="string">"Planner"</span>, <span class="string">"Generator"</span>,</span>
-            <span class="code-line">    <span class="string">"Executor"</span>, <span class="string">"Analyzer"</span>, <span class="string">"Learner"</span>]</span>
-            <span class="code-line">  mcp_servers = <span class="string">5</span> <span class="success">&#10003;</span></span>
-          </div>
-          <h3>Multi-Agent Orchestration Platform</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Agents:</span> 5 Specialized</span>
-            <span class="stat"><span class="stat-label">MCP:</span> 5 Servers</span>
-            <span class="stat"><span class="stat-label">Docs:</span> 8K+ lines</span>
-          </div>
-          <p>Enterprise multi-agent system with 5 specialized AI agents (Planner, Generator, Executor, Analyzer, Learner), 5 MCP servers (GitHub, Playwright, Supabase, Jira, Search), JWT auth, and Prometheus monitoring.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>FastAPI</span><span>Claude</span><span>LangChain</span><span>CrewAI</span><span>PostgreSQL</span><span>Docker</span><span>MCP</span>
-          </div>
-          <div class="buttons">
-            <a href="projects/multi-agent-orchestration/" class="btn">Explore</a>
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. RAG Knowledge System -->
-      <div class="project-card" data-category="data-intel">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">rag_system.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">class</span> RAGSystem:</span>
-            <span class="code-line">  sources = <span class="string">25</span>  <span class="comment"># collectors</span></span>
-            <span class="code-line">  vectordb = FAISS(<span class="string">"embeddings"</span>)</span>
-            <span class="code-line">  search(<span class="string">"query"</span>) <span class="success">→ FOUND</span></span>
-          </div>
-          <h3>RAG Knowledge System</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Sources:</span> 25+</span>
-            <span class="stat"><span class="stat-label">DB:</span> FAISS Vector</span>
-            <span class="stat"><span class="stat-label">Tools:</span> 10+ frameworks</span>
-          </div>
-          <p>Advanced Retrieval-Augmented Generation system for QA automation knowledge with 25+ data source collectors (Stack Overflow, GitHub, Arxiv), FAISS semantic search, and interactive Streamlit chatbot.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>FAISS</span><span>OpenAI</span><span>Streamlit</span><span>ChromaDB</span><span>BeautifulSoup</span>
-          </div>
-          <div class="buttons">
-            <a href="projects/rag-system/" class="btn">Explore</a>
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. QA Automation Bot + MCP -->
-      <div class="project-card" data-category="qa-framework">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">qa_automation_bot.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">async def</span> run_features():</span>
-            <span class="code-line">  mcp = PlaywrightMCP(<span class="string">"enhanced"</span>)</span>
-            <span class="code-line">  errors.learn(pattern) <span class="comment"># AI fix</span></span>
-            <span class="code-line">  allure.report() <span class="success">PASS</span></span>
-          </div>
-          <h3>QA Automation Bot + MCP</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Features:</span> 7 BDD</span>
-            <span class="stat"><span class="stat-label">MCP:</span> Enhanced</span>
-            <span class="stat"><span class="stat-label">Roles:</span> 3 tested</span>
-          </div>
-          <p>Production-grade QA bot with enhanced Playwright MCP server (1,878 lines), multi-feature BDD tests, error learning system, role-based testing (Manager, Tech, Driver), and Allure reporting.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Playwright</span><span>MCP</span><span>BDD</span><span>Allure</span><span>Error Learning</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Jira to Zephyr Automation -->
-      <div class="project-card" data-category="data-intel">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">jira_zephyr_cli.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">def</span> generate_test_case(ticket):</span>
-            <span class="code-line">  ai = grok.analyze(ticket.desc)</span>
-            <span class="code-line">  match = faiss.similarity(<span class="string">0.98</span>)</span>
-            <span class="code-line">  zephyr.push(test_case) <span class="success">✓</span></span>
-          </div>
-          <h3>Jira → Zephyr Test Case AI</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Accuracy:</span> 98%+</span>
-            <span class="stat"><span class="stat-label">AI:</span> Grok</span>
-            <span class="stat"><span class="stat-label">Vector:</span> FAISS</span>
-          </div>
-          <p>AI system converting Jira tickets to Zephyr Scale test cases with 98%+ style match using Grok AI, FAISS vector similarity, sentence transformers, duplicate protection, and dry-run validation.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Grok AI</span><span>FAISS</span><span>Jira API</span><span>Zephyr</span><span>FastAPI</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Jira to TestRail Automation -->
-      <div class="project-card" data-category="data-intel">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">jira_testrail_sync.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">class</span> JiraTestRailMapper:</span>
-            <span class="code-line">  style_match = <span class="string">"98%+"</span></span>
-            <span class="code-line">  <span class="keyword">def</span> sync(jira_issue):</span>
-            <span class="code-line">    testrail.create(case) <span class="success">SYNCED</span></span>
-          </div>
-          <h3>Jira → TestRail Sync</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Match:</span> 98%+</span>
-            <span class="stat"><span class="stat-label">AI:</span> Grok</span>
-            <span class="stat"><span class="stat-label">Mode:</span> Dry-run</span>
-          </div>
-          <p>Automated Jira to TestRail sync system with Grok AI for intelligent test generation, automatic section creation per Epic, duplicate protection, and detailed step-by-step test cases.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Grok AI</span><span>Jira API</span><span>TestRail API</span><span>FastAPI</span><span>YAML</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. Jira Data Analytics -->
-      <div class="project-card" data-category="data-intel">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">jira_analytics_engine.ipynb</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">import</span> prophet, sklearn</span>
-            <span class="code-line">forecast = prophet.predict(tickets)</span>
-            <span class="code-line">anomalies = detect(<span class="string">87%</span> accuracy)</span>
-            <span class="code-line">dashboard.render() <span class="success">LIVE</span></span>
-          </div>
-          <h3>Jira Intelligence & Forecasting</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Accuracy:</span> 87.3%</span>
-            <span class="stat"><span class="stat-label">NLP:</span> Root Cause</span>
-            <span class="stat"><span class="stat-label">Forecast:</span> Prophet</span>
-          </div>
-          <p>ML-powered analytics engine for Jira data with Prophet forecasting, anomaly detection, cycle time analysis, NLP root cause analysis, workload heatmaps, and automated dashboard generation.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Prophet</span><span>Scikit-learn</span><span>Pandas</span><span>Plotly</span><span>NLP</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. AI-Enabled API Testing -->
-      <div class="project-card" data-category="qa-framework">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">api_automation_bdd.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">@given</span>(<span class="string">'API endpoint is ready'</span>)</span>
-            <span class="code-line"><span class="keyword">@when</span>(<span class="string">'I send GET /pokemon'</span>)</span>
-            <span class="code-line"><span class="keyword">@then</span>(<span class="string">'schema validates'</span>) <span class="success">PASS</span></span>
-            <span class="code-line"><span class="comment"># MCP server integrated</span></span>
-          </div>
-          <h3>AI-Enabled API Testing</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Framework:</span> BDD</span>
-            <span class="stat"><span class="stat-label">MCP:</span> Integrated</span>
-            <span class="stat"><span class="stat-label">Schema:</span> JSON</span>
-          </div>
-          <p>Comprehensive BDD API testing framework with Behave, MCP server integration, JSON schema validation, page objects, performance testing, and HTML reporting.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Behave</span><span>Playwright</span><span>MCP</span><span>JSON Schema</span><span>Pytest</span>
-          </div>
-          <div class="buttons">
-            <a href="projects/ai-enabled-qa/" class="btn">Explore</a>
-            <a href="https://github.com/YdvVipin/AIEnabledAPIAutomation" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. NanoGPT QA Model -->
-      <div class="project-card" data-category="ai-ml">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">nanogpt_qa_model.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">class</span> NanoGPT:</span>
-            <span class="code-line">  params = <span class="string">29.92M</span></span>
-            <span class="code-line">  data = <span class="string">54,793</span> QA conversations</span>
-            <span class="code-line">  loss: 1.43 → <span class="success">1.22</span> (89% ↑)</span>
-          </div>
-          <h3>Custom NanoGPT QA Model</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Params:</span> 29.92M</span>
-            <span class="stat"><span class="stat-label">Data:</span> 54.8K Q&A</span>
-            <span class="stat"><span class="stat-label">Mode:</span> Hybrid</span>
-          </div>
-          <p>Locally trained NanoGPT transformer (29.92M params) on 54,793 QA conversations. Hybrid mode combines local model with Grok API via MCP. Loss improved from 1.43 to 1.22.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>PyTorch</span><span>Transformer</span><span>Grok API</span><span>MCP</span><span>Tiktoken</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 11. LangChain RAG Project -->
-      <div class="project-card" data-category="ai-ml">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">langchain_rag_app.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">from</span> langchain <span class="keyword">import</span> RAG</span>
-            <span class="code-line">chain = ChromaDB | LLM | Stream</span>
-            <span class="code-line">response = chain.invoke(<span class="string">"query"</span>)</span>
-            <span class="code-line"><span class="comment"># SSE streaming enabled</span></span>
-          </div>
-          <h3>LangChain RAG Chatbot</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Backend:</span> FastAPI</span>
-            <span class="stat"><span class="stat-label">Vector:</span> ChromaDB</span>
-            <span class="stat"><span class="stat-label">Stream:</span> SSE</span>
-          </div>
-          <p>LangChain-based conversational AI with RAG, FastAPI backend with SSE streaming, ChromaDB/FAISS vector storage, PDF/web document ingestion, and Streamlit UI.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>LangChain</span><span>FastAPI</span><span>ChromaDB</span><span>Streamlit</span><span>OpenAI</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12. AI Gig Discovery Engine -->
-      <div class="project-card" data-category="ai-ml">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">gig_discovery_engine.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">def</span> score_gig(gig):</span>
-            <span class="code-line">  score = claude.analyze(gig)</span>
-            <span class="code-line">  <span class="keyword">if</span> score > <span class="string">7</span>: <span class="success">MATCH</span></span>
-            <span class="code-line">  <span class="comment"># 80% accuracy, 50+ gigs/wk</span></span>
-          </div>
-          <h3>AI Gig Discovery Engine</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">AI:</span> Claude API</span>
-            <span class="stat"><span class="stat-label">Accuracy:</span> 80%</span>
-            <span class="stat"><span class="stat-label">Speed:</span> 70% faster</span>
-          </div>
-          <p>Human-in-the-loop system for discovering freelance gigs across Upwork, RemoteOK, Indeed. Claude AI scores relevance, generates personalized proposals, with Streamlit dashboard and email notifications.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Claude API</span><span>Streamlit</span><span>Gmail</span><span>Airtable</span><span>RSS</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 13. AI-QA Bug Prediction -->
-      <div class="project-card" data-category="qa-framework">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">bug_predictor.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> predict</span>
-            <span class="code-line">risk = model.score(file_metrics)</span>
-            <span class="code-line">flask.serve(<span class="string">"/calculate"</span>)</span>
-            <span class="code-line">behave.test() <span class="success">ALL PASS</span></span>
-          </div>
-          <h3>AI Bug Prediction System</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">ML:</span> Scikit-learn</span>
-            <span class="stat"><span class="stat-label">Tests:</span> BDD + Unit</span>
-            <span class="stat"><span class="stat-label">API:</span> Flask</span>
-          </div>
-          <p>Flask-based QA framework with ML bug prediction model, file risk scoring, BDD tests with Behave, pytest unit tests, and Allure reporting. Intentional bug injection for testing practice.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Behave</span><span>Pytest</span><span>Allure</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 14. Playwright E2E with BDD -->
-      <div class="project-card" data-category="qa-framework">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">e2e_work_order.spec.ts</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">Feature</span>: Work Order Flow</span>
-            <span class="code-line">  <span class="keyword">Scenario</span>: Create + Assign</span>
-            <span class="code-line">  <span class="keyword">Given</span> <span class="string">dispatcher is logged in</span></span>
-            <span class="code-line">  <span class="keyword">Then</span> <span class="string">order status</span> = <span class="success">ACTIVE</span></span>
-          </div>
-          <h3>Playwright E2E Business Flows</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Framework:</span> Playwright</span>
-            <span class="stat"><span class="stat-label">BDD:</span> Cucumber</span>
-            <span class="stat"><span class="stat-label">Lang:</span> TypeScript</span>
-          </div>
-          <p>Comprehensive Playwright automation for complex business workflows — work orders, notifications, and analysis — with Cucumber BDD, auth state persistence, and HTML reports.</p>
-          <div class="tech-pills">
-            <span>TypeScript</span><span>Playwright</span><span>Cucumber</span><span>Node.js</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 15. Kona BDD Automation -->
-      <div class="project-card" data-category="qa-framework">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">kona_qa_automation.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">Feature</span>: Login Flow</span>
-            <span class="code-line">  <span class="keyword">Scenario</span>: Valid credentials</span>
-            <span class="code-line">  page.fill(<span class="string">"#username"</span>)</span>
-            <span class="code-line">  screenshot.capture() <span class="success">OK</span></span>
-          </div>
-          <h3>Kona Platform BDD Automation</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">Framework:</span> Behave</span>
-            <span class="stat"><span class="stat-label">Browser:</span> Playwright</span>
-            <span class="stat"><span class="stat-label">Pattern:</span> POM</span>
-          </div>
-          <p>BDD automation framework for Kona platform with Playwright browser control, Page Object Model, screenshot capture, configuration-driven test setup, and recording/playback.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>Playwright</span><span>Behave</span><span>Page Objects</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 16. GenAI QA Automation -->
-      <div class="project-card" data-category="ai-ml">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">genai_qa_automation.py</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">def</span> generate_bdd_tests():</span>
-            <span class="code-line">  ai = GenAI(<span class="string">"Claude"</span>)</span>
-            <span class="code-line">  features = ai.generate(<span class="string">"gherkin"</span>)</span>
-            <span class="code-line">  behave.run(features) <span class="success">PASS</span></span>
-          </div>
-          <h3>GenAI BDD Test Generator</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">AI:</span> Claude/OpenAI</span>
-            <span class="stat"><span class="stat-label">Output:</span> Gherkin</span>
-            <span class="stat"><span class="stat-label">Data:</span> CSV params</span>
-          </div>
-          <p>Uses generative AI to automatically create BDD feature files and parameterized test cases from CSV data. AI-powered Gherkin generation with Behave framework integration.</p>
-          <div class="tech-pills">
-            <span>Python</span><span>GenAI</span><span>Behave</span><span>Gherkin</span><span>CSV</span>
-          </div>
-          <div class="buttons">
-            <a href="projects/genai-qa-automation/" class="btn">Explore</a>
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 17. TestGenius Hub -->
-      <div class="project-card" data-category="ai-platform">
-        <div class="card-header">
-          <div class="terminal-bar">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">testgenius_hub.tsx</span>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="code-snippet">
-            <span class="code-line"><span class="keyword">import</span> { Dashboard } <span class="keyword">from</span> <span class="string">'./app'</span></span>
-            <span class="code-line"><span class="keyword">const</span> App = () => (</span>
-            <span class="code-line">  &lt;Dashboard theme=<span class="string">"modern"</span> /&gt;</span>
-            <span class="code-line">) <span class="comment">// shadcn + Tailwind</span></span>
-          </div>
-          <h3>TestGenius Hub Dashboard</h3>
-          <div class="tech-stats">
-            <span class="stat"><span class="stat-label">UI:</span> React 18</span>
-            <span class="stat"><span class="stat-label">Build:</span> Vite</span>
-            <span class="stat"><span class="stat-label">CSS:</span> Tailwind</span>
-          </div>
-          <p>Modern React 18 dashboard application with TypeScript, Vite, shadcn/ui components (Radix UI), and Tailwind CSS. Responsive, component-based, and type-safe architecture.</p>
-          <div class="tech-pills">
-            <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind</span><span>shadcn/ui</span><span>Radix</span>
-          </div>
-          <div class="buttons">
-            <a href="https://github.com/YdvVipin" target="_blank" class="btn btn-github">Source</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── Skills ───────────────────────────────────── -->
-  <section id="skills" class="skills">
-    <h2>Skills & Tech Stack</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h4>Programming Languages</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">C/C++</span>
-          <span class="skill-tag">C#</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">HTML/CSS</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Test Automation Frameworks</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Playwright</span>
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">Appium</span>
-          <span class="skill-tag">Cypress</span>
-          <span class="skill-tag">Cucumber/BDD</span>
-          <span class="skill-tag">Behave</span>
-          <span class="skill-tag">Pytest</span>
-          <span class="skill-tag">Jest</span>
-          <span class="skill-tag">JUnit</span>
-          <span class="skill-tag">Rest-Assured</span>
-          <span class="skill-tag">Locust</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>AI / ML / LLM</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Claude API</span>
-          <span class="skill-tag">GPT-4o / OpenAI</span>
-          <span class="skill-tag">Grok / xAI</span>
-          <span class="skill-tag">LangChain</span>
-          <span class="skill-tag">LangGraph</span>
-          <span class="skill-tag">CrewAI</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">Scikit-learn</span>
-          <span class="skill-tag">FAISS</span>
-          <span class="skill-tag">MCP Protocol</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>CI/CD & DevOps</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Jenkins</span>
-          <span class="skill-tag">GitHub Actions</span>
-          <span class="skill-tag">GitLab CI</span>
-          <span class="skill-tag">Azure DevOps</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">n8n Workflows</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Databases & Storage</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">SQLite</span>
-          <span class="skill-tag">Redis</span>
-          <span class="skill-tag">ChromaDB</span>
-          <span class="skill-tag">Weaviate</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Tools & Platforms</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Jira</span>
-          <span class="skill-tag">TestRail</span>
-          <span class="skill-tag">Zephyr Scale</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">Git/GitHub</span>
-          <span class="skill-tag">Allure Reports</span>
-          <span class="skill-tag">Android Studio</span>
-          <span class="skill-tag">Xcode</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Web & Backend</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Flask</span>
-          <span class="skill-tag">Streamlit</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">WebSocket</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Methodologies & Concepts</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Agile/Scrum</span>
-          <span class="skill-tag">BDD/TDD</span>
-          <span class="skill-tag">SDLC/STLC</span>
-          <span class="skill-tag">Page Object Model</span>
-          <span class="skill-tag">ETL Testing</span>
-          <span class="skill-tag">Performance Testing</span>
-          <span class="skill-tag">E2E Testing</span>
-          <span class="skill-tag">API Testing</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Education ────────────────────────────────── -->
-  <section id="education" class="education">
-    <h2>Education</h2>
-    <div class="education-grid">
-      <div class="edu-card">
-        <div class="edu-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="edu-content">
-          <h3>Post-Graduation Diploma in Computer Programming</h3>
-          <span class="edu-school">Seneca College, Toronto, ON</span>
-          <span class="edu-date">Jan 2021 – Dec 2022</span>
-          <div class="edu-courses">
-            <span>Object-Oriented Programming</span>
-            <span>Software Development</span>
-            <span>Web Development</span>
-            <span>Database Management</span>
-            <span>Android Development</span>
-            <span>IBM Computing</span>
-            <span>Linux</span>
-            <span>Microsoft Azure</span>
-          </div>
-        </div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="edu-content">
-          <h3>Bachelor of Technology (Information Technology)</h3>
-          <span class="edu-school">IIMT College of Engineering, Delhi, India</span>
-          <span class="edu-date">Aug 2010 – Jul 2014</span>
-          <p class="edu-note">Equivalent to a Bachelor of Computer Science degree from an Ontario university, as determined by World Education Services in Toronto, ON.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Achievements ─────────────────────────────── -->
-  <section id="achievements" class="achievements">
-    <h2>Key Achievements</h2>
-    <div class="achievements-grid">
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>AI Chatbot Framework</h3>
-        <p>Successfully developed Automation Framework from scratch for AI Chatbot application, demonstrating growth from RF engineering roots.</p>
-      </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3>65% Automation Coverage</h3>
-        <p>Took efforts in moving 65% test cases to automation, significantly saving time and improving testing reliability.</p>
-      </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <h3>80% Fewer Bugs</h3>
-        <p>Documented and resolved blocker issues which led to 80% less bugs in top projects through systematic defect analysis.</p>
-      </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>100+ Staff Trained</h3>
-        <p>Trained and managed a team of more than 100 technical staff, building leadership and mentoring capabilities.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Contact ──────────────────────────────────── -->
-  <section id="contact" class="contact">
-    <h2>Let's Connect</h2>
-    <p class="contact-subtitle">Looking for a QA engineer who builds AI-powered testing systems? Let's talk.</p>
-    <div class="contact-links">
-      <a href="mailto:ydvvipin1793@gmail.com" class="contact-card">
-        <span class="contact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </span>
-        <span class="contact-label">Email</span>
-        <span class="contact-value">ydvvipin1793@gmail.com</span>
-      </a>
-      <a href="tel:+16476769897" class="contact-card">
-        <span class="contact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </span>
-        <span class="contact-label">Phone</span>
-        <span class="contact-value">(647) 676-9897</span>
-      </a>
-      <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="contact-card">
-        <span class="contact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </span>
-        <span class="contact-label">LinkedIn</span>
-        <span class="contact-value">vipin-ydv</span>
-      </a>
-      <a href="https://github.com/YdvVipin" target="_blank" class="contact-card">
-        <span class="contact-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </span>
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value">YdvVipin</span>
-      </a>
-    </div>
-  </section>
-
-  <footer>
+  <!-- Footer -->
+  <footer class="footer" id="contact" role="contentinfo">
     <div class="footer-inner">
-      <p>&copy; 2026 Vipin Yadav. Built with precision.</p>
+      <div class="footer-col">
+        <h3 class="footer-heading">Experience</h3>
+        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">Bright Order Inc.</a>
+        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">Sofbang LLC</a>
+        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">OPPO Mobiles</a>
+        <a href="https://www.linkedin.com/in/vipin-ydv/" class="footer-link">Mobilecomm Technologies</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Key Projects</h3>
+        <a href="https://github.com/YdvVipin" class="footer-link">AI-Enabled QA Platform</a>
+        <a href="https://github.com/YdvVipin" class="footer-link">Multi-Agent Orchestration</a>
+        <a href="https://github.com/YdvVipin" class="footer-link">Playwright BDD Framework</a>
+        <a href="https://github.com/YdvVipin" class="footer-link">RAG Intelligence System</a>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <div class="social-grid">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/YdvVipin" target="_blank" class="social-icon" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </a>
+          <!-- Email -->
+          <a href="mailto:ydvvipin1793@gmail.com" class="social-icon" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+          <!-- Phone -->
+          <a href="tel:+16476769897" class="social-icon" aria-label="Phone">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
+          <!-- Resume -->
+          <a href="https://www.linkedin.com/in/vipin-ydv/" target="_blank" class="social-icon" aria-label="Resume">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 2l5 5h-5V4zm-3 12v-2h4v2h-4zm6-4H8v-2h8v2z"/>
+            </svg>
+          </a>
+          <!-- Location -->
+          <a href="https://maps.google.com/?q=Toronto,Ontario" target="_blank" class="social-icon" aria-label="Toronto, Ontario">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="js/script.js?v=5.0"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
