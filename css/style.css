@@ -1086,161 +1086,308 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* ─── Resume Page ──────────────────────────────── */
-.kc-resume-header {
+/* ─── Resume Page (Reactive Resume - Gengar Style) ─── */
+
+.rv-page {
+  --kc-accent: #6B8E23;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1a1a1a;
 }
 
-.kc-resume-contact {
-  font-size: 0.95rem;
-  color: var(--kc-text2);
-  margin-top: 4px;
-}
-
-.kc-resume-contact a {
-  color: var(--kc-accent);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.kc-resume-contact a:hover { color: var(--kc-accent-light); }
-
-.kc-resume-card {
-  background: var(--kc-surface);
-  border: 1px solid var(--kc-border);
-  border-radius: var(--kc-radius);
-  padding: 28px 32px;
-  margin-bottom: 16px;
-}
-
-.kc-resume-card:last-child { margin-bottom: 0; }
-
-.kc-resume-section-title {
-  font-family: var(--kc-font);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--kc-text);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--kc-accent);
-  display: inline-block;
-}
-
-.kc-resume-job-header {
+.rv-sidebar {
+  width: 34%;
+  flex-shrink: 0;
+  background: #f2f5e8;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.kc-resume-role {
+.rv-header {
+  background: var(--kc-accent);
+  color: #ffffff;
+  padding: 36px 24px 28px;
+}
+
+.rv-name {
   font-family: var(--kc-font);
-  font-size: 1.08rem;
+  font-size: 1.65rem;
   font-weight: 700;
-  color: var(--kc-text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 4px;
 }
 
-.kc-resume-company {
-  font-size: 0.92rem;
-  color: var(--kc-accent);
-  font-weight: 500;
-  margin-top: 2px;
+.rv-headline {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-bottom: 20px;
 }
 
-.kc-resume-date {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--kc-text3);
-  white-space: nowrap;
-  padding: 4px 12px;
-  background: var(--kc-bg);
-  border-radius: 100px;
-  border: 1px solid var(--kc-border);
-}
-
-.kc-resume-list {
-  list-style: none;
+.rv-contact {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.kc-resume-list li {
-  position: relative;
-  padding-left: 16px;
-  font-size: 0.9rem;
-  color: var(--kc-text2);
-  line-height: 1.65;
+.rv-contact__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
 }
 
-.kc-resume-list li::before {
+.rv-contact__item svg { flex-shrink: 0; opacity: 0.8; }
+
+.rv-contact__item a,
+.rv-contact__item span {
+  color: #ffffff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.rv-contact__item a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rv-sidebar > .rv-section { padding: 20px 24px; }
+.rv-sidebar > .rv-section + .rv-section { border-top: 1px solid rgba(107,142,35,0.15); }
+
+.rv-section__title {
+  font-family: var(--kc-font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--kc-accent);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--kc-accent);
+  margin-bottom: 14px;
+}
+
+.rv-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rv-skill-group__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4A6A14;
+  margin-bottom: 5px;
+}
+
+.rv-skill-group__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.rv-skill-group__tags span {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  background: rgba(107,142,35,0.12);
+  border-radius: 3px;
+  color: #2D4308;
+  font-weight: 500;
+}
+
+.rv-edu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rv-edu__degree {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.rv-edu__school {
+  font-size: 0.75rem;
+  color: #4A6A14;
+  font-weight: 500;
+}
+
+.rv-edu__date {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.rv-edu__note {
+  font-size: 0.68rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.rv-main {
+  flex: 1;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rv-summary {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #374151;
+  padding: 16px 18px;
+  background: rgba(107,142,35,0.06);
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.rv-main > .rv-section { margin-bottom: 22px; }
+.rv-main > .rv-section:last-child { margin-bottom: 0; }
+
+.rv-timeline {
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid var(--kc-accent);
+}
+
+.rv-timeline__item {
+  position: relative;
+  padding-bottom: 22px;
+}
+
+.rv-timeline__item:last-child { padding-bottom: 0; }
+
+.rv-timeline__dot {
+  position: absolute;
+  left: -26px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--kc-accent);
+  background: #ffffff;
+}
+
+.rv-timeline__content { padding-left: 4px; }
+
+.rv-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.rv-job-header__company {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rv-job-header__location {
+  font-size: 0.72rem;
+  color: #9ca3af;
+}
+
+.rv-job-header__role {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--kc-accent);
+  text-align: right;
+}
+
+.rv-job-header__date {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  text-align: right;
+}
+
+.rv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+}
+
+.rv-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 0.78rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.rv-list li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 9px;
-  width: 5px;
-  height: 5px;
+  top: 7px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: var(--kc-accent);
 }
 
-.kc-resume-edu-detail {
-  font-size: 0.88rem;
-  color: var(--kc-text2);
-  line-height: 1.6;
-  margin-top: 10px;
+.rv-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-.kc-resume-skills-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.rv-project {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #fafafa;
 }
 
-.kc-resume-skill-group {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
+.rv-project__name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--kc-accent);
+  margin-bottom: 4px;
 }
 
-.kc-resume-skill-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--kc-text);
-  min-width: 170px;
-  flex-shrink: 0;
-  padding-top: 4px;
+.rv-project__desc {
+  font-size: 0.72rem;
+  color: #6b7280;
+  line-height: 1.5;
 }
 
-.kc-resume-skill-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-/* Print styles for resume */
+/* Print */
 @media print {
-  .kc-nav, .kc-footer, .kc-btn { display: none !important; }
-  .kc-section { padding: 16px 0 !important; }
-  .kc-resume-card { break-inside: avoid; border: 1px solid #ddd; box-shadow: none; }
+  .kc-nav, .kc-footer, .kc-btn, button { display: none !important; }
+  .kc-section { padding: 0 !important; }
+  .kc-wrap { max-width: none; padding: 0; }
+  .rv-page { box-shadow: none; border-radius: 0; }
   .kc-fade { opacity: 1 !important; transform: none !important; }
   body { background: #fff; }
 }
 
 @media (max-width: 767px) {
-  .kc-resume-header { flex-direction: column; }
-  .kc-resume-job-header { flex-direction: column; gap: 8px; }
-  .kc-resume-date { align-self: flex-start; }
-  .kc-resume-card { padding: 20px 18px; }
-  .kc-resume-skill-group { flex-direction: column; gap: 6px; }
-  .kc-resume-skill-label { min-width: 0; }
+  .rv-page { flex-direction: column; }
+  .rv-sidebar { width: 100%; }
+  .rv-header { padding: 28px 20px 24px; }
+  .rv-name { font-size: 1.4rem; }
+  .rv-sidebar > .rv-section { padding: 16px 20px; }
+  .rv-main { padding: 24px 20px; }
+  .rv-job-header { flex-direction: column; gap: 4px; }
+  .rv-job-header__role,
+  .rv-job-header__date { text-align: left; }
+  .rv-projects { grid-template-columns: 1fr; }
 }
 
 /* ─── Reduced Motion ────────────────────────────── */
