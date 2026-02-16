@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#0b1220" />
+  <rect x="0" y="0" width="1280" height="720" fill="url(#g)" opacity="0.08" />
+  <g transform="translate(80,160)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700" fill="#ffffff">Playwright BDD</text>
+    <text x="0" y="70" font-family="Inter, Arial, sans-serif" font-size="28" fill="#d1e9f0">BDD + Playwright + Allure reporting — Reliable automation</text>
+  </g>
+  <g transform="translate(880,260)">
+    <circle cx="120" cy="120" r="70" fill="#06b6d4" />
+    <polygon points="105,100 165,120 105,140" fill="#ffffff" />
+  </g>
+  <text x="80" y="640" font-family="Inter, Arial, sans-serif" font-size="18" fill="#9fb4c9">View repo on GitHub • Contact: ydvvipin1793@gmail.com</text>
+</svg>

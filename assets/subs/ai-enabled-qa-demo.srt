@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:04,000
+AI-Enabled QA — GenAI Test Platform
+
+2
+00:00:04,000 --> 00:00:08,000
+Manual test maintenance drains teams and slows releases.
+
+3
+00:00:08,000 --> 00:00:20,000
+This platform uses generative AI to create, prioritize, and self-heal end-to-end tests, plus fast CI integration and reporting.
+
+4
+00:00:20,000 --> 00:00:45,000
+Here we run a generated test: see auto-generated steps, test execution with screenshots, and the automated triage suggestions for failures.
+
+5
+00:00:45,000 --> 00:00:55,000
+Outcome: reduced test debt and improved release velocity.
+
+6
+00:00:55,000 --> 00:01:06,000
+View the project details or contact me to run a pilot.

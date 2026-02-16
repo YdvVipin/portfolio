@@ -1,0 +1,36 @@
+name: Process Demo Videos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  process:
+    name: Process demo videos
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg imagemagick
+
+    - name: Ensure script is executable
+      run: chmod +x ./scripts/process-demo-videos.sh
+
+    - name: Run video processing script
+      run: bash ./scripts/process-demo-videos.sh --crf 23
+      env:
+        TZ: UTC
+
+    - name: List processed outputs
+      run: ls -la assets/videos/processed || true
+
+    - name: Upload processed videos
+      uses: actions/upload-artifact@v4
+      with:
+        name: processed-demo-videos
+        path: assets/videos/processed
+        retention-days: 7

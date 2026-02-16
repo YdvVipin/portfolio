@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">
+  <rect width="100%" height="100%" fill="#071224" />
+  <rect x="0" y="0" width="1280" height="720" fill="#06b6d4" opacity="0.06" />
+  <text x="80" y="220" font-family="Inter, Arial, sans-serif" font-size="52" fill="#ffffff" font-weight="800">AI-Enabled QA</text>
+  <text x="80" y="280" font-family="Inter, Arial, sans-serif" font-size="24" fill="#cfeff6">GenAI-powered test generation & execution</text>
+  <g transform="translate(900,250)">
+    <rect x="0" y="0" width="260" height="160" rx="12" fill="#0b1722" opacity="0.6" />
+    <circle cx="130" cy="80" r="48" fill="#6366f1" />
+    <polygon points="120,68 160,80 120,92" fill="#ffffff" />
+  </g>
+  <text x="80" y="640" font-family="Inter, Arial, sans-serif" font-size="18" fill="#86c5d6">Pilot available • Contact: ydvvipin1793@gmail.com</text>
+</svg>

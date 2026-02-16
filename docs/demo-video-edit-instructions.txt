@@ -1,0 +1,64 @@
+Demo video edit instructions — resources prepared
+
+What I prepared for you in the project folder:
+- assets/posters/*.svg — poster SVG files for each demo (1280x720 SVGs you can convert to PNG locally)
+  - playwright-bdd-framework-poster.svg
+  - ai-enabled-qa-poster.svg
+  - multi-agent-orchestration-poster.svg
+- assets/subs/*.srt — subtitle files (draft voiceover-based SRTs)
+  - playwright-bdd-framework-demo.srt
+  - ai-enabled-qa-demo.srt
+  - multi-agent-orchestration-demo.srt
+- Updated project pages now reference the posters and the SRT download links.
+
+Recommended local toolchain (run on your machine):
+- ffmpeg (latest) — required for video edits and encoding
+- ImageMagick or any image editor (optional) to convert SVG -> PNG posters
+- (Optional) TTS/voiceover tool (ElevenLabs, local TTS) to create voiced narration
+
+High-level edit flow (one-off commands to run for each demo):
+1) Convert SVG poster to PNG (optional, ffmpeg or imagemagick)
+   - Using ImageMagick:
+     convert -density 150 poster.svg -resize 1280x720 poster.png
+   - Using ffmpeg (if imagemagick not available):
+     ffmpeg -y -i poster.svg -vf scale=1280:720 poster.png
+
+2) (Optional) Create short intro/outro clips from a poster image
+   - 3s intro (1280x720, 30fps):
+     ffmpeg -y -loop 1 -i poster.png -c:v libx264 -t 3 -pix_fmt yuv420p -vf "format=yuv420p" intro.mp4
+   - 5s outro (use another poster or same):
+     ffmpeg -y -loop 1 -i poster.png -c:v libx264 -t 5 -pix_fmt yuv420p -vf "format=yuv420p" outro.mp4
+
+3) Concatenate intro + original + outro into a single file (re-encode)
+   - ffmpeg -y -i intro.mp4 -i input.mp4 -i outro.mp4 -filter_complex "[0:v][0:a][1:v][1:a][2:v][2:a]concat=n=3:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k combined.mp4
+   - If your intro/outro lack audio, replace their audio stream with silent one: (ffmpeg -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100)
+
+4) Burn-in subtitles from the prepared SRT file (optional)
+   - ffmpeg -y -i combined.mp4 -vf "subtitles=assets/subs/playwright-bdd-framework-demo.srt:force_style='FontName=Inter,FontSize=20,PrimaryColour=&HFFFFFF&'" -c:a copy combined_subs.mp4
+   - Note: ffmpeg's subtitles filter works well with .srt; if fonts are missing, it uses defaults.
+
+5) Overlay lower-third captions / short callouts at specific times (example)
+   - Example: add a lower-third text between 4s and 12s
+     ffmpeg -y -i combined.mp4 -vf "drawtext=fontfile=/path/to/DejaVuSans-Bold.ttf:text='Brittle tests slow teams down':fontcolor=white:fontsize=28:box=1:boxcolor=black@0.5:boxborderw=8:x=40:y=640:enable='between(t,4,12)'" -c:a copy annotated.mp4
+
+6) Normalize and compress final video
+   - ffmpeg -y -i annotated.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k final_optimized.mp4
+
+7) Optional: burn-in SRT and combine steps in one pipeline
+   - ffmpeg -y -i intro.mp4 -i input.mp4 -i outro.mp4 -filter_complex "[0:v]scale=1280:720,setsar=1[v0];[1:v]scale=1280:720,setsar=1[v1];[2:v]scale=1280:720,setsar=1[v2];[v0][0:a][v1][1:a][v2][2:a]concat=n=3:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" -vf "subtitles=assets/subs/playwright-bdd-framework-demo.srt" -c:v libx264 -crf 23 -preset medium -c:a aac final_with_subs.mp4
+
+Notes & tips:
+- If your machine lacks the exact fonts referenced, use a system font path in the drawtext command (DejaVuSans is common on Linux). Example font path: /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+- For best quality / reasonable file size, use CRF 20-24 (lower number -> higher quality). Adjust bitrate for audio as needed.
+- If you want background music, prepare a music track (loopable, royalty-free), then mix it by adding -i music.mp3 and using -filter_complex to adjust volumes and apply audio ducking when voiceover is present.
+
+Automations & next steps I can do for you (if you run the commands locally or grant a machine with ffmpeg installed):
+- Produce intro/outro videos (animated) and concatenate with originals
+- Burn-in subtitles (SRT) generated from the voiceover scripts
+- Overlay lower-third callouts at scripted timestamps
+- Compress and optimize final files and replace originals in project folder
+- Create optimized poster PNGs converted from SVGs
+
+If you want me to run all edits in this environment, I attempted to install ffmpeg/Pillow, but the workspace does not allow apt or pip installations (permissions blocked). If you can run the commands on your local machine or a VM (or allow me access to a machine with ffmpeg), I’ll run the entire pipeline and push final MP4s back to the repo.
+
+I also prepared SRTs and SVG posters inside assets/ — run the ffmpeg commands above (replace filenames as needed) and send me the resulting files or allow me to pick them up and I will update the portfolio pages with the final optimized videos and thumbnails.

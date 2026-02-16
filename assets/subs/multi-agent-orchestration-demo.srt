@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:04,000
+Multi-Agent Orchestration — Agentic QA
+
+2
+00:00:04,000 --> 00:00:08,000
+Coordinating test workflows across tools is time-consuming.
+
+3
+00:00:08,000 --> 00:00:20,000
+This orchestration layer runs specialized agents to generate tests, triage failures, and trigger remediation workflows across CI and ticketing.
+
+4
+00:00:20,000 --> 00:00:45,000
+Watch an agent-triggered run: agents generate a test, execute it, collect logs, and create a Jira ticket with repro steps.
+
+5
+00:00:45,000 --> 00:00:55,000
+Result: faster resolution and automated context for teams.
+
+6
+00:00:55,000 --> 00:01:06,000
+Contact me to pilot agentic workflows in your pipeline.

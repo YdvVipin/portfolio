@@ -2,6 +2,3 @@
 *.png
 .DS_Store
 .env
-
-# Generated demo videos (too large for git)
-assets/videos/*.mp4
