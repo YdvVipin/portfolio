@@ -1,0 +1,112 @@
+project: playwright-bdd-framework
+title: "Playwright BDD Framework"
+voice: "nova"
+resolution: [1280, 720]
+
+slides:
+  - code_snippet: |
+      # Playwright BDD Framework
+      # TypeScript + Cucumber BDD
+      # 3 AI Agents for Smart Testing
+      # 9-Tier Intelligent Locator System
+    filename: "project-overview.ts"
+    narration: >
+      The Playwright BDD Framework combines TypeScript,
+      Cucumber BDD, and three AI agents
+      with a nine-tier intelligent locator system.
+      It's designed for enterprise-grade test automation.
+    effect: "fade"
+
+  - code_snippet: |
+      // 9-Tier Locator Strategy
+
+      Tier 1: data-testid (most reliable)
+      Tier 2: aria-label / role
+      Tier 3: CSS unique ID
+      Tier 4: Text content match
+      Tier 5: CSS class combination
+      Tier 6: XPath relative
+      Tier 7: Visual proximity
+      Tier 8: AI pattern match
+      Tier 9: AI fallback generation
+
+      // Each tier has a confidence score
+      // System tries Tier 1 first, falls through
+    filename: "locators/strategy.ts"
+    narration: >
+      The nine-tier locator system is the framework's secret weapon.
+      Starting from the most reliable data-testid attributes,
+      falling through to ARIA labels, CSS selectors,
+      text matching, and finally AI-powered pattern matching.
+      Each tier has a confidence score — the system always
+      picks the most reliable locator available.
+    effect: "zoom_in"
+
+  - code_snippet: |
+      // Cucumber BDD Feature
+      Feature: User Authentication
+
+        Scenario: Successful login
+          Given I am on the login page
+          When I enter valid credentials
+            | email    | test@example.com |
+            | password | SecurePass123    |
+          And I click the login button
+          Then I should see the dashboard
+          And the welcome message shows my name
+
+      // Step Definition (TypeScript)
+      Given('I am on the login page', async () => {
+        await page.goto('/login');
+        await locator.find('login-form').waitFor();
+      });
+    filename: "features/auth.feature"
+    narration: >
+      BDD scenarios written in plain English, backed by
+      TypeScript step definitions. The framework integrates
+      the intelligent locator system directly into step definitions.
+      QA engineers write human-readable tests,
+      and the AI handles the element-finding complexity.
+    effect: "typewriter"
+
+  - code_snippet: |
+      // AI Agent Architecture
+
+      Agent 1: Locator Intelligence Agent
+        → Analyzes DOM, selects optimal locator tier
+        → Self-heals broken locators automatically
+
+      Agent 2: Test Data Agent
+        → Generates context-aware test data
+        → Handles edge cases and boundary values
+
+      Agent 3: Report Analysis Agent
+        → Analyzes test failures
+        → Suggests fixes and identifies flaky tests
+    filename: "agents/index.ts"
+    narration: >
+      Three AI agents enhance the framework.
+      A Locator Intelligence agent that selects and heals locators.
+      A Test Data agent that generates smart test data.
+      And a Report Analysis agent that identifies flaky tests
+      and suggests targeted fixes.
+    effect: "pan_right"
+
+  - code_snippet: |
+      # Built with AI-Assisted Development
+
+      # Key Features:
+      #   ✓ TypeScript + Cucumber BDD
+      #   ✓ 9-tier intelligent locator system
+      #   ✓ 3 specialized AI agents
+      #   ✓ Self-healing test locators
+      #   ✓ AI-powered failure analysis
+
+      # github.com/YdvVipin
+    filename: "README.md"
+    narration: >
+      The Playwright BDD Framework proves that AI and traditional
+      testing frameworks can work together beautifully.
+      Nine tiers of locator intelligence, three AI agents,
+      and enterprise-ready BDD — built with AI-assisted development.
+    effect: "zoom_out"

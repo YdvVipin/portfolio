@@ -1,0 +1,137 @@
+project: ai-enabled-qa
+title: "QA Automation AI Enabler"
+voice: "nova"
+resolution: [1280, 720]
+
+slides:
+  - code_snippet: |
+      # QA Automation AI Enabler
+      # 50,000+ Lines of Code
+      # 72 FastAPI Endpoints
+      # 18 Specialized AI Agents
+      # Built with: React + FastAPI + AI/ML
+    filename: "project-overview.py"
+    narration: >
+      Meet QA Automation AI Enabler — my flagship project.
+      Over fifty thousand lines of code, seventy-two FastAPI endpoints,
+      and eighteen specialized AI agents working together
+      to automate the entire QA lifecycle.
+    effect: "fade"
+
+  - code_snippet: |
+      # Architecture: 3-Layer Pipeline
+
+      Layer 1: Browser Recorder (Chrome Extension)
+        → Captures user interactions in real-time
+
+      Layer 2: Deterministic Parser (FastAPI)
+        → Converts raw events to structured actions
+
+      Layer 3: AI Code Generator (Multi-LLM)
+        → Generates production-ready Playwright tests
+    filename: "architecture.md"
+    narration: >
+      The architecture follows a three-layer pipeline.
+      First, a Chrome extension records browser interactions.
+      Then, a deterministic parser structures raw events into actions.
+      Finally, a multi-LLM AI layer generates production-ready
+      Playwright test scripts with self-healing locators.
+    effect: "fade"
+
+  - code_snippet: |
+      @app.post("/api/generate-tests")
+      async def generate_tests(spec: TestSpec):
+          """Generate Playwright tests from recorded actions."""
+          agent = TestGeneratorAgent(
+              model="gpt-4",
+              strategy="deterministic_first"
+          )
+          result = await agent.run(spec)
+          return {"tests": result.code, "confidence": result.score}
+
+      @app.post("/api/self-heal")
+      async def self_heal(broken: BrokenLocator):
+          """AI-powered locator self-healing."""
+          healer = SelfHealingAgent()
+          return await healer.fix(broken)
+    filename: "api/endpoints.py"
+    narration: >
+      Here's a glimpse at the API layer. Each endpoint triggers
+      a specialized AI agent. The test generator uses a
+      deterministic-first strategy — AI only kicks in when
+      rule-based generation isn't confident enough.
+      The self-healing agent automatically fixes broken locators
+      when the UI changes.
+    effect: "typewriter"
+
+  - code_snippet: |
+      class AgentOrchestrator:
+          """Coordinates 18 specialized AI agents."""
+
+          agents = {
+              "test_generator": TestGeneratorAgent,
+              "locator_healer": SelfHealingAgent,
+              "assertion_builder": AssertionAgent,
+              "data_factory": TestDataAgent,
+              "report_analyzer": ReportAnalysisAgent,
+              "code_reviewer": CodeReviewAgent,
+              # ... 12 more specialized agents
+          }
+
+          async def run_pipeline(self, task: QATask):
+              plan = await self.planner.create_plan(task)
+              for step in plan.steps:
+                  agent = self.agents[step.agent_type]()
+                  result = await agent.execute(step)
+                  await self.memory.store(result)
+    filename: "agents/orchestrator.py"
+    narration: >
+      The heart of the system is the Agent Orchestrator.
+      Eighteen specialized agents — from test generation
+      to self-healing locators to intelligent report analysis.
+      Each agent has a focused responsibility, and the orchestrator
+      coordinates them through a planning pipeline with shared memory.
+    effect: "zoom_in"
+
+  - code_snippet: |
+      # React Dashboard
+      # ┌─────────────────────────────────────┐
+      # │  QA AI Enabler         [Settings]   │
+      # ├─────────┬───────────────────────────┤
+      # │ Record  │  Generated Tests     [▶]  │
+      # │ History │  ─────────────────────     │
+      # │         │  test_login.spec.ts        │
+      # │ Agents  │  test_checkout.spec.ts     │
+      # │ Status  │  test_search.spec.ts       │
+      # │         │                             │
+      # │ Reports │  Coverage: 94.2%           │
+      # └─────────┴───────────────────────────┘
+    filename: "dashboard-layout.txt"
+    narration: >
+      The React dashboard brings it all together.
+      Record browser sessions, view generated test scripts,
+      monitor agent status in real-time, and track test coverage.
+      Everything is designed for QA engineers who want
+      AI-powered automation without the complexity.
+    effect: "fade"
+
+  - code_snippet: |
+      # Built with AI-Assisted Development
+      # Using Agentic AI throughout the process
+
+      # This project demonstrates:
+      #   ✓ Full-stack AI integration (React + FastAPI)
+      #   ✓ Multi-agent orchestration (18 agents)
+      #   ✓ Production-ready API design (72 endpoints)
+      #   ✓ Self-healing test automation
+      #   ✓ AI-assisted development workflow
+
+      # github.com/YdvVipin
+    filename: "README.md"
+    narration: >
+      QA Automation AI Enabler was built using AI-assisted
+      development with agentic AI throughout the process.
+      It represents the intersection of QA engineering expertise
+      and modern AI — exactly where testing is headed.
+      Check out the full source code on GitHub.
+    effect: "zoom_out"

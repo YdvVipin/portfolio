@@ -58,6 +58,21 @@
   </div>
 </section>
 
+<!-- Demo Video -->
+<div class="container" style="padding-bottom:40px">
+  <h2 style="font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:16px">Watch It In Action</h2>
+  <div style="position:relative;border-radius:12px;overflow:hidden;background:#0a0a0f;border:1px solid rgba(0,255,255,0.12);box-shadow:0 8px 32px rgba(0,0,0,0.3)">
+    <div style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:.75rem;font-weight:600;background:rgba(0,255,255,0.1);color:var(--cyan);border:1px solid rgba(0,255,255,0.25);backdrop-filter:blur(8px);z-index:3">AI-Generated Demo</div>
+    <video id="demo-video" data-src="../../assets/videos/playwright-bdd-framework-demo.mp4" preload="none" style="width:100%;display:block;border-radius:12px"></video>
+    <div id="demo-poster" onclick="var v=document.getElementById('demo-video');var s=v.dataset.src;if(s&&!v.src){v.src=s;v.load()}v.play();this.style.opacity='0';this.style.pointerEvents='none'" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(10,10,15,0.95),rgba(17,17,25,0.9));cursor:pointer;transition:opacity .4s ease;z-index:2">
+      <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#6366f1);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(6,182,212,0.4)">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:.85rem;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:.05em">Click to play demo</div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="detail-stats">
     <div class="detail-stat"><div class="detail-stat-num">7+</div><div class="detail-stat-label">Test Suites</div></div>

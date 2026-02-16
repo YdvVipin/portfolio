@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   loadGitHubData();
   renderLocalProjects();
+  initVideoPlayers();
 });
 
 // ─── Navigation ───────────────────────────────────
@@ -392,4 +393,77 @@ function getTimeAgo(date) {
 function formatSize(kb) {
   if (kb >= 1024) return `${(kb / 1024).toFixed(1)} MB`;
   return `${kb} KB`;
+}
+
+// ─── Video Player ─────────────────────────────────
+function initVideoPlayers() {
+  document.querySelectorAll('.kc-video').forEach(container => {
+    const video = container.querySelector('video');
+    const poster = container.querySelector('.kc-video__poster');
+    const playPauseBtn = container.querySelector('.kc-video__play-pause');
+    const progress = container.querySelector('.kc-video__progress');
+    const progressBar = container.querySelector('.kc-video__progress-bar');
+    const timeDisplay = container.querySelector('.kc-video__time');
+
+    if (!video) return;
+
+    // Click poster to play (lazy load)
+    if (poster) {
+      poster.addEventListener('click', () => {
+        const src = video.dataset.src;
+        if (src && !video.src) {
+          video.src = src;
+          video.load();
+        }
+        video.play();
+        poster.classList.add('hidden');
+      });
+    }
+
+    // Play/Pause toggle
+    if (playPauseBtn) {
+      playPauseBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          if (poster) poster.classList.add('hidden');
+        } else {
+          video.pause();
+        }
+      });
+    }
+
+    // Progress bar update
+    video.addEventListener('timeupdate', () => {
+      if (video.duration) {
+        const pct = (video.currentTime / video.duration) * 100;
+        if (progressBar) progressBar.style.width = pct + '%';
+        if (timeDisplay) {
+          const cur = formatVideoTime(video.currentTime);
+          const dur = formatVideoTime(video.duration);
+          timeDisplay.textContent = cur + ' / ' + dur;
+        }
+      }
+    });
+
+    // Click progress bar to seek
+    if (progress) {
+      progress.addEventListener('click', (e) => {
+        const rect = progress.getBoundingClientRect();
+        const pct = (e.clientX - rect.left) / rect.width;
+        video.currentTime = pct * video.duration;
+      });
+    }
+
+    // Reset on end
+    video.addEventListener('ended', () => {
+      if (poster) poster.classList.remove('hidden');
+      if (progressBar) progressBar.style.width = '0%';
+    });
+  });
+}
+
+function formatVideoTime(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return m + ':' + (s < 10 ? '0' : '') + s;
 }
