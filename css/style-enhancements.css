@@ -64,6 +64,14 @@
 :root.kc-theme--dark .kc-card__desc {
   color: #9ca3af;
 }
+:root.kc-theme--dark .kc-btn--outline {
+  color: #e5e7eb;
+  border-color: rgba(148,163,184,0.4);
+}
+:root.kc-theme--dark .kc-btn--outline:hover {
+  color: #a5b4fc;
+  border-color: #6366F1;
+}
 
 /* Hero card / glass effect */
 .kc-hero__content {
@@ -147,4 +155,164 @@
 }
 .kc-footer__social:hover {
   color: #e5e7eb;
+}
+
+/* ─── Journey / Milestone Roadmap ──────────────── */
+.kc-journey__item {
+  display: flex;
+  gap: 24px;
+  padding-bottom: 56px;
+}
+
+.kc-journey__item:last-child {
+  padding-bottom: 0;
+}
+
+.kc-journey__marker-col {
+  position: relative;
+  width: 56px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.kc-journey__marker-col::after {
+  content: "";
+  position: absolute;
+  top: 56px;
+  bottom: -56px;
+  left: 50%;
+  width: 2px;
+  background: var(--kc-border);
+  transform: translateX(-50%);
+}
+
+.kc-journey__item:last-child .kc-journey__marker-col::after {
+  display: none;
+}
+
+.kc-journey__marker {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--kc-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  box-shadow: var(--kc-shadow-md);
+  z-index: 1;
+}
+
+.kc-journey__card {
+  flex: 1;
+  background: var(--kc-surface);
+  border: 1px solid var(--kc-border);
+  border-radius: var(--kc-radius);
+  padding: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kc-journey__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--kc-shadow-lg);
+}
+
+.kc-journey__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.kc-journey__date {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--kc-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kc-journey__location {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--kc-text3);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.kc-journey__role {
+  font-family: var(--kc-font);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--kc-text);
+  margin-bottom: 2px;
+}
+
+.kc-journey__company {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--kc-text2);
+  margin-bottom: 14px;
+}
+
+.kc-journey__desc {
+  font-size: 0.95rem;
+  color: var(--kc-text2);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.kc-journey__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* "Now" milestone — highlighted */
+.kc-journey__item--now .kc-journey__marker {
+  background: linear-gradient(135deg, var(--kc-accent), var(--kc-secondary));
+  box-shadow: 0 0 0 6px rgba(99,102,241,0.12), var(--kc-shadow-md);
+}
+
+.kc-journey__item--now .kc-journey__card {
+  border-color: var(--kc-accent-light);
+  background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(236,72,153,0.04));
+}
+
+.kc-journey__item--now .kc-hero__tag {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 640px) {
+  .kc-journey__item { gap: 16px; padding-bottom: 40px; }
+  .kc-journey__marker-col,
+  .kc-journey__marker { width: 44px; height: 44px; }
+  .kc-journey__marker { font-size: 1.1rem; }
+  .kc-journey__marker-col::after { top: 44px; bottom: -40px; }
+  .kc-journey__card { padding: 20px; }
+  .kc-journey__role { font-size: 1.05rem; }
+}
+
+:root.kc-theme--dark .kc-journey__card {
+  background: #020617;
+  border-color: rgba(51,65,85,0.9);
+}
+:root.kc-theme--dark .kc-journey__desc,
+:root.kc-theme--dark .kc-journey__company {
+  color: #9ca3af;
+}
+:root.kc-theme--dark .kc-journey__role {
+  color: #e5e7eb;
+}
+:root.kc-theme--dark .kc-journey__marker-col::after {
+  background: rgba(51,65,85,0.9);
+}
+:root.kc-theme--dark .kc-journey__item--now .kc-journey__card {
+  background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(236,72,153,0.08));
+  border-color: rgba(99,102,241,0.5);
 }
