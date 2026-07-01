@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ydvvipin.github.io/portfolio/sitemap.xml
