@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Agent Orchestration - Vipin Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/detail-compat.css">
+<style>
+.detail-hero { padding: 140px 24px 60px; text-align: center; }
+.detail-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: var(--text); }
+.detail-hero .grad { background: linear-gradient(135deg, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-hero p { font-size: 1.05rem; color: var(--text2); max-width: 620px; margin: 0 auto 32px; }
+.detail-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(99,102,241,0.08); margin-bottom: 60px; }
+.detail-stat { background: var(--bg2); padding: 24px 16px; text-align: center; }
+.detail-stat-num { font-size: 1.5rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-stat-label { font-size: 0.75rem; color: var(--text3); margin-top: 4px; }
+.detail-section { padding: 60px 0; }
+.detail-section h2 { font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.detail-section .subtitle { font-size: 1rem; color: var(--text2); margin-bottom: 32px; max-width: 640px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.detail-card { padding: 24px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); }
+.detail-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--accent2); }
+.detail-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.pill { padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500; background: var(--bg3); border: 1px solid rgba(255,255,255,0.05); color: var(--text); }
+.agent-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 24px; }
+.agent-card { padding: 20px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+.agent-card .agent-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: var(--accent2); margin-bottom: 6px; }
+.agent-card h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.agent-card p { font-size: 0.78rem; color: var(--text3); line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="tech-bg"></div>
+
+<header>
+  <nav>
+    <a href="../../index.html#projects" class="nav-brand" style="text-decoration:none">&larr; Portfolio</a>
+    <ul><li><a href="#agents">Agents</a></li><li><a href="#features">Features</a></li><li><a href="#tech">Tech</a></li></ul>
+  </nav>
+</header>
+
+<section class="detail-hero">
+  <div class="container">
+    <h1>Multi-Agent<br><span class="grad">QA Orchestration</span></h1>
+    <p>AI-powered platform orchestrating specialized agents for end-to-end QA automation. Features browser recording, MCP agent communication, A2A orchestration, self-healing tests, and a Streamlit analytics dashboard.</p>
+  </div>
+</section>
+
+<!-- Demo Video -->
+<div class="container" style="padding-bottom:40px">
+  <h2 style="font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:16px">Watch It In Action</h2>
+  <div style="position:relative;border-radius:12px;overflow:hidden;background:#0a0a0f;border:1px solid rgba(99,102,241,0.12);box-shadow:0 8px 32px rgba(0,0,0,0.3)">
+    <div style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:.75rem;font-weight:600;background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.25);backdrop-filter:blur(8px);z-index:3">AI-Generated Demo</div>
+    <video id="demo-video" poster="../../assets/posters/multi-agent-orchestration-poster.svg" data-src="../../assets/videos/multi-agent-orchestration-demo.mp4" preload="none" style="width:100%;display:block;border-radius:12px"></video>
+    <div id="demo-poster" onclick="var v=document.getElementById('demo-video');var s=v.dataset.src;if(s&&!v.src){v.src=s;v.load()}v.play();this.style.opacity='0';this.style.pointerEvents='none'" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(10,10,15,0.95),rgba(17,17,25,0.9));cursor:pointer;transition:opacity .4s ease;z-index:2">
+      <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6,#ec4899);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(99,102,241,0.4)">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:.85rem;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:.05em">Click to play demo</div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;padding:12px 16px;background:transparent">
+      <a href="../../assets/subs/multi-agent-orchestration-demo.srt" download style="color:var(--accent2);text-decoration:underline">Download subtitles (SRT)</a>
+      <a href="../../assets/videos/multi-agent-orchestration-demo.mp4" style="color:var(--accent2);text-decoration:underline" target="_blank">Download original demo</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="detail-stats">
+    <div class="detail-stat"><div class="detail-stat-num">50%</div><div class="detail-stat-label">Faster Test Cycles</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">40%</div><div class="detail-stat-label">Fewer Escaped Defects</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">70%</div><div class="detail-stat-label">Less Manual QA</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">MCP</div><div class="detail-stat-label">Agent Protocol</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">A2A</div><div class="detail-stat-label">Agent-to-Agent</div></div>
+  </div>
+</div>
+
+<section class="detail-section" id="agents">
+  <div class="container">
+    <h2>Agent Architecture</h2>
+    <p class="subtitle">Specialized AI agents communicating via MCP for comprehensive QA coverage.</p>
+    <div class="agent-flow">
+      <div class="agent-card"><div class="agent-num">AGENT</div><h5>Test Generator</h5><p>Generates BDD/Gherkin scenarios and Playwright/Selenium scripts from requirements.</p></div>
+      <div class="agent-card"><div class="agent-num">AGENT</div><h5>Script Builder</h5><p>Converts generated test cases into executable automation scripts with proper locators.</p></div>
+      <div class="agent-card"><div class="agent-num">AGENT</div><h5>Test Executor</h5><p>Runs test suites, captures results, screenshots, and execution metrics.</p></div>
+      <div class="agent-card"><div class="agent-num">AGENT</div><h5>Self-Healer</h5><p>Detects and fixes broken tests automatically using AI analysis.</p></div>
+      <div class="agent-card"><div class="agent-num">AGENT</div><h5>Bug Predictor</h5><p>Analyzes code changes to predict high-risk areas and prioritize testing.</p></div>
+      <div class="agent-card"><div class="agent-num">AGENT</div><h5>Reporter</h5><p>Generates comprehensive analytics, coverage reports, and trend analysis.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="features" style="background:var(--bg2)">
+  <div class="container">
+    <h2>Key Features</h2>
+    <div class="detail-grid">
+      <div class="detail-card"><h4>Browser Recording</h4><p>Record browser interactions and convert them to test scripts. Supports clicks, inputs, navigation, and complex user flows.</p></div>
+      <div class="detail-card"><h4>MCP Protocol</h4><p>Model Context Protocol for standardized agent communication. Each agent exposes tools and resources via JSON-RPC.</p></div>
+      <div class="detail-card"><h4>A2A Orchestration</h4><p>Agent-to-Agent communication for complex multi-step QA workflows. Agents delegate tasks and share context.</p></div>
+      <div class="detail-card"><h4>Streamlit Dashboard</h4><p>Real-time analytics dashboard with test metrics, agent status, coverage visualizations, and execution history.</p></div>
+      <div class="detail-card"><h4>Docker Deployment</h4><p>Containerized microservice architecture with Docker Compose. PostgreSQL, FastAPI, and agent services.</p></div>
+      <div class="detail-card"><h4>Self-Healing Tests</h4><p>AI-powered automatic repair of failing tests. Broken selectors, timing issues, and assertion mismatches fixed on the fly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="tech">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <div class="tech-pills">
+      <span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Claude API</span><span class="pill">LangGraph</span><span class="pill">CrewAI</span><span class="pill">MCP Protocol</span><span class="pill">Playwright</span><span class="pill">Selenium</span><span class="pill">PostgreSQL</span><span class="pill">Docker</span><span class="pill">Streamlit</span><span class="pill">WebSocket</span><span class="pill">Prometheus</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><p style="font-size:.82rem;color:var(--text3)">&copy; 2026 Vipin Yadav</p></div></footer>
+<script src="../../js/script.js"></script>
+</body>
+</html>

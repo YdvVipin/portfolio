@@ -1,0 +1,1 @@
+Required fields: ['id', 'name', 'is_main_series']

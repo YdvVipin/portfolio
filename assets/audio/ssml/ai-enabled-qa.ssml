@@ -1,0 +1,7 @@
+<speak>
+  <prosody rate="medium">This is the AI-Enabled QA Enabler — a platform that turns browser recordings into enterprise-grade automated tests in seconds.</prosody>
+  <break time="200ms"/>
+  <prosody rate="medium">It uses a three-layer pipeline: a deterministic selector resolver, a template-based Playwright code builder, and an AI polish layer for edge cases. Multi-LLM enrichment adds smart assertions and BDD scenarios where helpful.</prosody>
+  <break time="200ms"/>
+  <prosody rate="medium">Results are stored in a pattern database so fixes improve future tests. Jira integration and a dashboard make automation actionable for teams.</prosody>
+</speak>

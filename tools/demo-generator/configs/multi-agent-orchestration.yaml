@@ -1,0 +1,124 @@
+project: multi-agent-orchestration
+title: "Multi-Agent Orchestration System"
+voice: "nova"
+resolution: [1280, 720]
+
+slides:
+  - code_snippet: |
+      # Multi-Agent Orchestration System
+      # 5 Specialized AI Agents
+      # 5 MCP (Model Context Protocol) Servers
+      # Built with: CrewAI + LangChain + MCP
+    filename: "project-overview.py"
+    narration: >
+      This is my Multi-Agent Orchestration System.
+      Five specialized AI agents coordinated through
+      five MCP servers, built on CrewAI and LangChain.
+      It demonstrates how multiple AI agents can collaborate
+      on complex tasks autonomously.
+    effect: "fade"
+
+  - code_snippet: |
+      # Agent Architecture
+
+      Agent 1: Research Agent
+        → Gathers and synthesizes information
+        → Tools: Web search, document parsing
+
+      Agent 2: Analysis Agent
+        → Processes and evaluates data
+        → Tools: Data analysis, pattern matching
+
+      Agent 3: Code Agent
+        → Generates and reviews code
+        → Tools: Code execution, linting
+
+      Agent 4: QA Agent
+        → Tests and validates outputs
+        → Tools: Test runner, assertion engine
+
+      Agent 5: Orchestrator Agent
+        → Plans and delegates to other agents
+        → Tools: Task planner, memory store
+    filename: "agents/README.md"
+    narration: >
+      Five agents, each with a clear specialty.
+      Research, Analysis, Code Generation, QA Validation,
+      and an Orchestrator that plans and delegates.
+      Each agent has its own toolset and communicates
+      through the Model Context Protocol.
+    effect: "zoom_in"
+
+  - code_snippet: |
+      from crewai import Agent, Task, Crew
+      from langchain.tools import Tool
+
+      research_agent = Agent(
+          role="Research Specialist",
+          goal="Gather comprehensive information",
+          tools=[web_search, doc_parser],
+          llm=ChatOpenAI(model="gpt-4")
+      )
+
+      crew = Crew(
+          agents=[research, analysis, coder, qa, orchestrator],
+          tasks=task_pipeline,
+          process=Process.hierarchical,
+          manager_llm=ChatOpenAI(model="gpt-4")
+      )
+
+      result = crew.kickoff()
+    filename: "orchestration/crew.py"
+    narration: >
+      The implementation uses CrewAI's hierarchical process.
+      A manager LLM coordinates the crew, delegating tasks
+      based on each agent's specialization.
+      LangChain provides the tool integrations and
+      chain-of-thought reasoning capabilities.
+    effect: "typewriter"
+
+  - code_snippet: |
+      # MCP Server Architecture
+
+      Server 1: File System Server
+        → Read/write project files
+
+      Server 2: Database Server
+        → Query and store structured data
+
+      Server 3: API Server
+        → External API integrations
+
+      Server 4: Code Execution Server
+        → Sandboxed code runner
+
+      Server 5: Memory Server
+        → Shared context and state
+    filename: "mcp/servers.md"
+    narration: >
+      Five MCP servers provide the infrastructure layer.
+      File system access, database operations, external APIs,
+      sandboxed code execution, and a shared memory server.
+      This separation of concerns makes the system
+      modular and secure.
+    effect: "pan_left"
+
+  - code_snippet: |
+      # Built with AI-Assisted Development
+      # Using Agentic AI (CrewAI + LangChain)
+
+      # Key Achievements:
+      #   ✓ 5 autonomous AI agents
+      #   ✓ 5 MCP protocol servers
+      #   ✓ Hierarchical task delegation
+      #   ✓ Shared memory and context
+      #   ✓ Production-ready architecture
+
+      # github.com/YdvVipin
+    filename: "README.md"
+    narration: >
+      This project showcases production-grade multi-agent
+      architecture. Five agents working together through
+      the Model Context Protocol — this is the future
+      of AI-powered software engineering.
+    effect: "zoom_out"

@@ -1,0 +1,79 @@
+<testsuite name="abilities_api.Abilities API Testing" tests="5" errors="0" failures="0" skipped="0" time="0.406268" timestamp="2025-12-27T18:19:02.641361" hostname="Mac"><testcase classname="abilities_api.Abilities API Testing" name="Get ability by valid identifier -- @1.1 " status="passed" time="0.10616"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.1 
+    Given the Pokemon API is available ... passed in 0.000s
+    When I request ability with identifier "1" ... passed in 0.098s
+    Then the response status should be 200 ... passed in 0.002s
+    And the response time should be less than 5 seconds ... passed in 0.002s
+    And the response should contain valid ability data ... passed in 0.003s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="abilities_api.Abilities API Testing" name="Get ability by valid identifier -- @1.2 " status="passed" time="0.079928"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.2 
+    Given the Pokemon API is available ... passed in 0.000s
+    When I request ability with identifier "stench" ... passed in 0.074s
+    Then the response status should be 200 ... passed in 0.001s
+    And the response time should be less than 5 seconds ... passed in 0.001s
+    And the response should contain valid ability data ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="abilities_api.Abilities API Testing" name="Get ability by valid identifier -- @1.3 " status="passed" time="0.071591"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.3 
+    Given the Pokemon API is available ... passed in 0.000s
+    When I request ability with identifier "2" ... passed in 0.066s
+    Then the response status should be 200 ... passed in 0.001s
+    And the response time should be less than 5 seconds ... passed in 0.001s
+    And the response should contain valid ability data ... passed in 0.004s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="abilities_api.Abilities API Testing" name="Get ability by valid identifier -- @1.4 " status="passed" time="0.075968"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.4 
+    Given the Pokemon API is available ... passed in 0.001s
+    When I request ability with identifier "drizzle" ... passed in 0.070s
+    Then the response status should be 200 ... passed in 0.001s
+    And the response time should be less than 5 seconds ... passed in 0.001s
+    And the response should contain valid ability data ... passed in 0.003s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="abilities_api.Abilities API Testing" name="Validate ability response structure" status="passed" time="0.072621"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @validation
+  Scenario: Validate ability response structure
+    Given the Pokemon API is available ... passed in 0.001s
+    When I request ability with identifier "stench" ... passed in 0.071s
+    Then the response status should be 200 ... passed in 0.000s
+    And the ability response should contain required fields ... passed in 0.000s
+      | field          |
+      | id             |
+      | name           |
+      | is_main_series |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

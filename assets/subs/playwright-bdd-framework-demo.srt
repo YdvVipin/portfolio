@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:04,000
+Playwright BDD — Test Framework
+
+2
+00:00:04,000 --> 00:00:08,000
+Brittle tests slow teams down and block releases.
+
+3
+00:00:08,000 --> 00:00:20,000
+This framework combines Playwright and Cucumber BDD with accessibility checks and Allure reporting for readable, reliable automation.
+
+4
+00:00:20,000 --> 00:00:45,000
+Watch a smoke run: tests execute in parallel, screenshots and traces are recorded, and failures are presented with detailed traces for fast debugging.
+
+5
+00:00:45,000 --> 00:00:55,000
+Result: faster CI feedback and fewer production regressions.
+
+6
+00:00:55,000 --> 00:01:06,000
+See the repo on GitHub or contact me for a demo (ydvvipin1793@gmail.com).

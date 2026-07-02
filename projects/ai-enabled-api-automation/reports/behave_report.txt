@@ -1,0 +1,232 @@
+Feature: Abilities API Testing # features/abilities_api.feature:1
+  As a Pokemon API user
+  I want to retrieve ability information
+  So that I can access ability data reliably
+  Background:   # features/abilities_api.feature:6
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.1   # features/abilities_api.feature:18
+    Given the Pokemon API is available                        # features/steps/pokemon_steps.py:6
+    When I request ability with identifier "1"                # features/steps/pokemon_steps.py:34
+    Then the response status should be 200                    # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds       # features/steps/pokemon_steps.py:80
+    And the response should contain valid ability data        # features/steps/pokemon_steps.py:97
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.2   # features/abilities_api.feature:19
+    Given the Pokemon API is available                        # features/steps/pokemon_steps.py:6
+    When I request ability with identifier "stench"           # features/steps/pokemon_steps.py:34
+    Then the response status should be 200                    # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds       # features/steps/pokemon_steps.py:80
+    And the response should contain valid ability data        # features/steps/pokemon_steps.py:97
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.3   # features/abilities_api.feature:20
+    Given the Pokemon API is available                        # features/steps/pokemon_steps.py:6
+    When I request ability with identifier "2"                # features/steps/pokemon_steps.py:34
+    Then the response status should be 200                    # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds       # features/steps/pokemon_steps.py:80
+    And the response should contain valid ability data        # features/steps/pokemon_steps.py:97
+
+  @smoke
+  Scenario Outline: Get ability by valid identifier -- @1.4   # features/abilities_api.feature:21
+    Given the Pokemon API is available                        # features/steps/pokemon_steps.py:6
+    When I request ability with identifier "drizzle"          # features/steps/pokemon_steps.py:34
+    Then the response status should be 200                    # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds       # features/steps/pokemon_steps.py:80
+    And the response should contain valid ability data        # features/steps/pokemon_steps.py:97
+
+  @validation
+  Scenario: Validate ability response structure             # features/abilities_api.feature:24
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request ability with identifier "stench"         # features/steps/pokemon_steps.py:34
+    Then the response status should be 200                  # features/steps/pokemon_steps.py:71
+    And the ability response should contain required fields # features/steps/pokemon_steps.py:130
+      | field          |
+      | id             |
+      | name           |
+      | is_main_series |
+
+Feature: API Performance Testing # features/performance.feature:1
+  As a Pokemon API user
+  I want the API to respond quickly
+  So that I have a good user experience
+  Background:   # features/performance.feature:6
+
+  @performance
+  Scenario: Single Pokemon request performance          # features/performance.feature:10
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "pikachu"          # features/steps/pokemon_steps.py:20
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 2 seconds # features/steps/pokemon_steps.py:80
+
+  @performance
+  Scenario Outline: Multiple endpoint performance -- @1.1   # features/performance.feature:23
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request "pokemon" with identifier "1"            # features/steps/pokemon_steps.py:41
+    Then the response status should be 200                  # features/steps/pokemon_steps.py:71
+    And the response time should be less than 3 seconds     # features/steps/pokemon_steps.py:80
+
+  @performance
+  Scenario Outline: Multiple endpoint performance -- @1.2   # features/performance.feature:24
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request "ability" with identifier "1"            # features/steps/pokemon_steps.py:41
+    Then the response status should be 200                  # features/steps/pokemon_steps.py:71
+    And the response time should be less than 3 seconds     # features/steps/pokemon_steps.py:80
+
+  @performance
+  Scenario Outline: Multiple endpoint performance -- @1.3   # features/performance.feature:25
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request "item" with identifier "1"               # features/steps/pokemon_steps.py:41
+    Then the response status should be 200                  # features/steps/pokemon_steps.py:71
+    And the response time should be less than 3 seconds     # features/steps/pokemon_steps.py:80
+
+  @performance
+  Scenario: Pokemon list pagination performance             # features/performance.feature:28
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request Pokemon list with limit 100 and offset 0 # features/steps/pokemon_steps.py:27
+    Then the response status should be 200                  # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds     # features/steps/pokemon_steps.py:80
+    And the response should contain 100 Pokemon entries     # features/steps/pokemon_steps.py:153
+
+Feature: Pokemon API Testing # features/pokemon_api.feature:1
+  As a Pokemon API user
+  I want to retrieve Pokemon information
+  So that I can access Pokemon data reliably
+  Background:   # features/pokemon_api.feature:6
+
+  @smoke
+  Scenario Outline: Get Pokemon by valid ID -- @1.1     # features/pokemon_api.feature:19
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with ID "1"                  # features/steps/pokemon_steps.py:13
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds # features/steps/pokemon_steps.py:80
+    And the response should contain valid Pokemon data  # features/steps/pokemon_steps.py:89
+    And the Pokemon ID should be 1                      # features/steps/pokemon_steps.py:105
+
+  @smoke
+  Scenario Outline: Get Pokemon by valid ID -- @1.2     # features/pokemon_api.feature:20
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with ID "25"                 # features/steps/pokemon_steps.py:13
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds # features/steps/pokemon_steps.py:80
+    And the response should contain valid Pokemon data  # features/steps/pokemon_steps.py:89
+    And the Pokemon ID should be 25                     # features/steps/pokemon_steps.py:105
+
+  @smoke
+  Scenario Outline: Get Pokemon by valid ID -- @1.3     # features/pokemon_api.feature:21
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with ID "150"                # features/steps/pokemon_steps.py:13
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds # features/steps/pokemon_steps.py:80
+    And the response should contain valid Pokemon data  # features/steps/pokemon_steps.py:89
+    And the Pokemon ID should be 150                    # features/steps/pokemon_steps.py:105
+
+  @smoke
+  Scenario Outline: Get Pokemon by valid name -- @1.1   # features/pokemon_api.feature:33
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "pikachu"          # features/steps/pokemon_steps.py:20
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds # features/steps/pokemon_steps.py:80
+    And the response should contain valid Pokemon data  # features/steps/pokemon_steps.py:89
+    And the Pokemon name should be "pikachu"            # features/steps/pokemon_steps.py:113
+
+  @smoke
+  Scenario Outline: Get Pokemon by valid name -- @1.2   # features/pokemon_api.feature:34
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "charizard"        # features/steps/pokemon_steps.py:20
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds # features/steps/pokemon_steps.py:80
+    And the response should contain valid Pokemon data  # features/steps/pokemon_steps.py:89
+    And the Pokemon name should be "charizard"          # features/steps/pokemon_steps.py:113
+
+  @smoke
+  Scenario Outline: Get Pokemon by valid name -- @1.3   # features/pokemon_api.feature:35
+    Given the Pokemon API is available                  # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "mewtwo"           # features/steps/pokemon_steps.py:20
+    Then the response status should be 200              # features/steps/pokemon_steps.py:71
+    And the response time should be less than 5 seconds # features/steps/pokemon_steps.py:80
+    And the response should contain valid Pokemon data  # features/steps/pokemon_steps.py:89
+    And the Pokemon name should be "mewtwo"             # features/steps/pokemon_steps.py:113
+
+  @negative
+  Scenario Outline: Get Pokemon with invalid ID -- @1.1   # features/pokemon_api.feature:44
+    Given the Pokemon API is available                    # features/steps/pokemon_steps.py:6
+    When I request Pokemon with ID "0"                    # features/steps/pokemon_steps.py:13
+    Then the response status should be 404                # features/steps/pokemon_steps.py:71
+
+  @negative
+  Scenario Outline: Get Pokemon with invalid ID -- @1.2   # features/pokemon_api.feature:45
+    Given the Pokemon API is available                    # features/steps/pokemon_steps.py:6
+    When I request Pokemon with ID "-1"                   # features/steps/pokemon_steps.py:13
+    Then the response status should be 404                # features/steps/pokemon_steps.py:71
+
+  @negative
+  Scenario Outline: Get Pokemon with invalid ID -- @1.3   # features/pokemon_api.feature:46
+    Given the Pokemon API is available                    # features/steps/pokemon_steps.py:6
+    When I request Pokemon with ID "99999"                # features/steps/pokemon_steps.py:13
+    Then the response status should be 404                # features/steps/pokemon_steps.py:71
+
+  @negative
+  Scenario Outline: Get Pokemon with invalid name -- @1.1   # features/pokemon_api.feature:55
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "invalidpokemon"       # features/steps/pokemon_steps.py:20
+    Then the response status should be 404                  # features/steps/pokemon_steps.py:71
+
+  @negative
+  Scenario Outline: Get Pokemon with invalid name -- @1.2   # features/pokemon_api.feature:56
+    Given the Pokemon API is available                      # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "123abc"               # features/steps/pokemon_steps.py:20
+    Then the response status should be 404                  # features/steps/pokemon_steps.py:71
+
+  @validation
+  Scenario: Validate Pokemon response structure      # features/pokemon_api.feature:59
+    Given the Pokemon API is available               # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "pikachu"       # features/steps/pokemon_steps.py:20
+    Then the response status should be 200           # features/steps/pokemon_steps.py:71
+    And the response should contain required fields  # features/steps/pokemon_steps.py:121
+      | field     |
+      | id        |
+      | name      |
+      | height    |
+      | weight    |
+      | abilities |
+      | types     |
+    And the Pokemon should have at least one ability # features/steps/pokemon_steps.py:139
+    And the Pokemon should have at least one type    # features/steps/pokemon_steps.py:146
+
+  @integration
+  Scenario: Pokemon evolution chain integration                # features/pokemon_api.feature:74
+    Given the Pokemon API is available                         # features/steps/pokemon_steps.py:6
+    When I request Pokemon with name "pikachu"                 # features/steps/pokemon_steps.py:20
+    Then the response status should be 200                     # features/steps/pokemon_steps.py:71
+    When I get the species information for the Pokemon         # features/steps/pokemon_steps.py:53
+    Then the response status should be 200                     # features/steps/pokemon_steps.py:71
+    When I get the evolution chain for the species             # features/steps/pokemon_steps.py:62
+      Traceback (most recent call last):
+        File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^
+        File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/allure_commons/_allure.py", line 192, in impl
+          return func(*a, **kw)
+        File "features/steps/pokemon_steps.py", line 67, in step_get_evolution_chain
+          evolution_url = species_data["evolution_chain"]["url"]
+                          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+      KeyError: 'evolution_chain'
+      
+      Captured logging:
+      INFO:api_client:GET request to: https://pokeapi.co/api/v2/pokemon/pikachu
+      INFO:api_client:Response status: 200
+      INFO:utils.bdd_utils:Endpoint: pokemon/pikachu
+      INFO:utils.bdd_utils:Status Code: 200
+      INFO:utils.bdd_utils:Response Time: 0.07s
+      INFO:utils.bdd_utils:Response Size: 260644 bytes
+      INFO:api_client:GET request to: https://pokeapi.co/api/v2/pokemon-species/25
+      INFO:api_client:Response status: 200
+
+    Then the response status should be 200                     # None
+    And the evolution chain should contain species information # None
+

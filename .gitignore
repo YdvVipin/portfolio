@@ -1,0 +1,9 @@
+.playwright-mcp/
+*.png
+!assets/og-image.png
+.DS_Store
+.env
+.idea/
+__pycache__/
+.pytest_cache/
+.venv/

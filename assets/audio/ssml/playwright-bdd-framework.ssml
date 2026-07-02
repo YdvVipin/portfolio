@@ -1,0 +1,17 @@
+<speak>
+  <prosody rate="medium" pitch="medium">
+    Welcome — this is the Playwright BDD Framework demo. Record interactions once and produce production-ready Playwright tests with robust locators and BDD scenarios.
+  </prosody>
+  <break time="200ms"/>
+  <prosody rate="medium">
+    Our deterministic-first engine resolves selectors with a nine-tier priority chain, uses native Playwright locators like getByTestId and getByRole, and produces readable TypeScript test files ready for CI.
+  </prosody>
+  <break time="200ms"/>
+  <prosody rate="medium">
+    The framework includes retry logic, page object patterns, and self-healing fallbacks so tests survive UI changes.
+  </prosody>
+  <break time="150ms"/>
+  <prosody rate="medium" volume="loud">
+    See the repo and try the demo — links in the description.
+  </prosody>
+</speak>
