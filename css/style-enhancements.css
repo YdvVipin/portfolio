@@ -316,3 +316,109 @@
   background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(236,72,153,0.08));
   border-color: rgba(99,102,241,0.5);
 }
+
+/* Connector line draws in as each milestone scrolls into view */
+.kc-journey__item .kc-journey__marker-col::after {
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  transition: transform 0.9s ease-out 0.25s;
+}
+
+.kc-journey__item.kc-fade--visible .kc-journey__marker-col::after {
+  transform: translateX(-50%) scaleY(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kc-journey__item .kc-journey__marker-col::after {
+    transform: translateX(-50%) scaleY(1);
+    transition: none;
+  }
+}
+
+/* Key metrics highlighted inside journey narrative */
+.kc-journey__desc strong {
+  color: var(--kc-accent);
+  font-weight: 600;
+}
+
+/* Related-work links inside a milestone card */
+.kc-journey__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--kc-border);
+}
+
+.kc-journey__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--kc-accent);
+  transition: color 0.2s;
+}
+
+.kc-journey__links a:hover {
+  color: var(--kc-accent-light);
+}
+
+:root.kc-theme--dark .kc-journey__links {
+  border-top-color: rgba(51,65,85,0.9);
+}
+
+/* ─── Homepage Journey Teaser ──────────────────── */
+.kc-jt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.kc-jt__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--kc-surface);
+  border: 1px solid var(--kc-border);
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--kc-text2);
+  box-shadow: var(--kc-shadow);
+  white-space: nowrap;
+}
+
+.kc-jt__chip--now {
+  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(236,72,153,0.06));
+  border-color: var(--kc-accent-light);
+  color: var(--kc-text);
+}
+
+.kc-jt__arrow {
+  color: var(--kc-text3);
+  flex-shrink: 0;
+}
+
+:root.kc-theme--dark .kc-jt__chip {
+  background: #020617;
+  border-color: rgba(51,65,85,0.9);
+  color: #9ca3af;
+}
+
+:root.kc-theme--dark .kc-jt__chip--now {
+  background: linear-gradient(135deg, rgba(99,102,241,0.18), rgba(236,72,153,0.1));
+  border-color: rgba(99,102,241,0.5);
+  color: #e5e7eb;
+}
+
+@media (max-width: 640px) {
+  .kc-jt__arrow { display: none; }
+  .kc-jt { gap: 8px; }
+  .kc-jt__chip { font-size: 0.8rem; padding: 8px 12px; }
+}
