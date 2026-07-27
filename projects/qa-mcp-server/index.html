@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA MCP Server - Vipin Yadav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/detail-compat.css">
+<style>
+.detail-hero { padding: 140px 24px 60px; text-align: center; }
+.detail-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: var(--text); }
+.detail-hero .grad { background: linear-gradient(135deg, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-hero p { font-size: 1.05rem; color: var(--text2); max-width: 660px; margin: 0 auto 32px; }
+.detail-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--bg3); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(99,102,241,0.08); margin-bottom: 60px; }
+.detail-stat { background: var(--bg2); padding: 24px 16px; text-align: center; }
+.detail-stat-num { font-size: 1.5rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.detail-stat-label { font-size: 0.75rem; color: var(--text3); margin-top: 4px; }
+.detail-section { padding: 60px 0; }
+.detail-section h2 { font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.detail-section .subtitle { font-size: 1rem; color: var(--text2); margin-bottom: 32px; max-width: 660px; }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.detail-card { padding: 24px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); }
+.detail-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--accent2); }
+.detail-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+.tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.pill { padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500; background: var(--bg3); border: 1px solid rgba(255,255,255,0.05); color: var(--text); }
+.agent-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 24px; }
+.agent-card { padding: 20px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); }
+.agent-card .agent-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700; color: var(--accent2); margin-bottom: 6px; letter-spacing: .05em; }
+.agent-card h5 { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; color: var(--text); font-family: 'JetBrains Mono', monospace; }
+.agent-card p { font-size: 0.78rem; color: var(--text3); line-height: 1.5; }
+.flow-pre { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; line-height: 1.9; color: var(--text2); background: var(--bg2); border: 1px solid rgba(99,102,241,0.12); border-radius: var(--radius); padding: 24px; overflow-x: auto; margin-top: 24px; white-space: pre; }
+.flow-pre b { color: var(--accent2); font-weight: 600; }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 24px; }
+.verdict { padding: 24px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(255,255,255,0.05); border-left: 3px solid var(--accent); }
+.verdict.no { border-left-color: var(--text3); }
+.verdict h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text); font-family: 'JetBrains Mono', monospace; }
+.verdict .tag { font-size: 0.68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent2); display: block; margin-bottom: 10px; }
+.verdict.no .tag { color: var(--text3); }
+.verdict p { font-size: 0.86rem; color: var(--text2); line-height: 1.6; }
+.callout { padding: 24px; border-radius: var(--radius); background: var(--bg2); border: 1px solid rgba(99,102,241,0.12); margin-top: 24px; }
+.callout h4 { font-size: 0.9rem; font-weight: 700; color: var(--accent2); margin-bottom: 8px; }
+.callout p { font-size: 0.88rem; color: var(--text2); line-height: 1.65; }
+</style>
+</head>
+<body>
+<div class="tech-bg"></div>
+
+<header>
+  <nav>
+    <a href="../../index.html#projects" class="nav-brand" style="text-decoration:none">&larr; Portfolio</a>
+    <ul><li><a href="#decision">Decision</a></li><li><a href="#tools">Tools</a></li><li><a href="#design">Design</a></li><li><a href="#tech">Tech</a></li></ul>
+  </nav>
+</header>
+
+<section class="detail-hero">
+  <div class="container">
+    <h1>QA MCP Server<br><span class="grad">one tool surface, not four agents</span></h1>
+    <p>An MCP server that exposes a 50K-LOC QA platform's internal flows — Jira, test planning, self-healing, risk prediction — as nine tools any MCP client can call. 287 lines, zero new dependencies, no new business logic. The interesting part isn't the code; it's what got left out of it.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="detail-stats">
+    <div class="detail-stat"><div class="detail-stat-num">9</div><div class="detail-stat-label">Tools Over stdio</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">287</div><div class="detail-stat-label">Lines of Server</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">0</div><div class="detail-stat-label">New Dependencies</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">13</div><div class="detail-stat-label">Wiring Tests</div></div>
+    <div class="detail-stat"><div class="detail-stat-num">4</div><div class="detail-stat-label">Flows Unified</div></div>
+  </div>
+</div>
+
+<section class="detail-section" id="decision">
+  <div class="container">
+    <h2>The Decision</h2>
+    <p class="subtitle">The brief was "turn these four flows into four AI agents." The right answer was two agents, seven tools, and one server — and the reasoning is the deliverable.</p>
+
+    <p style="font-size:0.92rem;color:var(--text2);line-height:1.7;max-width:660px">An agent earns its cost when the next step depends on what the last step saw. Anything else is a function call with a language model bolted to the front of it, paying latency and hallucination risk for nothing. Each candidate flow got held against that test.</p>
+
+    <div class="split">
+      <div class="verdict">
+        <span class="tag">Agent — earns it</span>
+        <h4>Self-healing</h4>
+        <p>Run the test, read the failure, repair it, re-run, bounded by a retry budget. Every step is conditioned on the previous result. This is a real loop and it already worked that way.</p>
+      </div>
+      <div class="verdict">
+        <span class="tag">Agent — earns it</span>
+        <h4>Test creation</h4>
+        <p>Qualifies once it can inspect a live DOM rather than guess at selectors. The judgment is real: which element, which assertion, what the recorded intent was.</p>
+      </div>
+      <div class="verdict no">
+        <span class="tag">Tool — not an agent</span>
+        <h4>Jira</h4>
+        <p>Deterministic REST calls. Wrapping a model around <em>create_bug()</em> buys latency, token cost, and a novel way to file a ticket that shouldn't exist. It became three plain tools.</p>
+      </div>
+      <div class="verdict no">
+        <span class="tag">Tool — not an agent</span>
+        <h4>Risk prediction</h4>
+        <p>Git churn, cyclomatic complexity, and an IsolationForest. There is no language model in it and it doesn't want one — it wants bug-history data. A tool, not an agent.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>The reframe that made it 287 lines</h4>
+      <p>The agent loop doesn't have to live in the codebase. Exposed over MCP, the client — Claude Code, Cursor, Claude Desktop — supplies the planning, retries, and conversation state. That deletes four orchestrators, four deployments, and four auth paths before any of them are written. The repo contributes what only it can: functions that do one thing and return JSON.</p>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="tools" style="background:var(--bg2)">
+  <div class="container">
+    <h2>The Tool Surface</h2>
+    <p class="subtitle">Nine tools across four families. Every one delegates to a function that already shipped in the platform — the server adds no business logic, only a doorway.</p>
+    <div class="agent-flow">
+      <div class="agent-card"><div class="agent-num">JIRA · READ</div><h5>jira_search</h5><p>Find tickets by JQL.</p></div>
+      <div class="agent-card"><div class="agent-num">JIRA · READ</div><h5>jira_ticket</h5><p>Full ticket detail including the auto-detected acceptance-criteria field.</p></div>
+      <div class="agent-card"><div class="agent-num">JIRA · WRITE</div><h5>jira_file_bug</h5><p>File a Bug and link it to the originating story. Gated behind a human yes.</p></div>
+      <div class="agent-card"><div class="agent-num">CREATE · LLM</div><h5>plan_from_ticket</h5><p>Ticket to Recording Plan, opening a tracked job. Returns the assumptions it had to invent.</p></div>
+      <div class="agent-card"><div class="agent-num">CREATE · READ</div><h5>list_recordings</h5><p>Recorded browser sessions, newest first — how the model discovers what it can build from.</p></div>
+      <div class="agent-card"><div class="agent-num">HEAL · LOOP</div><h5>run_and_heal</h5><p>Run, heal, re-run within a budget. Ends verified green or flagged for a human with a diagnosis.</p></div>
+      <div class="agent-card"><div class="agent-num">HEAL · LLM</div><h5>heal_test</h5><p>One-shot repair on any failing test, with the recorded session as ground truth.</p></div>
+      <div class="agent-card"><div class="agent-num">PREDICT · READ</div><h5>predict_risk</h5><p>Rank files most likely to break. Zero AI cost, works on any repository.</p></div>
+      <div class="agent-card"><div class="agent-num">REPORT · WRITE</div><h5>report_to_jira</h5><p>Post the verdict back to the ticket and close the loop. Gated.</p></div>
+    </div>
+
+    <div class="flow-pre">you ask a question in plain English
+   &darr;
+<b>MCP client</b>  spawns the server as a child process (stdio)
+   &darr;         asks "what tools do you have?" &rarr; 9, with annotations
+<b>qa_mcp.py</b>   one-line wrappers, no logic of its own
+   &darr;
+<b>core/*</b>      loop_a &middot; failure_analyzer &middot; jira_integration &middot; risk_predictor
+   &darr;
+Jira &middot; Playwright &middot; git history &middot; OpenAI
+
+no port &middot; no daemon &middot; no container &middot; process dies with the session</div>
+  </div>
+</section>
+
+<section class="detail-section" id="design">
+  <div class="container">
+    <h2>Engineering Decisions</h2>
+    <p class="subtitle">Five choices that took longer to decide than to implement.</p>
+    <div class="detail-grid">
+      <div class="detail-card"><h4>A gate the model cannot skip</h4><p>Write tools use MCP elicitation — a prompt the <em>human</em> answers in the client UI, not an argument the model sets for itself. Where a client can't elicit, the tool returns a dry-run preview naming exactly what it would have written, and the test suite asserts Jira receives nothing on that path.</p></div>
+      <div class="detail-card"><h4>stdout is the wire</h4><p>On stdio transport, a single stray print corrupts the JSON-RPC stream. Logging is pinned to stderr at boot and the wrapped modules were audited for print calls. Cheap discipline; silent, baffling breakage without it.</p></div>
+      <div class="detail-card"><h4>Heartbeats on long calls</h4><p>A heal cycle takes minutes, and clients kill idle tool calls. The run tool reports progress every 30 seconds while the work proceeds — tested by collapsing the interval and asserting a beat lands before a slow run returns.</p></div>
+      <div class="detail-card"><h4>Errors that tell you what to do</h4><p>Missing credentials return "enter them on the Settings page", not a stack trace. The model reads the sentence and relays it. Degradation is designed: with the database down, the credential-free tools still work.</p></div>
+      <div class="detail-card"><h4>Annotations, not just documentation</h4><p>Read-only and destructive hints ship as MCP tool annotations, so clients can auto-allow safe tools and prompt before dangerous ones. The docs and the protocol assert the same thing, and a test enforces they stay in sync.</p></div>
+      <div class="detail-card"><h4>One tool deliberately not shipped</h4><p>Test generation looked like a wrapper and wasn't: the session-to-BDD pipeline lives in a 330-line endpoint including a compile gate that keeps broken tests out of the framework. Shipping it meant either duplicating that gate or dropping it. Both are worse than waiting, so it was documented and deferred instead.</p></div>
+    </div>
+
+    <div class="callout">
+      <h4>Verified, not assumed</h4>
+      <p>Every claim was checked against a running system rather than a plan: a live stdio handshake returning all nine tools with annotations intact, a risk scan of 800 real files through the protocol, and a Jira query returning real tickets. Thirteen wiring tests run with no network and no model spend; the surrounding suite stayed green at 419.</p>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="tech" style="background:var(--bg2)">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <div class="tech-pills">
+      <span class="pill">Python</span><span class="pill">MCP Protocol</span><span class="pill">FastMCP</span><span class="pill">JSON-RPC / stdio</span><span class="pill">Elicitation</span><span class="pill">Jira REST</span><span class="pill">Playwright</span><span class="pill">OpenAI</span><span class="pill">scikit-learn</span><span class="pill">PostgreSQL</span><span class="pill">pytest</span>
+    </div>
+    <p style="font-size:0.86rem;color:var(--text3);line-height:1.7;margin-top:28px;max-width:660px">Built on top of the <a href="../ai-enabled-qa/index.html" style="color:var(--accent2)">QA Automation AI Enabler</a> platform — the same flows, given a second doorway so any MCP client can drive them.</p>
+  </div>
+</section>
+
+<footer><div class="container"><p style="font-size:.82rem;color:var(--text3)">&copy; 2026 Vipin Yadav</p></div></footer>
+<script src="../../js/script.js"></script>
+</body>
+</html>

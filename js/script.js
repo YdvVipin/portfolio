@@ -23,6 +23,7 @@ const FLAGSHIP_PROJECT = {
 };
 
 const SUPPORTING_PROJECTS = [
+  { name: 'QA MCP Server', path: 'projects/qa-mcp-server/', desc: 'Exposes the flagship platform as 9 MCP tools — Jira, planning, self-healing and risk, driven by any AI client', tags: ['Python', 'MCP'] },
   { name: 'Playwright BDD Framework', path: 'projects/playwright-bdd-framework/', desc: 'TypeScript BDD framework with 3 AI agents and 9-tier intelligent locator system', tags: ['TypeScript', 'Playwright'] },
   { name: 'Multi-Agent Orchestration', path: 'projects/multi-agent-orchestration/', desc: '5 specialized agents with 5 MCP servers using CrewAI and LangChain', tags: ['Python', 'CrewAI'] },
   { name: 'QA RAG System', path: 'projects/rag-system/', desc: '25+ data collectors with FAISS vector search for intelligent QA knowledge retrieval', tags: ['Python', 'FAISS'] },
