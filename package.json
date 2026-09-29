@@ -1,0 +1,13 @@
+{
+  "name": "vipin-portfolio",
+  "private": true,
+  "description": "Static portfolio site — dev tooling for site tests only",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "1.56.1"
+  }
+}
