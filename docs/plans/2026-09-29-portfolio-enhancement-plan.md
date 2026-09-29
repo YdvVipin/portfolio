@@ -7,6 +7,20 @@
 
 ---
 
+## Status (updated 2026-09-29)
+
+| Phase | Status | Notes |
+|---|---|---|
+| 1 — Repo hygiene | ✅ Done | 174 generated files untracked; Allure report kept (linked) |
+| 2 — Privacy & contact | ⏸ Needs Vipin | phone public? Formspree ID? |
+| 3 — Flagship Web+API+Mobile+HITL | ⏸ Needs Vipin | answers to Q1–Q7 |
+| 4 — Site tests | ✅ Done | Playwright + axe, desktop + mobile, CI green; fixed ~30 contrast issues, 2 near-invisible pages, mobile overflow, dead back-links |
+| 5 — Quality Dashboard | ✅ Built | fills in after the first push to `main` |
+| 6 — Performance & polish | ✅ Done | 404 page, SEO/OG meta on project pages, lazy images; Lighthouse ≈ 99/98/96/100 locally |
+| 7 — Optional | Not started | |
+
+---
+
 ## 0. Ground rules for the executing agent
 
 Read this section before touching anything.
