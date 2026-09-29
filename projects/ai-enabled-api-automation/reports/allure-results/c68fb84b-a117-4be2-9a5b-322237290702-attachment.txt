@@ -1,3 +1,0 @@
-Status Code: 200
-Response Time: 0.057s
-Response Size: 17873 bytes
