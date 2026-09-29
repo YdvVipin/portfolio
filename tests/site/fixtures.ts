@@ -1,5 +1,6 @@
 import { test as base, expect, Page } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 
 /** Site paths from sitemap.xml, relative to the site root (e.g. "pages/about.html"). */
 export const PAGES: string[] = [...readFileSync('sitemap.xml', 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
@@ -9,7 +10,8 @@ export const PAGES: string[] = [...readFileSync('sitemap.xml', 'utf8').matchAll(
  * Stubs every third-party request so runs are deterministic and offline-safe:
  * Google Fonts, the GitHub API used by js/script.js, and anything else external.
  * Script CDNs are let through by default so a broken library URL still fails the suite.
- * Set SITE_TESTS_OFFLINE=1 (e.g. in a sandbox without CDN access) to serve tiny shims instead.
+ * Set SITE_TESTS_OFFLINE=1 (e.g. in a sandbox without CDN access) to serve tiny shims instead,
+ * or point SITE_TESTS_CDN_DIR at a folder of real library files (matched by file name).
  */
 const SCRIPT_CDNS = ['cdn.jsdelivr.net', 'cdnjs.cloudflare.com', 'unpkg.com'];
 const OFFLINE = !!process.env.SITE_TESTS_OFFLINE;
@@ -23,6 +25,8 @@ async function stubExternal(page: Page) {
     const url = new URL(route.request().url());
     if (SCRIPT_CDNS.includes(url.hostname)) {
       if (!OFFLINE) return route.continue();
+      const local = process.env.SITE_TESTS_CDN_DIR && join(process.env.SITE_TESTS_CDN_DIR, basename(url.pathname));
+      if (local && existsSync(local)) return route.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(local) });
       const shim = Object.keys(CDN_SHIMS).find(name => url.pathname.includes(name));
       return route.fulfill({ status: 200, contentType: 'text/javascript', body: shim ? CDN_SHIMS[shim] : '' });
     }

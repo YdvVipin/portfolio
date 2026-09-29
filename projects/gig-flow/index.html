@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/detail-compat.css">
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>.mermaid .edgeLabel, .mermaid .edgeLabel p { color: #f3f4f6; }</style>
 </head>
 <body>
     <div class="tech-bg"></div>
@@ -178,7 +179,7 @@
     </footer>
 
     <script>
-        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { edgeLabelBackground: '#1f2937' } });
         
         // Initialize particles for this page
         document.addEventListener('DOMContentLoaded', function() {
