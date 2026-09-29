@@ -1,13 +1,15 @@
 import { test, expect } from './fixtures';
 
-const NAV = ['Projects', 'About', 'Journey', 'Resume', 'Contact'];
+const NAV: Record<string, string> = {
+  Projects: 'projects', About: 'about', Journey: 'journey', Resume: 'resume', Quality: 'dashboard', Contact: 'contact',
+};
 
 test('nav links reach their pages', async ({ page, isMobile }) => {
-  for (const label of NAV) {
+  for (const [label, file] of Object.entries(NAV)) {
     await page.goto('index.html');
     if (isMobile) await page.locator('.kc-nav__hamburger').click();
     await page.locator('.kc-nav__links').getByRole('link', { name: label, exact: true }).click();
-    await expect(page).toHaveURL(new RegExp(`pages/${label.toLowerCase()}\\.html$`));
+    await expect(page).toHaveURL(new RegExp(`pages/${file}\\.html$`));
   }
 });
 

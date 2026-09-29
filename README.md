@@ -32,6 +32,8 @@ A portfolio from a QA engineer should test itself. Every push runs a Playwright 
 - nav, mobile menu, theme toggle and the flagship demo video work
 - axe-core finds no serious or critical WCAG 2 A/AA violations
 
+On `main`, each run's results plus Lighthouse scores are appended to `data/qa-metrics.json` and shown on the [Quality Dashboard](https://ydvvipin.github.io/portfolio/pages/dashboard.html).
+
 Run it locally:
 
 ```bash
