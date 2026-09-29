@@ -8,9 +8,9 @@
   --kc-surface: #FFFFFF;
   --kc-border: #E5E7EB;
   --kc-text: #111827;
-  --kc-text2: #6B7280;
-  --kc-text3: #9CA3AF;
-  --kc-accent: #6366F1;
+  --kc-text2: #4B5563;
+  --kc-text3: #6B7280;
+  --kc-accent: #4F46E5;
   --kc-accent-light: #818CF8;
   --kc-secondary: #EC4899;
   --kc-green: #10B981;
@@ -1090,7 +1090,7 @@ a { color: inherit; text-decoration: none; }
 /* ─── Resume Page (Reactive Resume - Gengar Style) ─── */
 
 .rv-page {
-  --kc-accent: #6B8E23;
+  --kc-accent: #556B2F;
   display: flex;
   background: #ffffff;
   border-radius: 4px;
@@ -1224,13 +1224,13 @@ a { color: inherit; text-decoration: none; }
 
 .rv-edu__date {
   font-size: 0.7rem;
-  color: #6b7280;
+  color: #4b5563;
   margin-top: 2px;
 }
 
 .rv-edu__note {
   font-size: 0.68rem;
-  color: #6b7280;
+  color: #4b5563;
   font-style: italic;
   margin-top: 2px;
 }
@@ -1298,7 +1298,7 @@ a { color: inherit; text-decoration: none; }
 
 .rv-job-header__location {
   font-size: 0.72rem;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .rv-job-header__role {
@@ -1310,7 +1310,7 @@ a { color: inherit; text-decoration: none; }
 
 .rv-job-header__date {
   font-size: 0.72rem;
-  color: #9ca3af;
+  color: #6b7280;
   text-align: right;
 }
 
@@ -1364,7 +1364,7 @@ a { color: inherit; text-decoration: none; }
 
 .rv-project__desc {
   font-size: 0.72rem;
-  color: #6b7280;
+  color: #4b5563;
   line-height: 1.5;
 }
 

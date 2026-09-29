@@ -11,7 +11,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0a0a0f;--bg2:#111119;--bg3:#1a1a27;--bg4:#222233;
-  --text:#e4e4ef;--text2:#9d9db5;--text3:#6b6b85;
+  --text:#e4e4ef;--text2:#9d9db5;--text3:#8b8ba3;
   --accent:#6366f1;--accent2:#818cf8;--accent3:#4f46e5;
   --green:#22c55e;--green2:#16a34a;
   --orange:#f59e0b;--pink:#ec4899;--cyan:#06b6d4;--red:#ef4444;
@@ -84,10 +84,10 @@ nav .links a:hover{color:var(--text)}
 .arch-layer .layer-marker{display:flex;flex-direction:column;align-items:center;width:60px;flex-shrink:0}
 .layer-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:#fff;flex-shrink:0}
 .layer-line{flex:1;width:2px;background:var(--bg4)}
-.l1 .layer-num{background:var(--cyan)}
-.l2 .layer-num{background:var(--accent)}
-.l25 .layer-num{background:var(--orange)}
-.l3 .layer-num{background:var(--pink)}
+.l1 .layer-num{background:var(--cyan);color:#0a0a0f}
+.l2 .layer-num{background:var(--accent3)}
+.l25 .layer-num{background:var(--orange);color:#0a0a0f}
+.l3 .layer-num{background:var(--pink);color:#0a0a0f}
 .arch-card{flex:1;padding:28px;border-radius:var(--radius);background:var(--bg2);border:1px solid rgba(255,255,255,.05);margin-bottom:16px}
 .arch-card h4{font-size:1rem;font-weight:700;margin-bottom:6px}
 .arch-card .arch-file{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent2);margin-bottom:10px}
@@ -133,6 +133,10 @@ nav .links a:hover{color:var(--text)}
 .code-header .dots span:nth-child(2){background:#f59e0b}
 .code-header .dots span:nth-child(3){background:#22c55e}
 .code-header .file-name{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text3)}
+.code-block{min-width:0;max-width:100%}
+.rg{display:grid}.rg>*{min-width:0}
+.rg-2{grid-template-columns:1fr 1fr}.rg-3{grid-template-columns:repeat(3,1fr)}.rg-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:768px){.rg-2,.rg-3{grid-template-columns:1fr}.rg-4{grid-template-columns:1fr 1fr}}
 .code-body{padding:20px;overflow-x:auto}
 .code-body pre{font-family:'JetBrains Mono',monospace;font-size:.8rem;line-height:1.7;color:var(--text2)}
 .code-body .kw{color:var(--pink)}
@@ -170,7 +174,7 @@ footer .footer-links a{color:var(--text2);font-size:.88rem;font-weight:500}
 <!-- Nav -->
 <nav>
   <div class="inner">
-    <a href="../../index.html#projects" class="logo" style="text-decoration:none">&larr; Portfolio</a>
+    <a href="../../pages/projects.html" class="logo" style="text-decoration:none">&larr; Portfolio</a>
     <div class="links">
       <a href="#about">About</a>
       <a href="#architecture">Architecture</a>
@@ -354,7 +358,7 @@ footer .footer-links a{color:var(--text2);font-size:.88rem;font-weight:500}
     <h2 class="section-title">9-Tier Selector Priority Chain</h2>
     <p class="section-subtitle">Every DOM element yields 8-10 possible selectors. The resolver scores each one and picks the most stable — not the most convenient.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+    <div class="rg rg-2" style="gap:32px;align-items:start">
       <div class="tier-list">
         <div class="tier-row"><span class="tier-rank">1</span><span class="tier-name">data-testid</span><div style="flex:2"><div class="tier-bar" style="width:100%;background:var(--green)"></div></div><span class="tier-conf" style="color:var(--green)">100</span></div>
         <div class="tier-row"><span class="tier-rank">2</span><span class="tier-name">data-cy / data-test</span><div style="flex:2"><div class="tier-bar" style="width:98%;background:var(--green)"></div></div><span class="tier-conf" style="color:var(--green)">98</span></div>
@@ -599,7 +603,7 @@ test(<span class="str">'User can complete checkout flow'</span>, <span class="kw
     <h2 class="section-title">End-to-End Architecture</h2>
     <p class="section-subtitle">From browser recording to test execution, integrated with enterprise tools.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px">
+    <div class="rg rg-3" style="gap:12px;margin-top:24px">
       <div style="padding:24px;border-radius:var(--radius);background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.15);text-align:center">
         <div style="font-size:.7rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Input Layer</div>
         <div style="font-size:.85rem;color:var(--text);display:flex;flex-direction:column;gap:6px">
@@ -626,7 +630,7 @@ test(<span class="str">'User can complete checkout flow'</span>, <span class="kw
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px">
+    <div class="rg rg-4" style="gap:12px;margin-top:12px">
       <div style="padding:18px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid rgba(255,255,255,.05);text-align:center">
         <div style="font-size:.7rem;font-weight:600;color:var(--text3);margin-bottom:4px">Database</div>
         <div style="font-size:.82rem;color:var(--text)">PostgreSQL + Redis</div>
@@ -654,7 +658,7 @@ test(<span class="str">'User can complete checkout flow'</span>, <span class="kw
     <h2 class="section-title">Key Technical Decisions</h2>
     <p class="section-subtitle">Architectural trade-offs and design philosophy behind this project.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div class="rg rg-2" style="gap:16px">
       <div style="padding:24px;border-radius:var(--radius);background:var(--bg);border:1px solid rgba(255,255,255,.05)">
         <h4 style="font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--accent2)">Deterministic First, AI Second</h4>
         <p style="font-size:.85rem;color:var(--text2)">Template-based code generation handles 85-90% of cases reliably. AI only enhances — never generates core logic. This inverted approach gives enterprise-grade reliability while still benefiting from LLM intelligence.</p>

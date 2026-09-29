@@ -11,8 +11,8 @@
   --bg3: #232323;
   --text: #EDEDEF;
   --text2: #A1A1AA;
-  --text3: #52525B;
-  --accent: #6366F1;
+  --text3: #8A8A94;
+  --accent: #4F46E5;
   --accent2: #818CF8;
   --cyan: #22D3EE;
   --pink: #EC4899;
@@ -303,7 +303,7 @@ section ul {
 .agent-card .agent-num {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent2);
   font-size: 0.85rem;
   margin-bottom: 6px;
 }
@@ -385,4 +385,10 @@ section ul {
   .agent-flow {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─── Code blocks scroll instead of widening the page on mobile ─── */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
 }

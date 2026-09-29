@@ -38,7 +38,7 @@ const MORE_WORK = [
 ];
 
 const LANG_COLORS = {
-  JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5',
+  JavaScript: '#f1e05a', TypeScript: '#2b6cb0', Python: '#3572A5',
   HTML: '#e34c26', CSS: '#563d7c', Java: '#b07219', 'C#': '#178600',
   Ruby: '#701516', Go: '#00ADD8', Rust: '#dea584', PHP: '#4F5D95',
   Swift: '#F05138', Kotlin: '#A97BFF', Shell: '#89e051', Dart: '#00B4AB',
@@ -47,7 +47,7 @@ const LANG_COLORS = {
 };
 
 function getLangColor(lang) {
-  return LANG_COLORS[lang] || '#9CA3AF';
+  return LANG_COLORS[lang] || '#6B7280';
 }
 
 // ─── Init ─────────────────────────────────────────
